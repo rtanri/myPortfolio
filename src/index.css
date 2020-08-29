@@ -13,7 +13,8 @@ code {
 }
 
 .dashboard {
-  margin: 25px 15% 150px 15%;
+  width: 1100px;
+  margin: 25px auto 150px auto;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -32,5 +33,36 @@ code {
   flex-direction:row;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+
+.ui.segment.basicProfile{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.ui.pointing.menu{
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+}
+
+.ui.pointing.menu .item{
+  width: 200px;
+  justify-content: center;
+}
+
+.ui.pointing.menu .item:hover{
+  background: #f0ece2;
+}
+
+
+.ui.pointing.menu .active.item{
+  background: #c7b198;
+  color: rgba(0,0,0,1.95);
+}
+
+.ui.pointing.menu .active.item:hover{
+  background: #c7b198;
+  color: rgba(0,0,0,1.95);
 }
 
