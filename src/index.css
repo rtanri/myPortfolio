@@ -14,7 +14,7 @@ code {
 
 .dashboard {
   width: 1100px;
-  margin: 25px auto 150px auto;
+  margin: 25px auto 300px auto;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -64,5 +64,10 @@ code {
 .ui.pointing.menu .active.item:hover{
   background: #c7b198;
   color: rgba(0,0,0,1.95);
+}
+
+.ui.bottom.attached.segment.active.tab {
+  border: none;
+  padding: unset;
 }
 

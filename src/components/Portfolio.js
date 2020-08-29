@@ -15,7 +15,7 @@ class Portfolio extends Component {
     const panes = [
         { menuItem: 'Web Apps', render: () => <Tab.Pane>{<WebApp />}</Tab.Pane>},
         { menuItem: 'Mobile Apps', render: () => <Tab.Pane>{<MobileApp />}</Tab.Pane>},
-        { menuItem: 'Creative Projects', render: () => <Tab.Pane>{<OtherProjects />}</Tab.Pane>},
+        { menuItem: 'Low-code Projects', render: () => <Tab.Pane>{<OtherProjects />}</Tab.Pane>},
     ]
 
     return (
@@ -25,7 +25,6 @@ class Portfolio extends Component {
         <BodyHeader />
           <Tab panes={panes} 
             menu={{pointing: true}}
-            // className="tab"
           />
       </div>
       
@@ -43,7 +42,7 @@ const MainHeader = () => (
 
 const BodyHeader = () => (
   <Header as='h2' textAlign='center'>
-    <Header.Content>Projects</Header.Content>
+    <Header.Content>Programming Projects</Header.Content>
   </Header>
 )
 
@@ -53,7 +52,7 @@ const BasicProfile = () => (
     <Grid columns='two' divided>
       <Grid.Row stretched>
         <Grid.Column width="6">
-          <Image size="medium" src='images/wireframe/image.png' />
+          <Image src='images/dashboard/profile.jpg' />
         </Grid.Column>
 
         <Grid.Column width="10">
@@ -76,28 +75,31 @@ class WebApp extends Component {
     return(
       <Segment> 
 
-      <Grid columns='three' divided>
+      <Grid columns='three'>
 
       <Grid.Row>
         <Grid.Column>
           {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
+            link = "https://wouldyourathertoeat.netlify.app/"
+            imageSource = '/images/dashboard/yourather.png'
             title = 'Would You Rather'
             extra = 'React, Redux, Semantic UI'
           />}
         </Grid.Column>
 
         <Grid.Column>
-          {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
-            title = 'eBook Readers (DIY Kindle)'
+          {<ProjectCard
+            link = "https://diy-kindle.netlify.app" 
+            imageSource = '/images/dashboard/elibrary.png'
+            title = 'E-Library (DIY Kindle)'
             extra = 'React, Redux'
           />}
         </Grid.Column>
 
         <Grid.Column>
           {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
+            link = "https://revin-resto-review.netlify.app"
+            imageSource = '/images/dashboard/cafereviewer.jpeg'
             title = 'Cafe Reviewer (DIY Yelp)'
             extra = 'Using Google Map API'
           />}
@@ -108,7 +110,8 @@ class WebApp extends Component {
       <Grid.Row>
         <Grid.Column>
           {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
+            link = 'https://jasmine-testing.netlify.app'
+            imageSource = '/images/dashboard/jasmine.jpeg'
             title = 'Jasmine Testing'
             extra = 'Using Jasmine, Gulp'
           />}
@@ -116,7 +119,8 @@ class WebApp extends Component {
 
         <Grid.Column>
           {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
+            link = "https://revin-frogger-game.netlify.app"
+            imageSource = '/images/dashboard/frogger.png'
             title = 'Game: Frogger'
             extra = 'Randomizer Object Creator, Object Oriented, DOM, EventListener'
           />}
@@ -124,7 +128,8 @@ class WebApp extends Component {
 
         <Grid.Column>
           {<ProjectCard 
-            imageSource = '/images/wireframe/image.png'
+            link = 'https://revin-flipcard-game.netlify.app'
+            imageSource = '/images/dashboard/flipcard.png'
             title = 'Game: Flip Card'
             extra = 'Using Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
           />}
@@ -146,7 +151,7 @@ const MobileApp = () => (
 
         <Grid.Column >
             {<ProjectCard 
-              imageSource = '/images/wireframe/image.png'
+              imageSource = '/images/dashboard/flashcard.jpeg'
               title = 'Flash Card Mobile App'
               extra = 'ReactNative'
             />}
@@ -154,7 +159,7 @@ const MobileApp = () => (
 
           <Grid.Column>
             {<ProjectCard 
-              imageSource = '/images/wireframe/image.png'
+              imageSource = '/images/dashboard/fitnessapp.jpeg'
               title = 'Fitness Mobile App'
               extra = 'ReactNative'
             />}
@@ -176,18 +181,30 @@ const OtherProjects = () => (
     <Grid.Row columns={3} >
 
       <Grid.Column verticalAlign='center'>
-        <Image src='images/wireframe/image.png' />
-        <Header as='h3'>NTU MAE Club Website</Header>
+        {<ProjectCard 
+              imageSource = '/images/dashboard/maeclub.png'
+              title = 'NTU MAE Club Website'
+              extra = 'Set new hosting name, initiate JOOMLA, plan the layout and template; and maintain the content'
+              link = 'https://www.maeclub.com/'
+            />}
       </Grid.Column>
 
       <Grid.Column verticalAlign='center'>
-        <Image src='images/wireframe/image.png' />
-        <Header as='h3'>Armapillow</Header>
+        {<ProjectCard 
+              link = 'http://unbouncepages.com/onlinemp/'
+              imageSource = '/images/dashboard/shopee.png'
+              title = 'Shopee Market Research'
+              extra = 'One Page Project on market research, USP and competitive analytics on Shopee expansion in Indonesia in 2015'
+            />}
       </Grid.Column>
 
       <Grid.Column verticalAlign='center'>
-        <Image src='images/wireframe/image.png' />
-        <Header as='h3'>Shopee Market Research</Header>
+        {<ProjectCard 
+              link = 'http://unbouncepages.com/rindoucard/'
+              imageSource = '/images/dashboard/rindoucard.png'
+              title = 'RindouCard Printing'
+              extra = 'Landing page to capture potential buyers during university side-hustling'
+            />}
       </Grid.Column>
 
     </Grid.Row>
@@ -195,8 +212,10 @@ const OtherProjects = () => (
   </Segment>
 )
 
-const ProjectCard = ({imageSource, title, extra}) => (
-    <Card>
+const ProjectCard = ({link, imageSource, title, extra}) => (
+    <Card
+      as='a' href={link} target='_blank'
+    >
       <Image src={imageSource} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{title}</Card.Header>
