@@ -10,12 +10,13 @@ import Portfolio from './Portfolio'
 
 export class App extends Component{
     render(){
-        const panes = [
-            { menuItem: 'Portfolio', render: () => <Tab.Pane>{<Portfolio />}</Tab.Pane> },
-            { menuItem: 'Semantic UI', render: () => <Tab.Pane>{<Semantic1/>}</Tab.Pane> },
-          ]
+        // const panes = [
+        //     { menuItem: 'Portfolio', render: () => <Tab.Pane>{<Portfolio />}</Tab.Pane> },
+        //     { menuItem: 'Semantic UI', render: () => <Tab.Pane>{<Semantic1/>}</Tab.Pane> },
+        //   ]
         return(
-            <Tab panes={panes} />
+            // <Tab panes={panes} />
+            <Portfolio />
         )
     }
 }

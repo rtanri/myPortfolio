@@ -1,3 +1,11 @@
+html{
+  background-color: #364f6b;
+}
+
+#root{
+  background-color: #364f6b;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: pink;
 }
 
 code {
@@ -12,18 +21,22 @@ code {
     monospace;
 }
 
+
+/* Main Page CSS */
 .dashboard {
-  width: 1100px;
-  margin: 25px auto 300px auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  width: 900px;
+  margin: 50px auto 50px auto;
+  /* padding-left: 0px;
+  padding-right: 100px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: white;
+
 }
 
-.contentList{
-  margin: 50px auto;
+.contentPage{
+  padding: 50px 60px 50px 60px;
 }
 
 .flex-even{
@@ -40,6 +53,20 @@ code {
   margin-bottom: 25px;
 }
 
+/* Profile  */
+p.profileSummary{
+  font-size: 18px;
+}
+
+.ui.button.contactButton{
+  background: green;
+  color: white;
+  font-weight: 1200;
+}
+
+
+
+/* Project TAB CSS  */
 .ui.pointing.menu{
   justify-content: center;
   border: none;
@@ -52,18 +79,17 @@ code {
 }
 
 .ui.pointing.menu .item:hover{
-  background: #f0ece2;
+  background: #fafafa;
 }
 
-
 .ui.pointing.menu .active.item{
-  background: #c7b198;
-  color: rgba(0,0,0,1.95);
+  background: green;
+  color: white;
 }
 
 .ui.pointing.menu .active.item:hover{
-  background: #c7b198;
-  color: rgba(0,0,0,1.95);
+  background:green;
+  color: white;
 }
 
 .ui.bottom.attached.segment.active.tab {
@@ -71,3 +97,49 @@ code {
   padding: unset;
 }
 
+.ui.segment.minHeight{
+  min-height: 350px;
+}
+
+
+/* Interest & Experiment Header CSS */
+.childHeader{
+  margin-top: 0px;
+  margin-bottom: -20px;
+  color: #0652DD;
+}
+
+.deepPadding{
+  padding-left: 50px;
+}
+
+a.ui.header{
+  color: #0652DD;
+}
+
+.ui.header.childHeaderItem{
+  margin-top: 5px;
+}
+
+.marginTop{
+  margin-top:30px;
+}
+
+.ui.center.aligned.header.headerMargin{
+  margin-top:30px;
+  margin-bottom: 20px;
+}
+
+.ui.left.aligned.header.headerMargin {
+  margin-top:50px;
+  margin-bottom: 30px;
+}
+
+/* project photo size
+width: 900
+height: 680
+
+Canvas size
+width: 1000
+height: 700
+*/
