@@ -1,9 +1,9 @@
 html{
-  background-color: #364f6b;
+  background-color: #dddddd;
 }
 
 #root{
-  background-color: #364f6b;
+  background-color: #dddddd;
 }
 
 body {
@@ -32,11 +32,14 @@ code {
   flex-direction: column;
   justify-content: space-around;
   background-color: white;
-
 }
 
 .contentPage{
   padding: 50px 60px 50px 60px;
+}
+
+.lightPadding{
+  padding: 20px 30px 30px 30px;
 }
 
 .flex-even{
@@ -51,6 +54,11 @@ code {
 .ui.segment.basicProfile{
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.backButton{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 /* Profile  */
@@ -97,6 +105,7 @@ p.profileSummary{
   padding: unset;
 }
 
+/* sub-tab box */
 .ui.segment.minHeight{
   min-height: 340px;
 }

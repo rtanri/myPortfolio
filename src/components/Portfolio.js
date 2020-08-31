@@ -9,6 +9,8 @@ import {
   Button,
 } from 'semantic-ui-react'
 import Semantic1 from './Semantic1'
+import {NavLink, Link} from 'react-router-dom'
+
 
 
 class Portfolio extends Component {
@@ -135,7 +137,8 @@ class WebApp extends Component {
       <Grid.Row>
         <Grid.Column>
           {<ProjectCard 
-            link = "https://wouldyourathertoeat.netlify.app/"
+            // link = "https://wouldyourathertoeat.netlify.app/"
+            link='/would-you-rather'
             imageSource = '/images/dashboard/yourather.jpg'
             title = 'Would You Rather'
             extra = 'React, Redux, Semantic UI'
@@ -144,7 +147,7 @@ class WebApp extends Component {
 
         <Grid.Column>
           {<ProjectCard
-            link = "https://diy-kindle.netlify.app" 
+            link = "/e-library"
             imageSource = '/images/dashboard/elibrary.jpg'
             title = 'E-Library (DIY Kindle)'
             extra = 'React, Redux'
@@ -153,7 +156,7 @@ class WebApp extends Component {
 
         <Grid.Column>
           {<ProjectCard 
-            link = "https://revin-resto-review.netlify.app"
+            link = "/resto-reviewer"
             imageSource = '/images/dashboard/cafereviewer.jpg'
             title = 'Cafe Reviewer (DIY Yelp)'
             extra = 'Using Google Map API'
@@ -176,6 +179,7 @@ const MobileApp = () => (
 
         <Grid.Column >
             {<ProjectCard 
+              link="/reactnative-flash-card"
               imageSource = '/images/dashboard/flashcard.jpg'
               title = 'Flash Card Mobile App'
               extra = 'ReactNative'
@@ -184,6 +188,7 @@ const MobileApp = () => (
 
           <Grid.Column>
             {<ProjectCard 
+              link='/reactnative-fitness-app'
               imageSource = '/images/dashboard/fitnessapp.jpg'
               title = 'Fitness Mobile App'
               extra = 'ReactNative'
@@ -204,7 +209,7 @@ const Game = () => (
       <Grid.Row columns={3}>
         <Grid.Column>
             {<ProjectCard 
-              link = "https://revin-frogger-game.netlify.app"
+              link = "/frogger"
               imageSource = '/images/dashboard/frogger.jpg'
               title = 'Game: Frogger'
               extra = 'Randomizer Object Creator, Object Oriented, DOM, EventListener'
@@ -213,7 +218,7 @@ const Game = () => (
 
           <Grid.Column>
             {<ProjectCard 
-              link = 'https://revin-flipcard-game.netlify.app'
+              link = '/flipcard'
               imageSource = '/images/dashboard/flipcard.jpg'
               title = 'Game: Flip Card'
               extra = 'Using Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
@@ -248,8 +253,7 @@ const OtherProjects = () => (
         </Grid.Column>
         <Grid.Column width={8}>
           <Header as="a" href='http://unbouncepages.com/onlinemp/' target='_blank' ><span>🛒</span> Shopee Market Research</Header>
-          <Header as="h4" className="childHeaderItem">One Page Project on market research, USP and competitive 
-          analytics on Shopee expansion in Indonesia in 2015'
+          <Header as="h4" className="childHeaderItem">One page market research & personal recommendation on Shopee market expansion to Indonesia in 2015
           </Header>
         </Grid.Column>
         <Grid.Column width={4} />
@@ -274,34 +278,35 @@ const OtherProjects = () => (
 )
 
 const ExperimentContent = () => (
-  <div class="marginTop">
-    <Grid>
-      <Grid.Row columns={3}>
-        <Grid.Column>
-        {/* work on Semantic Page Redirect */}
-            <h3 class='childHeader'><a href={<Semantic1/>} target="_blank"><span>🦺</span> Semantic UI React</a></h3>
-            <h4>Implement & tinkering Semantic UI format for REACT</h4>
-        </Grid.Column>
-        <Grid.Column>
-          <h3 class='childHeader'><a href='https://jasmine-testing.netlify.app' target="_blank"><span>🕵️‍♀️</span> Jasmine Testing</a></h3>
-          <h4>Using Jasmine to checking the API status and proptype of objects</h4>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  </div>
+    <div class="marginTop">
+      <Grid>
+        <Grid.Row columns={3}>
+
+          <Grid.Column>
+          <Header 
+            as={NavLink}
+            to='/react-semanticui' 
+            content="🦺 Semantic UI React"
+          />
+            <Header as="h4" className="childHeaderItem">Implement & tinkering Semantic UI format for REACT</Header>
+          </Grid.Column>
+
+          <Grid.Column>
+            <Header as="a" href='https://jasmine-testing.netlify.app' target='_blank' className="childHeader"><span>🕵️‍♀️</span> Jasmine Testing</Header>
+            <Header as="h4" className="childHeaderItem">
+                Jasmine to checking the API status and proptype of objects
+            </Header>
+          </Grid.Column>
+
+        </Grid.Row>
+      </Grid>
+    </div>
 )
 
-// {<ProjectCard 
-//   link = 'https://jasmine-testing.netlify.app'
-//   imageSource = '/images/dashboard/jasmine.jpeg'
-//   title = 'Jasmine Testing'
-//   extra = 'Using Jasmine, Gulp'
-// />}
 
 const ProjectCard = ({link, imageSource, title, extra}) => (
-    <Card
-      as='a' href={link} target='_blank'
-    >
+    <Link to={link}>
+    <Card>
       <Image src={imageSource} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{title}</Card.Header>
@@ -311,6 +316,7 @@ const ProjectCard = ({link, imageSource, title, extra}) => (
           {extra}
       </Card.Content>
     </Card>
+    </Link>
 )
 
 
