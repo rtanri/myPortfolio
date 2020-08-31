@@ -96,6 +96,7 @@ class BasicProfile extends Component {
           <Button 
             className="contactButton"
             content="Contact"
+            icon="rocket"
             as="a"
             href="mailto:tanrirevin@gmail.com"
           />
