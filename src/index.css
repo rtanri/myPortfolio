@@ -98,7 +98,7 @@ p.profileSummary{
 }
 
 .ui.segment.minHeight{
-  min-height: 350px;
+  min-height: 340px;
 }
 
 
@@ -110,7 +110,7 @@ p.profileSummary{
 }
 
 .deepPadding{
-  padding-left: 50px;
+  padding-left: 30px;
 }
 
 a.ui.header{

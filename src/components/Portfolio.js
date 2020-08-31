@@ -8,6 +8,7 @@ import {
   Tab,
   Button,
 } from 'semantic-ui-react'
+import Semantic1 from './Semantic1'
 
 
 class Portfolio extends Component {
@@ -58,7 +59,7 @@ const BodyHeader = () => (
 
 const InterestHeader = () => (
   <Header as='h2' textAlign='left' className="headerMargin">
-    <Header.Content>Initial Interest</Header.Content>
+    <Header.Content>First Sparks</Header.Content>
     <Header.Subheader>In past, these low-code platform & community sparked my 
     interest to HTML, CSS and JS
      </Header.Subheader>
@@ -135,7 +136,7 @@ class WebApp extends Component {
         <Grid.Column>
           {<ProjectCard 
             link = "https://wouldyourathertoeat.netlify.app/"
-            imageSource = '/images/dashboard/elibrary.jpg'
+            imageSource = '/images/dashboard/yourather.jpg'
             title = 'Would You Rather'
             extra = 'React, Redux, Semantic UI'
           />}
@@ -153,25 +154,11 @@ class WebApp extends Component {
         <Grid.Column>
           {<ProjectCard 
             link = "https://revin-resto-review.netlify.app"
-            imageSource = '/images/dashboard/elibrary.jpg'
+            imageSource = '/images/dashboard/cafereviewer.jpg'
             title = 'Cafe Reviewer (DIY Yelp)'
             extra = 'Using Google Map API'
           />}
         </Grid.Column>
-      {/* </Grid.Row> */}
-
-
-      {/* <Grid.Row> */}
-        {/* <Grid.Column>
-          {<ProjectCard 
-            link = 'https://jasmine-testing.netlify.app'
-            imageSource = '/images/dashboard/jasmine.jpeg'
-            title = 'Jasmine Testing'
-            extra = 'Using Jasmine, Gulp'
-          />}
-        </Grid.Column> */}
-
-
       </Grid.Row>
 
     </Grid>
@@ -189,7 +176,7 @@ const MobileApp = () => (
 
         <Grid.Column >
             {<ProjectCard 
-              imageSource = '/images/dashboard/elibrary.jpg'
+              imageSource = '/images/dashboard/flashcard.jpg'
               title = 'Flash Card Mobile App'
               extra = 'ReactNative'
             />}
@@ -197,7 +184,7 @@ const MobileApp = () => (
 
           <Grid.Column>
             {<ProjectCard 
-              imageSource = '/images/dashboard/elibrary.jpg'
+              imageSource = '/images/dashboard/fitnessapp.jpg'
               title = 'Fitness Mobile App'
               extra = 'ReactNative'
             />}
@@ -218,7 +205,7 @@ const Game = () => (
         <Grid.Column>
             {<ProjectCard 
               link = "https://revin-frogger-game.netlify.app"
-              imageSource = '/images/dashboard/frogger.png'
+              imageSource = '/images/dashboard/frogger.jpg'
               title = 'Game: Frogger'
               extra = 'Randomizer Object Creator, Object Oriented, DOM, EventListener'
             />}
@@ -227,7 +214,7 @@ const Game = () => (
           <Grid.Column>
             {<ProjectCard 
               link = 'https://revin-flipcard-game.netlify.app'
-              imageSource = '/images/dashboard/flipcard.png'
+              imageSource = '/images/dashboard/flipcard.jpg'
               title = 'Game: Flip Card'
               extra = 'Using Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
             />}
@@ -291,11 +278,12 @@ const ExperimentContent = () => (
     <Grid>
       <Grid.Row columns={3}>
         <Grid.Column>
-            <h3 class='childHeader'><span>🦺</span> Semantic UI React</h3>
+        {/* work on Semantic Page Redirect */}
+            <h3 class='childHeader'><a href={<Semantic1/>} target="_blank"><span>🦺</span> Semantic UI React</a></h3>
             <h4>Implement & tinkering Semantic UI format for REACT</h4>
         </Grid.Column>
         <Grid.Column>
-          <h3 class='childHeader'><span>🕵️‍♀️</span> Jasmine Testing</h3>
+          <h3 class='childHeader'><a href='https://jasmine-testing.netlify.app' target="_blank"><span>🕵️‍♀️</span> Jasmine Testing</a></h3>
           <h4>Using Jasmine to checking the API status and proptype of objects</h4>
         </Grid.Column>
       </Grid.Row>
@@ -303,7 +291,12 @@ const ExperimentContent = () => (
   </div>
 )
 
-
+// {<ProjectCard 
+//   link = 'https://jasmine-testing.netlify.app'
+//   imageSource = '/images/dashboard/jasmine.jpeg'
+//   title = 'Jasmine Testing'
+//   extra = 'Using Jasmine, Gulp'
+// />}
 
 const ProjectCard = ({link, imageSource, title, extra}) => (
     <Card
