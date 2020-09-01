@@ -35,20 +35,20 @@ code {
 }
 
 .contentPage{
-  padding: 50px 60px 50px 60px;
+  padding: 30px 60px 50px 60px;
+  border: unset;
+  box-shadow: unset;
+  background-color: white;
 }
 
 .lightPadding{
-  padding: 20px 30px 30px 30px;
+  padding: 30px 30px 30px 30px;
 }
 
-.flex-even{
-  padding-left: 5%;
-  padding-right: 5%;
+.flexBetween{
   display: flex;
-  flex-direction:row;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  flex-direction:column;
+  justify-content: space-between;
 }
 
 .ui.segment.basicProfile{
@@ -74,7 +74,7 @@ p.profileSummary{
 
 
 
-/* Project TAB CSS  */
+/* Dashboard TAB CSS  */
 .ui.pointing.menu{
   justify-content: center;
   border: none;
@@ -104,6 +104,16 @@ p.profileSummary{
   border: none;
   padding: unset;
 }
+
+/* project photo cropped size
+width: 900
+height: 680
+
+Canvas size
+width: 1000
+height: 680
+*/
+
 
 /* sub-tab box */
 .ui.segment.minHeight{
@@ -144,11 +154,33 @@ a.ui.header{
   margin-bottom: 30px;
 }
 
-/* project photo size
-width: 900
-height: 680
 
-Canvas size
-width: 1000
-height: 700
-*/
+/* Project page CSS */
+
+.ui.segments.projectNotes{
+  width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+  border:unset;
+  box-shadow:unset;
+  background-color: white;
+}
+
+.projectPage{
+  margin: 50px auto 50px auto;
+  /* background-color: white; */
+}
+
+.ui.segment.navigationBar{
+  width: 220px;
+}
+
+.ui.left.rail.navRail {
+  margin-right: 0;
+  width:230px;
+}
+
+.stickyContainer{
+  position: sticky;
+  top:50px;
+}

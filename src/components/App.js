@@ -16,6 +16,7 @@ import Game2 from '../projects/Game2'
 export class App extends Component{
     render(){
         return(
+            // <Project1/>
             <Router>
                 <Fragment>
                 <Switch>
