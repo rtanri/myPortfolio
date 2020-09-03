@@ -184,3 +184,8 @@ a.ui.header{
   position: sticky;
   top:50px;
 }
+
+.subHeader{
+  text-align: center;
+  font-size: 1.1rem;
+}

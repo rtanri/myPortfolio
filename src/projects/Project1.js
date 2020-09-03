@@ -1,11 +1,9 @@
 import React, {Component} from 'react'
-import _ from "lodash"
 import { 
     Segment,
     Header,
     Image,
     Rail,
-    Grid,
 } from 'semantic-ui-react'
 
 
@@ -43,7 +41,7 @@ const PortfolioNotes = () => (
             <LorumIpsum />
             <Header as="h4">1.2. App Functionality</Header>
             <LorumIpsum />
-            <SCS />
+            <Screenshot />
             <Header as="h4">1.3. Workflow Process</Header>
             <LorumIpsum />
         </Segment>
@@ -54,7 +52,7 @@ const PortfolioNotes = () => (
             <LorumIpsum />
             <Header as="h4">2.2. Component Hierarcy</Header>
             <LorumIpsum />
-            <SCS />
+            <Screenshot />
             <Header as="h4">2.3. Store Data</Header>
             <LorumIpsum />
         </Segment>
@@ -65,7 +63,7 @@ const PortfolioNotes = () => (
             <LorumIpsum />
             <Header as="h4">3.2. Action & Reducers</Header>
             <LorumIpsum />
-            <SCS />
+            <Screenshot />
             <Header as="h4">3.3. Middleware</Header>
             <LorumIpsum />
         </Segment>
@@ -114,8 +112,7 @@ const LorumIpsum = () => (
     </p>
 )
 
-{/* SCS a.k.a. Screenshot */}
-const SCS = () => (
+const Screenshot = () => (
     <Image size="large" src="/images/wireframe/image.png" />
 )
 

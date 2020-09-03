@@ -20,7 +20,7 @@ import {
     Label,
     Menu
 } from 'semantic-ui-react'
-import {Redirect} from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
 
 class Semantic1 extends Component{
 

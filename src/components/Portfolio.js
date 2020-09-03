@@ -8,7 +8,6 @@ import {
   Tab,
   Button,
 } from 'semantic-ui-react'
-import Semantic1 from './Semantic1'
 import {NavLink, Link} from 'react-router-dom'
 
 
@@ -219,10 +218,10 @@ const Game = () => (
 
           <Grid.Column>
             {<ProjectCard 
-              link = '/flipcard'
+              link = '/flip-card'
               imageSource = '/images/dashboard/flipcard.jpg'
               title = 'Game: Flip Card'
-              extra = 'Using Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
+              extra = 'Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
             />}
           </Grid.Column>
 
