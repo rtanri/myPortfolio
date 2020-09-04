@@ -57,7 +57,7 @@ const PortfolioNotes = () => (
         </Segment>
 
         <Segment>
-        <Header as="a" href="https://revin-frogger-game.netlify.app" target='_blank' className="childHeader">3. Live Demo <span>✨</span></Header>
+            <Header as="a" href="https://revin-frogger-game.netlify.app" target='_blank' className="childHeader">3. Live Demo <span>✨</span></Header>
         </Segment>
 
     </div>
