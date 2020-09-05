@@ -29,11 +29,11 @@ class MoProject1 extends Component {
 const PortfolioNotes = () => (
     <div class="lightPadding">
         <Header
-            content = "Would You Rather Apps"
+            content = "Mobile App: Flash Memory Cards"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">Local demo via <span><a href="https://github.com/rtanri/mobile-flashcards" target="_blank">Github Repo</a></span></p>
 
 
         <Segment>
@@ -42,7 +42,7 @@ const PortfolioNotes = () => (
             <Overview />
             <Header as="h4">1.2. App Functionality</Header>
             <AppF12y />
-            <Screenshot source="/images/dashboard/yourather.jpg" />
+            <Screenshot source="/images/dashboard/flashcard.jpg" />
             <Header as="h4">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
@@ -108,10 +108,7 @@ const LorumIpsum = () => (
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
     tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
     quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. Praesent ut viverra sem, eget ultricies nisi. 
-    Fusce a sagittis tortor, ac maximus nibh. Phasellus id justo eu nulla volutpat tempus. 
-    Nullam nunc ante, iaculis a cursus eu, placerat id risus. Donec tincidunt scelerisque augue at iaculis. 
-    Sed vel leo eu tellus iaculis vehicula.
+    urna interdum arcu gravida, et luctus nulla maximus. 
     </p>
 )
 
@@ -120,27 +117,26 @@ const LorumIpsum = () => (
 const Overview =() => (
     <div>
     <p>
-    You will be provided visual assets and a game loop engine; 
-    using these tools you must add a number of entities to the 
-    game including the player characters and enemies to recreate the 
-    classic arcade game Frogger. This game is a good practice for Object Oriented Programming.
-         </p>
+    Build a mobile application (Android or iOS - or both) that allows 
+    users to study collections of flashcards. The app will allow users 
+    to create different categories of flashcards called "decks", add flashcards
+     to those decks, then take quizzes on those decks.
+    </p>
      </div>
  )
 
 const AppF12y = () => (
     <div>
         <p>
-        In this game you have a Player and Enemies (bugs). 
-        The goal of the player is to reach the water, without 
-        colliding into any one of the enemies.
+        This mobile app is initiated from 'create-react-native-app', no started code.
         </p>
         <ul>
-            <li>The player can move left, right, up and down; press 'space' to change character</li>
-            <li>The enemies move at varying speeds on the paved block portion of the game board</li>
-            <li>Once a the player collides with an enemy, the game is reset and the player moves back to the starting square</li>
-            <li>Once the player reaches the water-on-top-list, score will be added +20pts.</li>
-            <li>Game finishes when player got hit by the bugs 3 times.</li>
+            <li>Allow users to create a deck which can hold an unlimited number of cards.,</li>
+            <li>Allow users to add a card to a specific deck,</li>
+            <li>The front of the card should display the question,</li>
+            <li>The back of the card should display the answer,</li>
+            <li>Users should be able to quiz themselves on a specific deck and receive a score once they're done,</li>
+            <li>Users should receive a notification to remind themselves to study if they haven't already for that day,</li>
         </ul>
     </div>
 )
@@ -152,10 +148,13 @@ const Workflow = () => (
         Create 'Player' and 'Enemies' classes using Object Oriented Programming.
     </p>
         <ol>
-            <li>Set the 'Enemies' props (image, speed, initial locations, movement direction),</li>
-            <li>Set the logic on handling Collision with 'Player',</li>
-            <li>Set the 'Player' props (initial location, image, handleInput from key pressed),</li>
-            <li>Add the logic of 'Adding Score', 'Decreasing Life', and 'End-Game'</li>
+            <li>Draw all the view of the mobile app,</li>
+            <li>Break Each View Into a Hierarchy of Components,</li>
+            <li>Plan out How Your App Will Manage Data,</li>
+            <li>Install Redux and create Store,</li>
+            <li>For each view that needs access to the store, create the component and connect it to the store.,</li>
+            <li>Add react-router,</li>
+            <li>Remember to add finishing touch and debug.</li>
         </ol>
     </div>
 

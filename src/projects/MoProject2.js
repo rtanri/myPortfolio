@@ -29,11 +29,11 @@ class MoProject2 extends Component {
 const PortfolioNotes = () => (
     <div class="lightPadding">
         <Header
-            content = "Would You Rather Apps"
+            content = "Mobile App: Fitness App"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">Local Demo via  <span><a href="https://github.com/rtanri/fitnessApp" target="_blank">Github Repo</a></span></p>
 
 
         <Segment>
@@ -42,7 +42,7 @@ const PortfolioNotes = () => (
             <Overview />
             <Header as="h4">1.2. App Functionality</Header>
             <AppF12y />
-            <Screenshot source="/images/dashboard/yourather.jpg" />
+            <Screenshot source="/images/dashboard/fitnessapp.jpg" />
             <Header as="h4">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
@@ -120,27 +120,24 @@ const LorumIpsum = () => (
 const Overview =() => (
     <div>
     <p>
-    You will be provided visual assets and a game loop engine; 
-    using these tools you must add a number of entities to the 
-    game including the player characters and enemies to recreate the 
-    classic arcade game Frogger. This game is a good practice for Object Oriented Programming.
-         </p>
+    Mobile Application with ReactNative where anyone interested in triathlon preparation or
+    trainings can record, track their progress and monitor most of relevant aspect while exercising.
+    </p>
      </div>
  )
 
 const AppF12y = () => (
     <div>
         <p>
-        In this game you have a Player and Enemies (bugs). 
-        The goal of the player is to reach the water, without 
-        colliding into any one of the enemies.
+        App will be published in iOS and Android by ReactNative, integrated with in-app calendar, 
+        and all record wil be based on each day. <br />
+        There will be 3 main tab categories:
+        
         </p>
         <ul>
-            <li>The player can move left, right, up and down; press 'space' to change character</li>
-            <li>The enemies move at varying speeds on the paved block portion of the game board</li>
-            <li>Once a the player collides with an enemy, the game is reset and the player moves back to the starting square</li>
-            <li>Once the player reaches the water-on-top-list, score will be added +20pts.</li>
-            <li>Game finishes when player got hit by the bugs 3 times.</li>
+            <li>Your Log: Consist of Calendar, and quick summary on selected dates.</li>
+            <li>Add Entry: Where user can log their running, cycling, swimming, sleeping hours and calories intake;</li>
+            <li>Live: direction navigation, speed & altitude of the user while exercising</li>
         </ul>
     </div>
 )
@@ -149,13 +146,15 @@ const AppF12y = () => (
 const Workflow = () => (
     <div>
     <p>
-        Create 'Player' and 'Enemies' classes using Object Oriented Programming.
+    Start with create a new 'ReactNative CLI Quickstart', and connect with both iOS simulator and Android simulator. Followed by adding the utils files (colors, helpers and calendar) as a starting code package.
     </p>
         <ol>
-            <li>Set the 'Enemies' props (image, speed, initial locations, movement direction),</li>
-            <li>Set the logic on handling Collision with 'Player',</li>
-            <li>Set the 'Player' props (initial location, image, handleInput from key pressed),</li>
-            <li>Add the logic of 'Adding Score', 'Decreasing Life', and 'End-Game'</li>
+            <li>Connect user inputs in new component: AddEntry,</li>
+            <li>Work on handleInput for 'Slider' and 'Stepper' input types,</li>
+            <li>Connect input types with 5 metrics in AddEntry-page,</li>
+            <li>Create Store by installing Redux,</li>
+            <li>Render the Calendar with EntryDetail in each date pressed,</li>
+            <li>Set Live-page, and remember to ask permission for location & notification.</li>
         </ol>
     </div>
 

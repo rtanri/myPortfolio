@@ -141,7 +141,7 @@ class WebApp extends Component {
             link='/would-you-rather'
             imageSource = '/images/dashboard/yourather.jpg'
             title = 'Would You Rather'
-            extra = 'React, Redux, Semantic UI'
+            extra = 'React, Redux Store, React-Router, Semantic UI'
           />}
         </Grid.Column>
 

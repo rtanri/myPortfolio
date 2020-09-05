@@ -29,11 +29,11 @@ class Project2 extends Component {
 const PortfolioNotes = () => (
     <div class="lightPadding">
         <Header
-            content = "Would You Rather Apps"
+            content = "E-Library (DIY Kindle)"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader"><span><a href="https://diy-kindle.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span></p>
 
 
         <Segment>
@@ -42,7 +42,7 @@ const PortfolioNotes = () => (
             <Overview />
             <Header as="h4">1.2. App Functionality</Header>
             <AppF12y />
-            <Screenshot source="/images/dashboard/yourather.jpg" />
+            <Screenshot source="/images/dashboard/elibrary.jpg" />
             <Header as="h4">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
@@ -120,11 +120,13 @@ const LorumIpsum = () => (
 const Overview =() => (
     <div>
     <p>
-    You will be provided visual assets and a game loop engine; 
-    using these tools you must add a number of entities to the 
-    game including the player characters and enemies to recreate the 
-    classic arcade game Frogger. This game is a good practice for Object Oriented Programming.
-         </p>
+    A bookshelf app that allows you to select and categorize books you 
+    have read, are currently reading, or want to read. The project 
+    emphasizes using React to build the application and provides an API 
+    server and client library that you will use to persist information as 
+    you interact with the application. 
+    This is the <a href="https://github.com/udacity/reactnd-project-myreads-starter" target="_blank">starting code</a> repo.
+    </p>
      </div>
  )
 
