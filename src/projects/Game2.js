@@ -4,7 +4,10 @@ import {
     Header,
     Image,
     Rail,
+    Breadcrumb,
+    Button,
 } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 class Game2 extends Component {
@@ -18,6 +21,7 @@ class Game2 extends Component {
                     <Rail position="left" className="navRail"> 
                         <LeftNavigation/>
                     </Rail>
+                    
                 </Segment.Group>
             </div>
         )
@@ -25,14 +29,37 @@ class Game2 extends Component {
 }
 
 
+const LeftNavigation = () => (
+    <div class="stickyContainer">
+        <Segment className="navigationBar">
+            <Header as="h3">Code Notes</Header>
+            <Header as="h4">1. Project Requirement</Header>
+            <p><a href="#overview">1.1. Simple Overview</a></p>
+            <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+            <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+            <p><a href="#starterCode">1.4. Starter Code</a></p>
+
+            <Header as="h4">2. Code Sample in This</Header>
+            <p><a href="#firstSample">2.1. Handling click on cards</a></p>
+            <p><a href="#secondSample">2.2. Arranging Cards Arrays </a></p>
+            <p><a href="#thirdSample">2.3. Managing Stars </a></p>
+            <p><a href="#forthSample">2.4. Setting Timer </a></p>
+
+        </Segment>
+    </div>
+)
+
 const PortfolioNotes = () => (
     <div class="lightPadding">
+        <BreadcrumbPanel />
         <Header
             content = "Flip Card Game"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">
+            <span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span>
+        </p>
 
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
@@ -72,30 +99,26 @@ const PortfolioNotes = () => (
             <Screenshot source="/images/flipcard/time-setting.jpg" />
         </Segment>
 
-        <p className="subHeader"><span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span></p>
-
-
+        <div class="projectFooter">
+            <Button size="small" floated='left' as={Link} to={""} content="Back"/>
+            <p className="subHeader"><span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span></p>
+        </div>
+    
     </div>
 )
 
-const LeftNavigation = () => (
-    <div class="stickyContainer">
-        <Segment className="navigationBar">
-            <Header as="h3">Code Notes</Header>
-            <Header as="h4">1. Project Requirement</Header>
-            <p><a href="#overview">1.1. Simple Overview</a></p>
-            <p><a href="#appFunctionality">1.2. App Functionality</a></p>
-            <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
-            <p><a href="#starterCode">1.4. Starter Code</a></p>
 
-            <Header as="h4">2. Code Sample in This</Header>
-            <p><a href="#firstSample">2.1. Handling click on cards</a></p>
-            <p><a href="#secondSample">2.2. Arranging Cards Arrays </a></p>
-            <p><a href="#thirdSample">2.3. Managing Stars </a></p>
-            <p><a href="#forthSample">2.4. Setting Timer </a></p>
+const BreadcrumbPanel = () => (
 
-        </Segment>
-    </div>
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>Flip Card Game</Breadcrumb.Section>
+    </Breadcrumb>
 )
 
 

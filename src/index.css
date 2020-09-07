@@ -169,15 +169,17 @@ a.ui.header{
 .ui.segments.projectNotes .segment{
   padding: 40px auto;
   font-size: 1.1rem;
+  /* border: unset;
+  box-shadow: unset; */
 }
 
 .ui.segments.projectNotes{
   width: 900px;
   margin-left:auto;
   margin-right:auto;
-  border:unset;
-  box-shadow:unset;
   background-color: white;
+  /* border:unset;
+  box-shadow:unset; */
 }
 
 .projectPage{
@@ -234,4 +236,9 @@ pre {
   border: 1px solid #c7c7c7;
   overflow: auto;
   overflow-y: hidden;
+}
+
+.projectFooter{
+  margin-left: 50px;
+  margin-right: 120px;
 }
