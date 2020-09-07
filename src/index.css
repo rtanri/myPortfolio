@@ -19,6 +19,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    color: #ff4675;
+    background-color: #fff6f9;
+    border-radius: 3px;
+    margin: 0 2px;
+    padding: 2px;
+    font-weight: 400;
+    font-size: .8em;
+    text-shadow: none;
+    border: 1px solid #ccc;
 }
 
 
@@ -42,7 +51,7 @@ code {
 }
 
 .lightPadding{
-  padding: 30px 30px 30px 30px;
+  padding: 30px 50px 30px 50px;
 }
 
 .flexBetween{
@@ -157,6 +166,11 @@ a.ui.header{
 
 /* Project page CSS */
 
+.ui.segments.projectNotes .segment{
+  padding: 40px auto;
+  font-size: 1.1rem;
+}
+
 .ui.segments.projectNotes{
   width: 900px;
   margin-left:auto;
@@ -173,7 +187,16 @@ a.ui.header{
 
 .ui.segment.navigationBar{
   width: 220px;
+  font-size: smaller;
 }
+
+.ui.segment.navigationBar p{
+  font-size: 14px;
+  margin: 0 0 0 10px;
+
+}
+
+
 
 .ui.left.rail.navRail {
   margin-right: 0;
@@ -187,5 +210,28 @@ a.ui.header{
 
 .subHeader{
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+}
+
+
+/* Formating Code PRE */
+
+code{
+  font-family: Consolas, monospace;
+  font-size: 0.8em;
+}
+
+.highlight{
+  color: #d0d0d0;
+}
+
+pre {
+  line-height: 1em;
+  margin: 16px 40px;
+  padding: 8px 0 8px 15px;
+  background: #333333;
+  border-radius: 3px;
+  border: 1px solid #c7c7c7;
+  overflow: auto;
+  overflow-y: hidden;
 }

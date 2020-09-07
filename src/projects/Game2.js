@@ -28,37 +28,52 @@ class Game2 extends Component {
 const PortfolioNotes = () => (
     <div class="lightPadding">
         <Header
-            content = "Would You Rather Apps"
+            content = "Flip Card Game"
             textAlign = "center"
             as = "h1"
         />
         <p className="subHeader"><span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span></p>
 
         <Segment>
-            <Header as="h3">1. Project Requirement</Header>
-            <Header as="h4">1.1. Simple Overview</Header>
+            <Header as="h2">1. Project Requirement</Header>
+            <Header as="h3" id='overview'>1.1. Simple Overview</Header>
             <Overview />
-            <Header as="h4">1.2. App Functionality</Header>
+            <Header as="h3" id='appFunctionality'>1.2. App Functionality</Header>
             <AppF12y />
             <Screenshot source="/images/dashboard/flipcard.jpg" />
-            <Header as="h4">1.3. Workflow Process</Header>
+            <Header as="h3" id='workflowProcess'>1.3. Workflow Process</Header>
             <Workflow />
+            <Header as="h3" id='starterCode'>1.4. Starter Code</Header>
+            <StarterCode />
         </Segment>
 
         <Segment>
-            <Header as="h3">2. Coding Phase</Header>
-            <Header as="h4">2.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">2.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">2.3. Middleware</Header>
-            <LorumIpsum />
+            <Header as="h2">2. Code Sample in This</Header>
+            {/* <Header as="h4">2.1. Starter Code</Header>
+            <StarterCode /> */}
+
+            <Header as="h3" id="firstSample">2.1. Handling click on cards</Header>
+            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
+            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+
+            <Header as="h3" id="secondSample">2.2. Arranging Cards Arrays</Header>
+            <p>We need to collect the eventListener of card clicked and checked if those 2 cards are matched or different.
+             These arrays are created to compore both cards and prevent errors - located at <code>/js/app.js</code>.</p>
+            <Screenshot source="/images/flipcard/card-array.jpg" />
+
+            <Header as="h3" id="thirdSample">2.3. Managing Stars - add & delete</Header>
+            <p>We need to connect star quantity depends on the result of card matching. 
+            Adding 1 if both cards matched, and deleting 1 if both cards mismatched - located at <code>/js/app.js</code>.</p>
+            <Screenshot source="/images/flipcard/star-setting.jpg" />
+
+            <Header as="h3" id="forthSample">2.4. Setting Timer</Header>
+            <p>Create a continuous flow on timer innerHTML by adding  +1sec  interval with <code>setTime()</code>. 
+            We also need to add <code>myStopFunction()</code> to stop the timer when the game has ended - located at <code>/js/app.js</code>.</p>
+            <Screenshot source="/images/flipcard/time-setting.jpg" />
         </Segment>
 
-        <Segment>
-        <Header as="a" href='https://revin-flipcard-game.netlify.app' target='_blank' className="childHeader">3. Live Demo <span>✨</span></Header>
-        </Segment>
+        <p className="subHeader"><span><a href='https://revin-flipcard-game.netlify.app'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Flip-card-game" target="_blank">Github Repo</a></span></p>
+
 
     </div>
 )
@@ -68,29 +83,21 @@ const LeftNavigation = () => (
         <Segment className="navigationBar">
             <Header as="h3">Code Notes</Header>
             <Header as="h4">1. Project Requirement</Header>
-            <Header.Subheader>1.1. Simple Overview</Header.Subheader>
-            <Header.Subheader>1.2. App Functionality </Header.Subheader>
-            <Header.Subheader>1.3. Workflow process </Header.Subheader>
+            <p><a href="#overview">1.1. Simple Overview</a></p>
+            <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+            <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+            <p><a href="#starterCode">1.4. Starter Code</a></p>
 
-            <Header as="h4">2. Coding Phase</Header>
-            <Header.Subheader>2.1. API Functions</Header.Subheader>
-            <Header.Subheader>2.2. Actions & Reducers</Header.Subheader>
-            <Header.Subheader>2.3. Middleware</Header.Subheader>
-            <Header.Subheader>2.4. Initialize App Data</Header.Subheader>
-
-            <Header as="h4"></Header>
+            <Header as="h4">2. Code Sample in This</Header>
+            <p><a href="#firstSample">2.1. Handling click on cards</a></p>
+            <p><a href="#secondSample">2.2. Arranging Cards Arrays </a></p>
+            <p><a href="#thirdSample">2.3. Managing Stars </a></p>
+            <p><a href="#forthSample">2.4. Setting Timer </a></p>
 
         </Segment>
     </div>
 )
 
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. 
-    </p>
-)
 
 
 const Overview =() => (
@@ -146,9 +153,24 @@ const Workflow = () => (
 
 )
 
+const StarterCode = () => (
+    <div>
+    <p>
+    Starter code with the ready to use HTML and CSS - <a href="https://github.com/udacity/fend-project-memory-game">Udacity GitHub link.</a>
+    </p>
+    </div>
+)
+
+
+
+
 
 const Screenshot = ({source}) => (
-    <Image size="large" src={source}/>
+    <Image 
+        size="big" 
+        //size="huge"
+        centered
+        src={source}/>
 )
 
 
