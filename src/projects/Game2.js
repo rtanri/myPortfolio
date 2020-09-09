@@ -21,7 +21,7 @@ class Game2 extends Component {
                     <Rail position="left" className="navRail"> 
                         <LeftNavigation/>
                     </Rail>
-                    
+
                 </Segment.Group>
             </div>
         )
@@ -39,7 +39,7 @@ const LeftNavigation = () => (
             <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
             <p><a href="#starterCode">1.4. Starter Code</a></p>
 
-            <Header as="h4">2. Code Sample in This</Header>
+            <Header as="h4">2. Code Samples</Header>
             <p><a href="#firstSample">2.1. Handling click on cards</a></p>
             <p><a href="#secondSample">2.2. Arranging Cards Arrays </a></p>
             <p><a href="#thirdSample">2.3. Managing Stars </a></p>
@@ -75,10 +75,8 @@ const PortfolioNotes = () => (
         </Segment>
 
         <Segment>
-            <Header as="h2">2. Code Sample in This</Header>
-            {/* <Header as="h4">2.1. Starter Code</Header>
-            <StarterCode /> */}
-
+            <Header as="h2">2. Code Samples</Header>
+        
             <Header as="h3" id="firstSample">2.1. Handling click on cards</Header>
             <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
             <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
@@ -179,7 +177,7 @@ const Workflow = () => (
 const StarterCode = () => (
     <div>
     <p>
-    Starter code with the ready to use HTML and CSS - <a href="https://github.com/udacity/fend-project-memory-game">Udacity GitHub link.</a>
+    Starter code with the ready to use HTML and CSS - <a href="https://github.com/udacity/fend-project-memory-game" target='_blank'>Udacity GitHub link.</a>
     </p>
     </div>
 )

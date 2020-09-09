@@ -4,7 +4,10 @@ import {
     Header,
     Image,
     Rail,
+    Breadcrumb,
+    Button,
 } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 class Project1 extends Component {
@@ -26,82 +29,175 @@ class Project1 extends Component {
 }
 
 
+const LeftNavigation = () => (
+    <div class="stickyContainer">
+        <Segment className="navigationBar">
+            <Header as="h3">Code Notes</Header>
+                <Header as="h4">1. Project Requirement</Header>
+                <p><a href="#overview">1.1. Simple Overview</a></p>
+                <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+                <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+
+                <Header as="h4">2. App Design</Header>
+                <p><a href="#view">2.1. View</a></p>
+                <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
+                <p><a href="#storeData">2.3. Store Data</a></p>`
+
+
+                <Header as="h4">3. Coding Phase</Header>
+                    <p><a href="#firstSample">3.1. API Functions</a></p>
+                    <p><a href="#secondSample">3.2. Actions and Reducers</a></p>
+                    <p><a href="#thirdSample">3.3. Middleware</a></p>
+                    <p><a href="#forthSample">3.4. Initialize App Data</a></p>
+                    <p><a href="#fifthSample">3.4. Login Page</a></p>
+
+        </Segment>
+    </div>
+)
+
 const PortfolioNotes = () => (
     <div class="lightPadding">
+        <BreadcrumbPanel />
         <Header
             content = "Would You Rather Apps"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">
+            <span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span>
+        </p>
 
 
         <Segment>
-            <Header as="h3">1. Project Requirement</Header>
-            <Header as="h4">1.1. Simple Overview</Header>
+            <Header as="h2">1. Project Requirement</Header>
+            <Header as="h3">1.1. Simple Overview</Header>
             <Overview />
-            <Header as="h4">1.2. App Functionality</Header>
+            <Header as="h3">1.2. App Functionality</Header>
             <AppF12y />
             <Screenshot source="/images/dashboard/yourather.jpg" />
-            <Header as="h4">1.3. Workflow Process</Header>
+            <Header as="h3">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
 
         <Segment>
-            <Header as="h3">2. App Design</Header>
-            <Header as="h4">2.1. View</Header>
+            <Header as="h2">2. App Design</Header>
+            <Header as="h3">2.1. View</Header>
             <LorumIpsum />
-            <Header as="h4">2.2. Component Hierarcy</Header>
+            <Header as="h3">2.2. Component Hierarcy</Header>
             <LorumIpsum />
             <Screenshot />
-            <Header as="h4">2.3. Store Data</Header>
+            <Header as="h3">2.3. Store Data</Header>
             <LorumIpsum />
         </Segment>
 
         <Segment>
-            <Header as="h3">3. Coding Phase</Header>
-            <Header as="h4">3.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">3.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">3.3. Middleware</Header>
-            <LorumIpsum />
+            <Header as="h2">3. Coding Phase</Header>
+
+            <Header as="h3" id="apiFunction">3.1. API Function</Header>
+            <p>The first step is to create a set of function wrappers to our async data requests. The methods would be direct database fetch requests and include:
+                <ul>
+                    <li>_getUsers</li> 
+                    <li>_getUser</li> 
+                    <li>_getQuestions</li> 
+                    <li>_saveQuestion</li> 
+                    <li>_saveQuestionAnswer</li> 
+                </ul>
+            We want to create the following API function wrappers for these:
+                <ul>
+                    <li>getInitialUsers - takes in _getUsers</li> 
+                    <li>getUser - takes in particular user with 'id'</li> 
+                    <li>getInitialPolls - takes in _getQuestions</li> 
+                    <li>savePollAPI - location to format data for post request</li> 
+                    <li>savePollAnswerAPI - location to format data for post request</li> 
+                </ul>
+            This is located at <code>/utils/api.js</code> 
+            </p>
+            <Screenshot source="/images/yourather/api.jpg"/>
+            
+            <Header as="h3" id="actionCode">3.2. Action</Header>
+            <p>Next step is to create a set of actions and action creators - created in <code>/src/actions/</code>
+                <ul>
+                    <li>authedUser.js - located at: <code>/src/actions/authedUser.js</code> </li> 
+                    <Screenshot source="/images/yourather/action-auth.jpg"/>
+                    
+                    <li>polls.js - located at: <code>/src/actions/polls.js</code> </li> 
+                    <Screenshot source="/images/yourather/action-poll.jpg"/>
+
+                    <li>user.js - located at: <code>/src/actions/user.js</code> </li> 
+                    <Screenshot source="/images/yourather/action-user.jpg"/>
+
+                    <li>shared.js - located at: <code>/src/actions/shared.js</code> </li> 
+                    <Screenshot source="/images/yourather/action-shared.jpg"/>
+                </ul>
+            </p>
+            
+            
+            <Header as="h3" id="reducerCode">3.3. Reducer</Header>
+            <p>The next step is to create our reducers. We start by creating the following files in <code>/src/reducers/</code>:
+                <ul>
+                    <li>authedUser.js - located at: <code>/src/reducers/authedUser.js</code> </li> 
+                    <Screenshot source="/images/yourather/reducer-auth.jpg"/>
+                    
+                    <li>polls.js - located at: <code>/src/reducers/polls.js</code> </li> 
+                    <Screenshot source="/images/yourather/reducer-poll.jpg"/>
+
+                    <li>user.js - located at: <code>/src/reducers/user.js</code> </li> 
+                    <Screenshot source="/images/yourather/reducer-user.jpg"/>
+
+                    <li>index.js - located at: <code>/src/reducers/index.js</code> </li> 
+                    <Screenshot source="/images/yourather/reducer-index.jpg"/>
+
+                    <li>Add Redux Provider code to entry point, to instantiated the store and passes it to Provider which wraps App and acts as a Context 
+                    - located at: <code>/src/index.js</code> </li> 
+                    <Screenshot source="/images/yourather/reducer-mainIndex.jpg"/>
+                </ul>
+            </p>
+
+
+            <Header as="h3" id="middleware">3.4. Middleware</Header>
+            <p>Create middleware functions that will be <strong>logger.js and index.js</strong> 
+            - all middleware follows this pattern <br/> <code>const logger = (store) => (next) => (action) => ...</code>
+            <ul>
+                <li>Logger - that will print out output for "action" and "state" - located at: <code>/src/middleware/logger.js</code> </li>
+                <Screenshot source="/images/yourather/logger.jpg"/>
+
+                <li>Index - to compile all middlewares  - located at: <code>/src/middleware/index.js</code> 
+                <Screenshot source="/images/yourather/middlewareIndex.jpg"/>
+                Note that middleware gets run after the action creator returns an object or function but before getting sent to the reducer. 
+                Middleware also gets run in the order we apply (Thunks need to run first so that it can properly handle logger). </li> <br/>
+
+                <li>Add Redux Middleware to code entry point -  - located at: <code>/src/index.js</code> </li>
+                <Screenshot source="/images/yourather/reducer-mainIndex.jpg"/>
+            </ul>
+            </p>
+            
+
+            <Header as="h3" id="firstSample">2.1. Middleware</Header>
+            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
+            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+            
+            <Header as="h3" id="firstSample">2.1. Middleware</Header>
+            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
+            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+            
+            <Header as="h3" id="firstSample">2.1. Middleware</Header>
+            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
+            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+            
+
         </Segment>
 
-        <Segment>
-            <Header as="a" href="https://wouldyourathertoeat.netlify.app" target='_blank' className="childHeader">4. Live Demo <span>✨</span></Header>
-        </Segment>
+        <div class="projectFooter">
+            <Button size="small" floated='left' as={Link} to={""} content="Back"/>
+            <p className="subHeader">
+                <span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span>
+            </p>
+        </div>
 
     </div>
 )
 
 
-const LeftNavigation = () => (
-    <div class="stickyContainer">
-        <Segment className="navigationBar">
-            <Header as="h3">Code Notes</Header>
-            <Header as="h4">1. Project Requirement</Header>
-            <Header.Subheader>1.1. Simple Overview</Header.Subheader>
-            <Header.Subheader>1.2. App Functionality </Header.Subheader>
-            <Header.Subheader>1.3. Workflow process </Header.Subheader>
-
-            <Header as="h4">2. App Design</Header>
-            <Header.Subheader>2.1. View</Header.Subheader>
-            <Header.Subheader>2.2. Component Hierarcy</Header.Subheader>
-            <Header.Subheader>2.2. Store Data</Header.Subheader>
-
-            <Header as="h4">3. Coding Phase</Header>
-            <Header.Subheader>3.1. API Functions</Header.Subheader>
-            <Header.Subheader>3.2. Actions & Reducers</Header.Subheader>
-            <Header.Subheader>3.3. Middleware</Header.Subheader>
-            <Header.Subheader>3.4. Initialize App Data</Header.Subheader>
-            <Header.Subheader>3.4. Login Page</Header.Subheader>
-
-            <Header as="h4">4. Finished: Live Demo</Header>
-        </Segment>
-    </div>
-)
 
 
 const LorumIpsum = () => (
@@ -115,6 +211,17 @@ const LorumIpsum = () => (
     </p>
 )
 
+const BreadcrumbPanel = () => (
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>Would You Rather</Breadcrumb.Section>
+    </Breadcrumb>
+)
 
 
 const Overview =() => (
@@ -172,8 +279,14 @@ const Workflow = () => (
 
 
 const Screenshot = ({source}) => (
-    <Image size="large" src={source}/>
+    <Image size="big" 
+    src={source}
+    centered
+    className="pictureMargin"
+    />
 )
+
+
 
 
 export default Project1

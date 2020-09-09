@@ -212,7 +212,7 @@ const Game = () => (
               link = "/frogger"
               imageSource = '/images/dashboard/frogger.jpg'
               title = 'Game: Frogger'
-              extra = 'Randomizer Object Creator, Object Oriented, DOM, EventListener'
+              extra = 'Object.Prototype, DOM, EventListener, Canvas Basic'
             />}
           </Grid.Column>
 
@@ -221,7 +221,7 @@ const Game = () => (
               link = '/flip-card'
               imageSource = '/images/dashboard/flipcard.jpg'
               title = 'Game: Flip Card'
-              extra = 'Web Responsive, Object Oriented, DOM, EventListener, Fetch API'
+              extra = 'Web Responsive, Arrays, DOM, EventListener, Fetch API, Timer function'
             />}
           </Grid.Column>
 
