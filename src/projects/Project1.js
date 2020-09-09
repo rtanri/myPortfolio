@@ -6,6 +6,8 @@ import {
     Rail,
     Breadcrumb,
     Button,
+    Icon,
+    Table,
 } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
@@ -41,15 +43,21 @@ const LeftNavigation = () => (
                 <Header as="h4">2. App Design</Header>
                 <p><a href="#view">2.1. View</a></p>
                 <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
-                <p><a href="#storeData">2.3. Store Data</a></p>`
-
+                <p><a href="#storeData">2.3. Store Data</a></p>
 
                 <Header as="h4">3. Coding Phase</Header>
-                    <p><a href="#firstSample">3.1. API Functions</a></p>
-                    <p><a href="#secondSample">3.2. Actions and Reducers</a></p>
-                    <p><a href="#thirdSample">3.3. Middleware</a></p>
-                    <p><a href="#forthSample">3.4. Initialize App Data</a></p>
-                    <p><a href="#fifthSample">3.4. Login Page</a></p>
+                    <p><a href="#apiFunction">3.1. API Functions</a></p>
+                    <p><a href="#actionCode">3.2. Action</a></p>
+                    <p><a href="#reducerCode">3.3. Reducer</a></p>
+                    <p><a href="#middleware">3.4. Middleware</a></p>
+                    <p><a href="#initializeData">3.5. Initialize Data</a></p>
+                    <p><a href="#loginNav">3.6. Login & Nav</a></p>
+                    <p><a href="#dashboard">3.7. Dashboard</a></p>
+                    <p><a href="#poll">3.8. Poll Component</a></p>
+                    <p><a href="#pollResult">3.9. Poll Result</a></p>
+                    <p><a href="#leaderboard">3.10. Leaderboard</a></p>
+                    <p><a href="#newPoll">3.11. New Poll</a></p>
+                    <p><a href="#error">3.12. Error 404</a></p>
 
         </Segment>
     </div>
@@ -67,32 +75,52 @@ const PortfolioNotes = () => (
             <span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span>
         </p>
 
-
+        {/* Section 1 */}
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
-            <Header as="h3">1.1. Simple Overview</Header>
+            <Header as="h3" id="overview">1.1. Simple Overview</Header>
             <Overview />
-            <Header as="h3">1.2. App Functionality</Header>
+            <Header as="h3" id="appFunctionality">1.2. App Functionality</Header>
             <AppF12y />
             <Screenshot source="/images/dashboard/yourather.jpg" />
-            <Header as="h3">1.3. Workflow Process</Header>
+            <Header as="h3" id="workflowProcess">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
 
+        {/* Section 2 */}
         <Segment>
             <Header as="h2">2. App Design</Header>
-            <Header as="h3">2.1. View</Header>
-            <LorumIpsum />
-            <Header as="h3">2.2. Component Hierarcy</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h3">2.3. Store Data</Header>
-            <LorumIpsum />
+            <Header as="h3" id="view">2.1. View</Header>
+            <p>The designing view layout has been done on each page using React Semantic-UI format. </p>
+
+            <Header as="h3" id="componentHierarcy">2.2. Component Hierarcy</Header>
+            <p>This step is to determine component hierarchy. Since a component should ideally only do one 
+            thing, it is important to see the flow of data and state across view and components. For example:
+            <ul>
+                <li>Dashboard View Page
+                <Screenshot source="/images/yourather/component-hie.jpg"/>
+                </li> 
+            </ul>
+            </p> 
+
+            <Header as="h3" id="storeData">2.3. Store Data</Header>
+            <p>Determining what data lives in the store and what should live in the component. The data elements in Redux that we are using in this app:
+            <ul>
+                <li>Users data</li> 
+                <li>Questions data</li> 
+                <li>AuthedUser data</li> 
+                <li>Text data for new question</li> 
+                <li>Answer data for answered question</li> 
+            </ul>  
+            <br />
+            If we present in table locating all data element in components:
+            <TableData />
+            </p>  
         </Segment>
 
+        {/* Section 3 */}
         <Segment>
             <Header as="h2">3. Coding Phase</Header>
-
             <Header as="h3" id="apiFunction">3.1. API Function</Header>
             <p>The first step is to create a set of function wrappers to our async data requests. The methods would be direct database fetch requests and include:
                 <ul>
@@ -172,17 +200,71 @@ const PortfolioNotes = () => (
             </p>
             
 
-            <Header as="h3" id="firstSample">2.1. Middleware</Header>
-            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
-            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+            <Header as="h3" id="initializeData">3.5. Initialize Data</Header>
+            <p>Invoke our <code>handleInitialUsers()</code> and <code>handleInitialPools()</code> think action creator that was created in <code>/src/actions/shared.js</code> 
+            Depends on the usage type, typically we invoke these data in early stage of page-rendering with method: <code>componentWillMount()</code> or <code>componentDidMount()</code>. 
+            In this project, this is invoked in:
+            <ul>
+                <li><code>components/App.js</code></li>
+                <li><code>components/Dashboard.js</code></li>
+            </ul>
+            </p>
             
-            <Header as="h3" id="firstSample">2.1. Middleware</Header>
-            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
-            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
             
-            <Header as="h3" id="firstSample">2.1. Middleware</Header>
-            <p>This step is done by adding 'minute' and 'second' label with span - located at <code>/js/app.js</code></p>
-            <Screenshot source="/images/flipcard/onClick-setting.jpg"/>
+            <Header as="h3" id="loginNav">3.6. Login & Navigation</Header>
+            <p>Login page work together with other components to authenticate user in navigation bar and whole app experience.</p>
+            <ul>
+                <li>App Component - <a href="https://github.com/rtanri/youRather/blob/master/src/components/App.js" target="_blank">find in my github</a></li> 
+                <li>Login Component  - <a href="https://github.com/rtanri/youRather/blob/master/src/components/Login.js" target="_blank">find in my github</a>
+                
+                </li> 
+                <li>Nav Component  - <a href="https://github.com/rtanri/youRather/blob/master/src/components/Nav.js" target="_blank">find in my github</a>
+
+                </li> 
+                <Screenshot source="/images/yourather/login.jpg"/>
+            </ul> 
+
+            <Header as="h3" id="dashboard">3.7. Dashboard</Header>
+            <p>Consist of Navigation with logged-in user, Tab, List of Cards - located at <code>/src/components/Dashboard.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/Dashboard.js" target="_blank">Github Page </a>.
+            </p>
+            <Image src="/images/yourather/dashboard.jpg" size="huge" bordered />
+
+            
+            <Header as="h3" id="poll">3.8. Poll Component</Header>
+            <p>This component not only contain the design of single question card in dashboard, but also the error-handling measure when user searched for 
+            unidentified question.id or null value in poll object. You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/Poll.js" target="_blank">Github Page</a> 
+             - located at <code>/src/components/Poll.js</code>.
+            </p>
+            <Screenshot source="/images/yourather/poll-code.jpg"/>
+            <Screenshot source="/images/yourather/poll-card.jpg"/>
+            
+            <Header as="h3" id="pollResult">3.9. Answering & Showing poll result</Header>
+            <p>This step involved creating actions, action creators, and reducers for both the users and questions store slices - located at <code>/src/components/PollDetails.js</code><br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/PollDetails.js" target="_blank">Github Page </a>.
+            </p>
+            <Screenshot source="/images/yourather/before-answer.jpg"/>
+            <Screenshot source="/images/yourather/after-answer.jpg"/>
+            
+            <Header as="h3" id="leaderboard">3.10. Display Leaderboard</Header>
+            <p>Table of users in order based on the number of questions answered - located at <code>/src/components/Leaderboard.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/Leaderboard.js" target="_blank">Github Page </a>.
+            </p>
+            <Screenshot source="/images/yourather/leaderboard.jpg"/>
+            
+            <Header as="h3" id="newPoll">3.11. Create New Poll</Header>
+            <p>The Add Question View allows a new poll to be created. This involves creating actions, action creators, & reducers for both the questions and users 
+            store slices. Button will be disabled if only 1 box is filled or more than 25 characters - located 
+            at <code>/src/components/addQuestion.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/AddQuestion.js" target="_blank">Github Page </a>.
+            </p>
+            <Screenshot source="/images/yourather/newPoll.jpg"/>
+            
+            <Header as="h3" id="error">3.12. No Match 404 Page</Header>
+            <p>Last part in 404 error where the bad path is used by user - located at <code>/src/components/PageNotFound.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/PageNotFound.js" target="_blank">Github Page </a>.
+            </p>
+            <Screenshot source="/images/yourather/error.jpg"/>
             
 
         </Segment>
@@ -227,14 +309,11 @@ const BreadcrumbPanel = () => (
 const Overview =() => (
     <div>
     <p>
-    In the "Would You Rather?" Project, you'll build a web app that lets a user 
-    play the “Would You Rather?” game. The game goes like this: A user is asked a 
-    question in the form: “Would you rather [option A] or [option B] ?”. 
-    Answering "neither" or "both" is against the rules. 
-    <br/>
-    In your app, users will be able to answer questions, see which questions 
-    they haven’t answered, see how other people have voted, post questions, 
-    and see the ranking of users on the leaderboard.
+    Web app that lets a user play the “Would You Rather?” game. Where a user is asked to answer a 
+    question in the form: “Would you rather [option A] or [option B] ?”, 
+    <br/> 
+    <br/> 
+    This app also allow to see other people voted, post questions, and see the ranking of users on the leaderboard.
     </p>
      </div>
  )
@@ -242,8 +321,7 @@ const Overview =() => (
 const AppF12y = () => (
     <div>
         <p>
-        The person using your application should have a way of impersonating/logging in as an existing user. 
-        Web-app should work correctly regardless of which user is selected. Once the user logs in, the home page should be shown.
+        User will impersonate/log-in as an existing user. Web-app should work correctly regardless of which user is selected. Once the user logs in, the home page should be shown.
         The logged-in user will see their name and profile on top navigation, and they can toggle unanswered/answered question in homepage.
         </p>
         <ul>
@@ -278,14 +356,103 @@ const Workflow = () => (
 )
 
 
+const TableData = () => (
+    <Table celled className="dataTable">
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Component</Table.HeaderCell>
+        <Table.HeaderCell>Users</Table.HeaderCell>
+        <Table.HeaderCell>Polls</Table.HeaderCell>
+        <Table.HeaderCell>AuthedUser</Table.HeaderCell>
+        <Table.HeaderCell>Text</Table.HeaderCell>
+        <Table.HeaderCell>Answer</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
+
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>App</Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell positives centered><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Login</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Nav</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Dashboard</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Poll</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Poll Detail</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>New Poll</Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+      
+      <Table.Row>
+        <Table.Cell>Leaderboard</Table.Cell>
+        <Table.Cell positives><Icon name='checkmark' /></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+)
+
 const Screenshot = ({source}) => (
     <Image size="big" 
     src={source}
     centered
+    bordered
     className="pictureMargin"
     />
 )
-
 
 
 
