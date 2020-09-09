@@ -4,7 +4,10 @@ import {
     Header,
     Image,
     Rail,
+    Breadcrumb,
+    Button,
 } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 class Game1 extends Component {
@@ -24,72 +27,104 @@ class Game1 extends Component {
     }
 }
 
+const LeftNavigation = () => (
+    <div class="stickyContainer">
+        <Segment className="navigationBar">
+            <Header as="h3">Code Notes</Header>
+                <Header as="h4">1. Project Requirement</Header>
+                <p><a href="#overview">1.1. Simple Overview</a></p>
+                <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+                <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+                <p><a href="#starterCode">1.4. Starter Code</a></p>
+
+                <Header as="h4">2. Code Samples</Header>
+                <p><a href="#firstSample">2.1. Enemy Object</a></p>
+                <p><a href="#secondSample">2.2. Player Object</a></p>
+                <p><a href="#thirdSample">2.3. Rendering All</a></p>
+                <p><a href="#forthSample">2.4. Set initial position</a></p>
+                <p><a href="#fifthSample">2.4. Keyboard Input Listener</a></p>
+
+        </Segment>
+    </div>
+)
+
 
 const PortfolioNotes = () => (
     <div class="lightPadding">
+        <BreadcrumbPanel />
         <Header
             content = "Frogger Arcade Game"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://revin-frogger-game.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Frogger-Game" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">
+            <span><a href="https://revin-frogger-game.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Frogger-Game" target="_blank">Github Repo</a></span>
+        </p>
 
         <Segment>
-            <Header as="h3">1. Project Requirement</Header>
-            <Header as="h4">1.1. Simple Overview</Header>
+            <Header as="h2">1. Project Requirement</Header>
+            <Header as="h3">1.1. Simple Overview</Header>
             <Overview />
-            <Header as="h4">1.2. App Functionality</Header>
+            <Header as="h3">1.2. App Functionality</Header>
             <AppF12y />
             <Screenshot source="/images/dashboard/frogger.jpg" />
-            <Header as="h4">1.3. Workflow Process</Header>
+            <Header as="h3">1.3. Workflow Process</Header>
             <Workflow />
+            <Header as="h3" id='starterCode'>1.4. Starter Code</Header>
+            <StarterCode />
         </Segment>
 
         <Segment>
-            <Header as="h3">2. Coding Phase</Header>
-            <Header as="h4">2.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">2.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">2.3. Middleware</Header>
-            <LorumIpsum />
-        </Segment>
+            <Header as="h2">2. Code Samples</Header>
 
-        <Segment>
-            <Header as="a" href="https://revin-frogger-game.netlify.app" target='_blank' className="childHeader">3. Live Demo <span>✨</span></Header>
+            <Header as="h3" id="firstSample">2.1. Enemy Object Props</Header>
+            <p>We create 1 enemy object and multiply it with <code>Object.prototype = new Character()</code>. 
+            In this setting, I include the collision effect with player by removing the heart
+            - located at <code>/js/app.js</code>.</p>
+            <Screenshot source="/images/frogger/enemy-object.jpg" />
+
+            <Header as="h3" id="secondSample">2.2. Player Object Props</Header>
+            <p>Player object consist of 2 character options that can be changed, scoring function, movement & initial position.
+            Movement function consist of addEventListener from keyboard input that will give directed movement.
+            - located at <code>/js/app.js</code>.</p>
+            <Screenshot source="/images/frogger/player-object.jpg" />
+
+            <Header as="h3" id="thirdSample">2.3. Rendering Enemy and Player</Header>
+            <p>This step is for rendering player, and enemies within 3-rows and random speed across Y-axis.</p>
+            <Screenshot source="/images/frogger/render-setting.jpg"/>
+
+            <Header as="h3" id="forthSample">2.4. Locating initial position</Header>
+            <p>We create an array of multiple enemies with different value of initial position and speed, meanwhile fixed position for player.</p>
+            <Screenshot source="/images/frogger/initiate-location.jpg" />
+
+            <Header as="h3" id="fifthSample">2.5. Handling Keyboard Input</Header>
+            <p>Example of addEventListener on capturing the keyboard input to give direction on player character.</p>
+            <Screenshot source="/images/frogger/handle-input.jpg" />
+
+
         </Segment>
+        <div class="projectFooter">
+            <Button size="small" floated='left' as={Link} to={""} content="Back"/>
+            <p className="subHeader">
+                <span><a href="https://revin-frogger-game.netlify.app" target='_blank'>Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/Frogger-Game" target="_blank">Github Repo</a></span>
+            </p>
+        </div>
 
     </div>
 )
 
-const LeftNavigation = () => (
-    <div class="stickyContainer">
-        <Segment className="navigationBar">
-            <Header as="h3">Code Notes</Header>
-            <Header as="h4">1. Project Requirement</Header>
-            <Header.Subheader>1.1. Simple Overview</Header.Subheader>
-            <Header.Subheader>1.2. App Functionality </Header.Subheader>
-            <Header.Subheader>1.3. Workflow process </Header.Subheader>
 
-            <Header as="h4">2. Coding Phase</Header>
-            <Header.Subheader>2.1. API Functions</Header.Subheader>
-            <Header.Subheader>2.2. Actions & Reducers</Header.Subheader>
-            <Header.Subheader>2.3. Middleware</Header.Subheader>
-            <Header.Subheader>2.4. Initialize App Data</Header.Subheader>
+const BreadcrumbPanel = () => (
 
-            <Header as="h4"></Header>
-
-        </Segment>
-    </div>
-)
-
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. 
-    </p>
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>Frogger Game</Breadcrumb.Section>
+    </Breadcrumb>
 )
 
 
@@ -127,18 +162,31 @@ const Workflow = () => (
         Create 'Player' and 'Enemies' classes using Object Oriented Programming.
     </p>
         <ol>
-            <li>Set the 'Enemies' props (image, speed, initial locations, movement direction),</li>
-            <li>Set the logic on handling Collision with 'Player',</li>
-            <li>Set the 'Player' props (initial location, image, handleInput from key pressed),</li>
-            <li>Add the logic of 'Adding Score', 'Decreasing Life', and 'End-Game'</li>
+            <li>Add the 'Enemy' props (image, speed, initial locations, reset, movement direction),</li>
+            <li>Set the logic on handling Collision in Enemy props,</li>
+            <li>Set the 'Player' props (initial location, image, reset, addEventListener, Adding Score),</li>
+            <li>Provide initial position and render all objects,</li>
+            <li>Add the logic of 'Remove Heart', and 'End-Game'</li>
         </ol>
     </div>
 
 )
 
+const StarterCode = () => (
+    <div>
+    <p>
+    Starter code with <code>/js/engine.js</code> to provide game loop functionality including render, 
+    and <code>/js/resource.js</code> to ease the process of loading images & caching files - <a href="https://github.com/udacity/frontend-nanodegree-arcade-game" target='_blank'>Udacity GitHub link.</a>
+    </p>
+    </div>
+)
 
 const Screenshot = ({source}) => (
-    <Image size="large" src={source}/>
+    <Image 
+    size="big" 
+    //size="huge"
+    centered
+    src={source}/>
 )
 
 
