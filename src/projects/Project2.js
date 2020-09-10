@@ -4,7 +4,12 @@ import {
     Header,
     Image,
     Rail,
+    Breadcrumb,
+    Button,
+    Icon,
+    Table,
 } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 class Project2 extends Component {
@@ -25,26 +30,70 @@ class Project2 extends Component {
     }
 }
 
+const BreadcrumbPanel = () => (
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>E-Library (DIY Kindle)</Breadcrumb.Section>
+    </Breadcrumb>
+)
+
+
+const LeftNavigation = () => (
+    <div class="stickyContainer">
+        <Segment className="navigationBar">
+            <Header as="h3">Code Notes</Header>
+                <Header as="h4">1. Project Requirement</Header>
+                <p><a href="#overview">1.1. Simple Overview</a></p>
+                <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+                <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+
+                <Header as="h4">2. App Design</Header>
+                <p><a href="#view">2.1. View</a></p>
+                <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
+                <p><a href="#storeData">2.3. Store Data</a></p>
+
+                <Header as="h4">3. Coding Phase</Header>
+                    <p><a href="#apiFunction">3.1. API Functions</a></p>
+                    <p><a href="#actionCode">3.2. Action</a></p>
+                    <p><a href="#reducerCode">3.3. Reducer</a></p>
+                    <p><a href="#middleware">3.4. Middleware</a></p>
+                    <p><a href="#initializeData">3.5. Initialize Data</a></p>
+                    <p><a href="#loginNav">3.6. Login & Nav</a></p>
+                    <p><a href="#dashboard">3.7. Dashboard</a></p>
+        </Segment>
+    </div>
+)
+
 
 const PortfolioNotes = () => (
     <div class="lightPadding">
+        <BreadcrumbPanel />
         <Header
             content = "E-Library (DIY Kindle)"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader"><span><a href="https://diy-kindle.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">
+            <span><a href="https://diy-kindle.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span>
+        </p>
 
 
         <Segment>
-            <Header as="h3">1. Project Requirement</Header>
-            <Header as="h4">1.1. Simple Overview</Header>
+            <Header as="h2">1. Project Requirement</Header>
+            <Header as="h3" id="overview">1.1. Simple Overview</Header>
             <Overview />
-            <Header as="h4">1.2. App Functionality</Header>
+            <Header as="h3" id="appFunctionality">1.2. App Functionality</Header>
             <AppF12y />
             <Screenshot source="/images/dashboard/elibrary.jpg" />
-            <Header as="h4">1.3. Workflow Process</Header>
+            <Header as="h3" id="workflowProcess">1.3. Workflow Process</Header>
             <Workflow />
+            <Header as="h3" id='starterCode'>1.4. Starter Code</Header>
+            <StarterCode />
         </Segment>
 
         <Segment>
@@ -64,44 +113,19 @@ const PortfolioNotes = () => (
             <LorumIpsum />
             <Header as="h4">3.2. Action & Reducers</Header>
             <LorumIpsum />
-            <Screenshot />
             <Header as="h4">3.3. Middleware</Header>
             <LorumIpsum />
         </Segment>
 
-        <Segment>
-            <Header as="a" href="https://wouldyourathertoeat.netlify.app" target='_blank' className="childHeader">4. Live Demo <span>✨</span></Header>
-        </Segment>
-
+        <div class="projectFooter">
+            <Button size="small" floated='left' as={Link} to={""} content="Back"/>
+            <p className="subHeader">
+                <span><a href="https://diy-kindle.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span>
+            </p>
+        </div>
     </div>
 )
 
-
-const LeftNavigation = () => (
-    <div class="stickyContainer">
-        <Segment className="navigationBar">
-            <Header as="h3">Code Notes</Header>
-            <Header as="h4">1. Project Requirement</Header>
-            <Header.Subheader>1.1. Simple Overview</Header.Subheader>
-            <Header.Subheader>1.2. App Functionality </Header.Subheader>
-            <Header.Subheader>1.3. Workflow process </Header.Subheader>
-
-            <Header as="h4">2. App Design</Header>
-            <Header.Subheader>2.1. View</Header.Subheader>
-            <Header.Subheader>2.2. Component Hierarcy</Header.Subheader>
-            <Header.Subheader>2.2. Store Data</Header.Subheader>
-
-            <Header as="h4">3. Coding Phase</Header>
-            <Header.Subheader>3.1. API Functions</Header.Subheader>
-            <Header.Subheader>3.2. Actions & Reducers</Header.Subheader>
-            <Header.Subheader>3.3. Middleware</Header.Subheader>
-            <Header.Subheader>3.4. Initialize App Data</Header.Subheader>
-            <Header.Subheader>3.4. Login Page</Header.Subheader>
-
-            <Header as="h4">4. Finished: Live Demo</Header>
-        </Segment>
-    </div>
-)
 
 
 const LorumIpsum = () => (
@@ -125,7 +149,6 @@ const Overview =() => (
     emphasizes using React to build the application and provides an API 
     server and client library that you will use to persist information as 
     you interact with the application. 
-    This is the <a href="https://github.com/udacity/reactnd-project-myreads-starter" target="_blank">starting code</a> repo.
     </p>
      </div>
  )
@@ -133,17 +156,20 @@ const Overview =() => (
 const AppF12y = () => (
     <div>
         <p>
-        In this game you have a Player and Enemies (bugs). 
-        The goal of the player is to reach the water, without 
-        colliding into any one of the enemies.
+        In this application, the main page displays a list of "shelves" (i.e. categories), 
+        each of which contains a number of books. The three shelves are:
         </p>
         <ul>
-            <li>The player can move left, right, up and down; press 'space' to change character</li>
-            <li>The enemies move at varying speeds on the paved block portion of the game board</li>
-            <li>Once a the player collides with an enemy, the game is reset and the player moves back to the starting square</li>
-            <li>Once the player reaches the water-on-top-list, score will be added +20pts.</li>
-            <li>Game finishes when player got hit by the bugs 3 times.</li>
+            <li>Currently Reading,</li>
+            <li>Want to Read,</li>
+            <li>Read.</li>
         </ul>
+        Each book has a control that lets you select the shelf for that book. 
+        When you select a different shelf, the book moves there. 
+        Note that the default value for the control should always be the current shelf the book is in. 
+        Main page also has a link to <code>/search</code> that allows you to 
+        find books to add to library.
+        <br/>
     </div>
 )
 
@@ -151,21 +177,39 @@ const AppF12y = () => (
 const Workflow = () => (
     <div>
     <p>
-        Create 'Player' and 'Enemies' classes using Object Oriented Programming.
+        If you used starter package, you can skip step 1 and 2 - straight to deciding the data & creating Redux store and connect with component.
     </p>
         <ol>
-            <li>Set the 'Enemies' props (image, speed, initial locations, movement direction),</li>
-            <li>Set the logic on handling Collision with 'Player',</li>
-            <li>Set the 'Player' props (initial location, image, handleInput from key pressed),</li>
-            <li>Add the logic of 'Adding Score', 'Decreasing Life', and 'End-Game'</li>
+            <li>Draw all the views of app,</li>
+            <li>Break each views into a Hierarchy of Components,</li>
+            <li>Determine the data each component needs and the location of that data should live in,</li>
+            <li>Passing data through to the components that need it,</li>
+            <li>Debug and check if everything when well,</li>
+            <li>Add Navigation and routing,</li>
+            <li>Build the <code>/search</code> feature,</li>
         </ol>
     </div>
 
 )
 
+const StarterCode = () => (
+    <div>
+    <p>
+    Starter code with the ready to use HTML and CSS - <a href="https://github.com/udacity/reactnd-project-myreads-starter" target='_blank'>Udacity GitHub link.</a>
+    </p>
+    </div>
+)
+
+
+
 
 const Screenshot = ({source}) => (
-    <Image size="large" src={source}/>
+    <Image size="big" 
+    src={source}
+    centered
+    bordered
+    className="pictureMargin"
+    />
 )
 
 
