@@ -55,16 +55,13 @@ const LeftNavigation = () => (
                 <Header as="h4">2. App Design</Header>
                 <p><a href="#view">2.1. View</a></p>
                 <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
-                <p><a href="#storeData">2.3. Store Data</a></p>
 
                 <Header as="h4">3. Coding Phase</Header>
                     <p><a href="#apiFunction">3.1. API Functions</a></p>
-                    <p><a href="#actionCode">3.2. Action</a></p>
-                    <p><a href="#reducerCode">3.3. Reducer</a></p>
-                    <p><a href="#middleware">3.4. Middleware</a></p>
-                    <p><a href="#initializeData">3.5. Initialize Data</a></p>
-                    <p><a href="#loginNav">3.6. Login & Nav</a></p>
-                    <p><a href="#dashboard">3.7. Dashboard</a></p>
+                    <p><a href="#app">3.2. App Component</a></p>
+                    <p><a href="#book">3.3. Book</a></p>
+                    <p><a href="#category">3.4. Category</a></p>
+                    <p><a href="#booksearch">3.5. Book Search</a></p>
         </Segment>
     </div>
 )
@@ -79,10 +76,10 @@ const PortfolioNotes = () => (
             as = "h1"
         />
         <p className="subHeader">
-            <span><a href="https://diy-kindle.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span>
+            <span><a href="https://diy-kindle.netlify.app" target="_blank">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span>
         </p>
 
-
+        {/* 1st Section */}
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
             <Header as="h3" id="overview">1.1. Simple Overview</Header>
@@ -96,25 +93,65 @@ const PortfolioNotes = () => (
             <StarterCode />
         </Segment>
 
+        {/* 2nd section */}
         <Segment>
-            <Header as="h3">2. App Design</Header>
-            <Header as="h4">2.1. View</Header>
-            <LorumIpsum />
-            <Header as="h4">2.2. Component Hierarcy</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">2.3. Store Data</Header>
-            <LorumIpsum />
+            <Header as="h2">2. App Design</Header>
+            <Header as="h3">2.1. View</Header>
+            <p>If you use starter code, you can use or follow the inbuild home view from there.</p>
+            <Header as="h3" id="componentHierarcy">2.2. Component Hierarcy</Header>
+            <p>This step is to determine hieracy of components resides in a view. For example in home page, it contained:
+            <ul>
+                <li>Book</li>
+                <li>BookSearch</li>
+                <li>Category</li>
+            </ul>
+            <Screenshot source="/images/elibrary/component-hie.jpg"/>
+            </p>
         </Segment>
 
+        {/* 3rd section */}
         <Segment>
-            <Header as="h3">3. Coding Phase</Header>
-            <Header as="h4">3.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">3.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Header as="h4">3.3. Middleware</Header>
-            <LorumIpsum />
+            <Header as="h2">3. Coding Phase</Header>
+
+            <Header as="h3" id="apiFunction">3.1. API Function</Header>
+            <p>The first step is to create a set of function wrappers to our async data requests. If you used the starter code, the <code>BooksAPI.js</code> file consist of:
+                <ul>
+                    <li>get(bookId)</li> 
+                    <li>getAll</li> 
+                    <li>update(book, shelf)</li> 
+                    <li>search(query)</li> 
+                </ul>
+            These functions will be imported in related component where in this case: <code>App.js</code> and <code>BookSearch.js</code>
+            </p>
+            <Screenshot source="/images/elibrary/api.jpg"/>
+
+
+            <Header as="h3" id="app">3.2. App Component</Header>
+            <p>Invoke <code>getAll()</code> and <code>updateShelf()</code> with 'Book' state to save the current book on shelves. In this App component, 
+            we also import Routing for <strong>home</strong> and <strong>search</strong> page 
+            - located at <code>/src/App.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/youRather/blob/master/src/components/Dashboard.js" target="_blank">Github Page </a>.
+            </p>
+            <Screenshot source="/images/elibrary/bookApp.jpg"/>
+
+
+            <Header as="h3" id="book">3.3. Book Component</Header>
+            <p>Consist of book layout and dropdown shelf categories - located at <code>/components/Book.js</code> <br/>
+            </p>
+            <Screenshot source="/images/elibrary/book.jpg"/>
+
+
+            <Header as="h3" id="category">3.4. Category Component</Header>
+            <p>In this component import the <code>Book.js</code> and allocate them based on the book properties <code>this.props.updateShelf</code>. For the "none" category will be deleted from all shelves. - located at <code>/components/Category.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/MyRead/blob/master/src/components/Category.js" target="_blank">Github Page </a>.
+            </p>
+            
+
+            <Header as="h3" id="booksearch">3.5. BookSearch Component</Header>
+            <p>User can find book searched by on title and author typed in the search bar - located at <code>/src/components/Dashboard.js</code> <br/>
+            You can find dashboard component code in my <a href="https://github.com/rtanri/MyRead/blob/master/src/components/BookSearch.js" target="_blank">Github Page </a>.
+            </p>
+
         </Segment>
 
         <div class="projectFooter">
@@ -125,20 +162,6 @@ const PortfolioNotes = () => (
         </div>
     </div>
 )
-
-
-
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. Praesent ut viverra sem, eget ultricies nisi. 
-    Fusce a sagittis tortor, ac maximus nibh. Phasellus id justo eu nulla volutpat tempus. 
-    Nullam nunc ante, iaculis a cursus eu, placerat id risus. Donec tincidunt scelerisque augue at iaculis. 
-    Sed vel leo eu tellus iaculis vehicula.
-    </p>
-)
-
 
 
 const Overview =() => (
@@ -181,12 +204,14 @@ const Workflow = () => (
     </p>
         <ol>
             <li>Draw all the views of app,</li>
-            <li>Break each views into a Hierarchy of Components,</li>
+            <li>Break each views into a Hierarchy of Components (Book, BookSearch, Category),</li>
             <li>Determine the data each component needs and the location of that data should live in,</li>
-            <li>Passing data through to the components that need it,</li>
-            <li>Debug and check if everything when well,</li>
+            <li>Connect BookAPI in <code>/src/App.js</code>,</li>
+            <li>Work on the display & layout of each book in <code>/components/Book.js</code>,</li>
+            <li>Method to find new book based on title & author in <code>/components/BookSearch.js</code>,</li>
+            <li>Setting for book allocation based on certain category in <code>/components/Category.js</code>,</li>
             <li>Add Navigation and routing,</li>
-            <li>Build the <code>/search</code> feature,</li>
+            <li>Always Debug and check if everything when well,</li>
         </ol>
     </div>
 
@@ -195,7 +220,7 @@ const Workflow = () => (
 const StarterCode = () => (
     <div>
     <p>
-    Starter code with the ready to use HTML and CSS - <a href="https://github.com/udacity/reactnd-project-myreads-starter" target='_blank'>Udacity GitHub link.</a>
+    Starter code with ready-to-use HTML, React app and Book API - <a href="https://github.com/udacity/reactnd-project-myreads-starter" target='_blank'>Udacity GitHub link.</a>
     </p>
     </div>
 )
