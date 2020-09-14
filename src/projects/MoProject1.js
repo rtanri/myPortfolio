@@ -4,7 +4,11 @@ import {
     Header,
     Image,
     Rail,
+    Breadcrumb,
+    Button,
 } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+
 
 
 class MoProject1 extends Component {
@@ -26,38 +30,95 @@ class MoProject1 extends Component {
 }
 
 
+const BreadcrumbPanel = () => (
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>ReactNative Flash Card</Breadcrumb.Section>
+    </Breadcrumb>
+)
+
+const LeftNavigation = () => (
+    <div class="stickyContainer">
+        <Segment className="navigationBar">
+            <Header as="h3">Code Notes</Header>
+
+                <Header as="h4">1. Project Requirement</Header>
+                    <p><a href="#overview">1.1. Simple Overview</a></p>
+                    <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+                    <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+
+                <Header as="h4">2. App Design</Header>
+                    <p><a href="#view">2.1. View</a></p>
+                    <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
+
+                <Header as="h4">3. Coding Phase</Header>
+                    <p><a href="#apiFunction">3.1. App Component</a></p>
+                    <p><a href="#a">3.2. Component</a></p>
+                    <p><a href="#b">3.3. Component</a></p>
+                    <p><a href="#c">3.4. Component</a></p>
+                    <p><a href="#d">3.5. Component</a></p>
+        </Segment>
+    </div>
+)
+
+
 const PortfolioNotes = () => (
     <div class="lightPadding">
+        <BreadcrumbPanel />
         <Header
-            content = "Mobile App: Flash Memory Cards"
+            content = "Mobile App: Flash Card"
             textAlign = "center"
             as = "h1"
         />
-        <p className="subHeader">Local demo via <span><a href="https://github.com/rtanri/mobile-flashcards" target="_blank">Github Repo</a></span></p>
+        <p className="subHeader">Local Demo via  <span><a href="https://github.com/rtanri/fitnessApp" target="_blank">Github Repo</a></span></p>
 
-
+        {/* Section 1 */}
         <Segment>
-            <Header as="h3">1. Project Requirement</Header>
-            <Header as="h4">1.1. Simple Overview</Header>
+            <Header as="h2">1. Project Requirement</Header>
+
+            <Header as="h3" id="overview">1.1. Simple Overview</Header>
+            <Screenshot source="/images/flashcard/all-pages.jpg" />
             <Overview />
-            <Header as="h4">1.2. App Functionality</Header>
+
+            <Header as="h3" id="appFunctionality">1.2. App Functionality</Header>
             <AppF12y />
-            <Screenshot source="/images/dashboard/flashcard.jpg" />
-            <Header as="h4">1.3. Workflow Process</Header>
+          
+            <Header as="h3" id="workflowProcess">1.3. Workflow Process</Header>
             <Workflow />
         </Segment>
 
+        {/* Section 2 */}
         <Segment>
-            <Header as="h3">2. App Design</Header>
-            <Header as="h4">2.1. View</Header>
-            <LorumIpsum />
-            <Header as="h4">2.2. Component Hierarcy</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">2.3. Store Data</Header>
-            <LorumIpsum />
+            <Header as="h2">2. App Design</Header>
+            <Header as="h3" id="view">2.1. View</Header>
+            <p>The designing view layout has been done on each page using React Semantic-UI format. </p>
+
+            <Header as="h3" id="componentHierarcy">2.2. Component Hierarcy</Header>
+            <p>This step is to determine component hierarchy. Since a component should ideally only do one 
+            thing, it is important to see the flow of data and state across view and components. For example:
+            <ul>
+                <li>Dashboard View Page
+                <Screenshot source="/images/yourather/component-hie.jpg"/>
+                </li> 
+            </ul>
+            </p> 
+
+            <Header as="h3" id="storeData">2.3. Store Data</Header>
+            <p>Determining what data lives in the store and what should live in the component. The data elements in Redux that we are using in this app:
+            <ul>
+                <li>Users data</li> 
+                <li>Questions data</li> 
+            </ul>  
+            <br />
+            </p>  
         </Segment>
 
+        {/* Section 3 */}
         <Segment>
             <Header as="h3">3. Coding Phase</Header>
             <Header as="h4">3.1. API Function</Header>
@@ -69,37 +130,13 @@ const PortfolioNotes = () => (
             <LorumIpsum />
         </Segment>
 
-        <Segment>
-            <Header as="a" href="https://wouldyourathertoeat.netlify.app" target='_blank' className="childHeader">4. Live Demo <span>✨</span></Header>
-        </Segment>
+        <div class="projectFooter">
+            <Button size="small" floated='left' as={Link} to={""} content="Back"/>
+          
+            <p className="subHeader">Local Demo via  <span><a href="https://github.com/rtanri/fitnessApp" target="_blank">Github Repo</a></span></p>
+       
+        </div>
 
-    </div>
-)
-
-
-const LeftNavigation = () => (
-    <div class="stickyContainer">
-        <Segment className="navigationBar">
-            <Header as="h3">Code Notes</Header>
-            <Header as="h4">1. Project Requirement</Header>
-            <Header.Subheader>1.1. Simple Overview</Header.Subheader>
-            <Header.Subheader>1.2. App Functionality </Header.Subheader>
-            <Header.Subheader>1.3. Workflow process </Header.Subheader>
-
-            <Header as="h4">2. App Design</Header>
-            <Header.Subheader>2.1. View</Header.Subheader>
-            <Header.Subheader>2.2. Component Hierarcy</Header.Subheader>
-            <Header.Subheader>2.2. Store Data</Header.Subheader>
-
-            <Header as="h4">3. Coding Phase</Header>
-            <Header.Subheader>3.1. API Functions</Header.Subheader>
-            <Header.Subheader>3.2. Actions & Reducers</Header.Subheader>
-            <Header.Subheader>3.3. Middleware</Header.Subheader>
-            <Header.Subheader>3.4. Initialize App Data</Header.Subheader>
-            <Header.Subheader>3.4. Login Page</Header.Subheader>
-
-            <Header as="h4">4. Finished: Live Demo</Header>
-        </Segment>
     </div>
 )
 
@@ -160,10 +197,15 @@ const Workflow = () => (
 
 )
 
-
 const Screenshot = ({source}) => (
-    <Image size="large" src={source}/>
+    <Image size="big" 
+    src={source}
+    centered
+    bordered
+    className="pictureMargin"
+    />
 )
+
 
 
 export default MoProject1

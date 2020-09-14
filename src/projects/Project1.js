@@ -31,6 +31,19 @@ class Project1 extends Component {
 }
 
 
+const BreadcrumbPanel = () => (
+    <Breadcrumb>
+      <Breadcrumb.Divider icon="left arrow" />
+      <Breadcrumb.Section 
+        as= {Link}
+        to= {"/"}
+      >Home</Breadcrumb.Section>
+      <Breadcrumb.Divider />
+      <Breadcrumb.Section>Would You Rather</Breadcrumb.Section>
+    </Breadcrumb>
+)
+
+
 const LeftNavigation = () => (
     <div class="stickyContainer">
         <Segment className="navigationBar">
@@ -280,30 +293,6 @@ const PortfolioNotes = () => (
 )
 
 
-
-
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. Praesent ut viverra sem, eget ultricies nisi. 
-    Fusce a sagittis tortor, ac maximus nibh. Phasellus id justo eu nulla volutpat tempus. 
-    Nullam nunc ante, iaculis a cursus eu, placerat id risus. Donec tincidunt scelerisque augue at iaculis. 
-    Sed vel leo eu tellus iaculis vehicula.
-    </p>
-)
-
-const BreadcrumbPanel = () => (
-    <Breadcrumb>
-      <Breadcrumb.Divider icon="left arrow" />
-      <Breadcrumb.Section 
-        as= {Link}
-        to= {"/"}
-      >Home</Breadcrumb.Section>
-      <Breadcrumb.Divider />
-      <Breadcrumb.Section>Would You Rather</Breadcrumb.Section>
-    </Breadcrumb>
-)
 
 
 const Overview =() => (
