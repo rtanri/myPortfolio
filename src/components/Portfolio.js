@@ -157,7 +157,7 @@ class WebApp extends Component {
         <Grid.Column>
           {<ProjectCard 
             link = "/resto-reviewer"
-            imageSource = '/images/dashboard/cafereviewer.jpg'
+            imageSource = '/images/dashboard/resto-reviewer.jpg'
             title = 'Cafe Reviewer (DIY Yelp)'
             extra = 'Using Google Map API'
           />}

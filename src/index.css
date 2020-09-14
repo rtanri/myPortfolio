@@ -118,7 +118,7 @@ p.profileSummary{
 width: 900
 height: 680
 
-Canvas size
+Canvas siz
 width: 1000
 height: 680
 */
@@ -213,6 +213,13 @@ a.ui.header{
 .subHeader{
   text-align: center;
   font-size: 1.3rem;
+}
+
+.pictureDetail{
+  text-align: center;
+  font-weight: bolder;
+  margin-top: -20px;
+  font-size: small;
 }
 
 

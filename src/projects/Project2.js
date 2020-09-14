@@ -6,8 +6,6 @@ import {
     Rail,
     Breadcrumb,
     Button,
-    Icon,
-    Table,
 } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
