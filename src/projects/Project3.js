@@ -45,16 +45,16 @@ const LeftNavigation = () => (
         <Segment className="navigationBar">
             <Header as="h3">Code Notes</Header>
                 <Header as="h4">1. Project Requirement</Header>
-                <p><a href="#overview">1.1. Simple Overview</a></p>
-                <p><a href="#appFunctionality">1.2. App Functionality</a></p>
-                <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+                    <p><a href="#overview">1.1. Simple Overview</a></p>
+                    <p><a href="#appFunctionality">1.2. App Functionality</a></p>
+                    <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
+                    <p><a href="#starterCode">1.4. Starter Code  </a></p>
 
-                <Header as="h4">2. Coding Phase</Header>
-                    <p><a href="#apiFunction">2.1. API Functions</a></p>
-                    <p><a href="#app">2.2. App Component</a></p>
-                    <p><a href="#book">2.3. Book</a></p>
-                    <p><a href="#category">2.4. Category</a></p>
-                    <p><a href="#booksearch">2.5. Book Search</a></p>
+                <Header as="h4">2. Work Process</Header>
+                    <p><a href="#googleAPI">2.1. Google Map API</a></p>
+                    <p><a href="#flexImg">2.2. Flex Images</a></p>
+                    <p><a href="#responsive">2.3. Responsive Design</a></p>
+                    <p><a href="#serviceWorker">2.4. SW with Cache API</a></p>
         </Segment>
     </div>
 )
@@ -65,7 +65,7 @@ const PortfolioNotes = () => (
     <div class="lightPadding">
         <BreadcrumbPanel />
         <Header
-            content = "Restaurant Reviewer"
+            content = "Singapore Restaurant Reviewer"
             textAlign = "center"
             as = "h1"
         />
@@ -89,7 +89,7 @@ const PortfolioNotes = () => (
         <Segment>
             <Header as="h2">2. Work Process</Header>
 
-            <Header as="h3" id="apiFunction">2.1. Google Map API</Header>
+            <Header as="h3" id="googleAPI">2.1. Google Map API</Header>
             <p>
             Connect the Map and Position-Marker with Google Map API by create your personal GoogleMap Key, insert the API Key, and code the JS API (if needed) into your files:
                 <ul>
@@ -107,7 +107,7 @@ const PortfolioNotes = () => (
                 <p class="pictureDetail">Map API result in Restaurant Detail Page</p>
 
             
-            <Header as="h3" id="app">2.2. Flex Restaurant List</Header>
+            <Header as="h3" id="flexImg">2.2. Flex Restaurant List</Header>
             <p>From the starter code, list of restaurant is not in flex sequence. I add flex setting in #restaurant-list CSS with code sample below 
             - located at <code>/css/styles.css</code> <br/>
             <Screenshot source="/images/resto/flex-image.jpg"/>
@@ -115,7 +115,7 @@ const PortfolioNotes = () => (
             
 
 
-            <Header as="h3" id="apiFunction">2.3. Responsive Design</Header>
+            <Header as="h3" id="responsive">2.3. Responsive Design</Header>
             <p>Starting small, i created few breakpoints according to where the layout naturally needed it. Here are breakpoints that I chose:
                 <ul>
                     <li>min-width 460px</li> 
@@ -130,10 +130,7 @@ const PortfolioNotes = () => (
             <p class="pictureDetail">Restaurant page in different screen sizes</p>
 
 
-
-
-
-            <Header as="h3" id="app">2.4. SW with Cache API</Header>
+            <Header as="h3" id="serviceWorker">2.4. SW with Cache API</Header>
             <p>
             Create and register service worker to allow cache to be saved and website can be accessed again while no internet, 2 files added:
                 <ul>
@@ -161,31 +158,22 @@ const PortfolioNotes = () => (
 const Overview =() => (
     <div>
     <p>
-    For the Restaurant Reviews projects, you will incrementally convert a 
-    static webpage to a mobile-ready web application. In Stage One, you will 
-    take a static design that lacks accessibility and convert the design to 
-    be responsive on different sized displays and accessible for screen 
-    reader use. You will also begin converting this to a Progressive Web 
-    Application by caching some assets for offline use.
+    It's a mobile-ready web application with Google Map API. Some Assets like images were cached for offline use on different sized displays and accessible for screen 
+    reader use.
     </p>
      </div>
  )
 
 const AppF12y = () => (
     <div>
-        <p>
-        In this game you have a Player and Enemies (bugs). 
-        The goal of the player is to reach the water, without 
-        colliding into any one of the enemies.
-        </p>
+
         <ul>
-            <li><strong>Make the provided site fully responsive.</strong> All of the page elements should be usable and visible in any viewport, 
-                including desktop, tablet, and mobile displays. Images shouldn't overlap, and page elements should wrap when
-                 the viewport is too small to display them side by side.</li> <br/>
-            <li><strong>Make the site accessible.</strong> Using what you've learned about web accessibility, ensure that alt attributes are 
-                present and descriptive for images. Add screen-reader-only attributes when appropriate to add useful 
-                supplementary text. Use semantic markup where possible, and aria attributes when semantic markup is not 
-                feasible.</li> <br />
+            <li><strong>Fully responsive.</strong> All of the page elements were usable and visible in any viewport, 
+                including desktop, tablet, and mobile displays. Images didnot overlap, and page elements wrapped when
+                 the viewport is too small.</li> <br/>
+            <li><strong>Make the site accessible.</strong> ALT attributes are 
+                present and descriptive for images. Added screen-reader-only attributes when appropriate to add useful 
+                supplementary text. Used semantic markup and aria attributes when semantic markup is not feasible.</li> <br />
             <li><strong>Cache the static site for offline use.</strong> Using Cache API and a ServiceWorker, cache the data for the website 
                 so that any page (including images) that has been visited is accessible offline.</li> <br/>
         </ul>
@@ -197,8 +185,8 @@ const Workflow = () => (
         <ol>
             <li>Get MapBox API Key to use Google map on your page,</li>
             <li>Get on the map on the screen,</li>
-            <li>Convert the provided site to use a responsive design,</li>
-            <li>Implement accessibility features in the site HTML,</li>
+            <li>Manage the images flex design,</li>
+            <li>Convert the provided site to use a responsive design and accesability features,</li>
             <li>Add a ServiceWorker script</li> 
         </ol>
     </div>
