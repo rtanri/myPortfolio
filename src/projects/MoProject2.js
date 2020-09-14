@@ -135,7 +135,24 @@ const PortfolioNotes = () => (
             <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
             <ul>
                 <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
-                    <p class="pictureDetail">Code Samples for Run and Eat activities</p>
+                </li> 
+            </ul>
+            </p> 
+
+
+            <Header as="h3" id="componentHierarcy">2.5. Next Component</Header>
+            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
+            <ul>
+                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
+                </li> 
+            </ul>
+            </p> 
+
+
+            <Header as="h3" id="componentHierarcy">2.6. What Else</Header>
+            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
+            <ul>
+                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
                 </li> 
             </ul>
             </p> 

@@ -146,7 +146,7 @@ const PortfolioNotes = () => (
             
 
             <Header as="h3" id="booksearch">3.5. BookSearch Component</Header>
-            <p>User can find book searched by on title and author typed in the search bar - located at <code>/src/components/Dashboard.js</code> <br/>
+            <p>User can find book searched by on title and author typed in the search bar - located at <code>/src/components/BookSearch.js</code> <br/>
             You can find dashboard component code in my <a href="https://github.com/rtanri/MyRead/blob/master/src/components/BookSearch.js" target="_blank">Github Page </a>.
             </p>
 

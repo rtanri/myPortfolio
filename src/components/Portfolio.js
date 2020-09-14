@@ -141,7 +141,7 @@ class WebApp extends Component {
             link='/would-you-rather'
             imageSource = '/images/dashboard/yourather.jpg'
             title = 'Would You Rather'
-            extra = 'React, Redux Store, React-Router, Semantic UI'
+            extra = 'React, Redux Store, React-Router, Login page, Custom Navbar, Semantic UI'
           />}
         </Grid.Column>
 
@@ -150,7 +150,7 @@ class WebApp extends Component {
             link = "/e-library"
             imageSource = '/images/dashboard/elibrary.jpg'
             title = 'E-Library (DIY Kindle)'
-            extra = 'React, Redux'
+            extra = 'Basic React, Data Location, Search Bar'
           />}
         </Grid.Column>
 
@@ -159,7 +159,7 @@ class WebApp extends Component {
             link = "/resto-reviewer"
             imageSource = '/images/dashboard/resto-reviewer.jpg'
             title = 'Cafe Reviewer (DIY Yelp)'
-            extra = 'Using Google Map API'
+            extra = 'Google Map API, Web Responsive, Service-Worker Offline Cache'
           />}
         </Grid.Column>
       </Grid.Row>
@@ -191,7 +191,7 @@ const MobileApp = () => (
               link='/reactnative-fitness-app'
               imageSource = '/images/dashboard/fitnessapp.jpg'
               title = 'Fitness Mobile App'
-              extra = 'ReactNative'
+              extra = 'ReactNative, Calendar, Metric Input; Tab & Stack Navigation'
             />}
           </Grid.Column>
 
