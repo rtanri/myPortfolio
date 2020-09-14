@@ -92,47 +92,61 @@ const PortfolioNotes = () => (
 
         {/* Section 2 */}
         <Segment>
-            <Header as="h2">2. App Design</Header>
-            <Header as="h3" id="view">2.1. View</Header>
-            <p>The designing view layout has been done on each page using React Semantic-UI format. </p>
-
-            <Header as="h3" id="componentHierarcy">2.2. Component Hierarcy</Header>
-            <p>This step is to determine component hierarchy. Since a component should ideally only do one 
-            thing, it is important to see the flow of data and state across view and components. For example:
+            <Header as="h2">2. ReactNative App</Header>
+            <Header as="h3" id="view">2.1. Setting Up Development Environment</Header>
+            <p>This app was built from scratch where it was initiated from <a href="https://reactnative.dev/docs/environment-setup" target="_blank">React Native CLI Quickstart.</a>.
+            It's important to work on the initial setting and path for your iOS and Android simulators to be updated simultaneously. Need to pay attention on:
             <ul>
-                <li>Dashboard View Page
-                <Screenshot source="/images/yourather/component-hie.jpg"/>
+                <li>iOS Dependencies: Node, Watchman, Xcode, CocoaPods;</li>
+                <li>Android Dependencies: Java Development Kit, Android Studio;</li>
+            </ul>
+            </p>
+
+            <Header as="h3" id="componentHierarcy">2.2. Add API files in Utils</Header>
+            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
+            <ul>
+                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
+                    <Screenshot source="/images/fitness/getMetricMeta.jpg" />
+                    <p class="pictureDetail">Code Samples for Run and Eat activities</p>
                 </li> 
             </ul>
             </p> 
 
-            <Header as="h3" id="storeData">2.3. Store Data</Header>
-            <p>Determining what data lives in the store and what should live in the component. The data elements in Redux that we are using in this app:
+            <Header as="h3" id="storeData">2.3. AddEntry Component</Header>
+                <Image src="/images/fitness/comp-addentry.jpg" floated="left" bordered className="floatLeft"/>
+            <p>This component will receive and manage data input by user, in this step, I add few functions in component:
             <ul>
-                <li>Users data</li> 
-                <li>Questions data</li> 
+                <li>State (initial state is zero),</li> 
+                <li>Increment(metric) : linked with <code>onIncrement()</code></li> 
+                <li>Decrement(metric) : linked with <code>onDecrement()</code>,</li> 
+                <li>Slide(metric, value) : linked with <code>onChange()</code>,</li> 
+                <li>Submit : linked with <code>onPress()</code>,</li> 
             </ul>  
-            <br />
+            Since this addEntry will be specific to each day, I add Date in the Header of AddEntry View Page. In addition, I also imported UdaciSlider & UdaciStepper in AddEntry Component:
+            <ul>
+            <li>Add Slide UI in <code>/components/UdaciSlider.js</code></li>
+            <li>Add Stepper UI in <code>/components/UdaciSteppers.js</code></li>
+            </ul>
+            You can find the code for AddEntry Component here - <a href="https://github.com/rtanri/fitnessApp/blob/master/components/AddEntry.js" target="_blank">github page</a>.
             </p>  
+
+
+            <Header as="h3" id="componentHierarcy">2.4. History Component with Calendar API</Header>
+            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
+            <ul>
+                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
+                    <p class="pictureDetail">Code Samples for Run and Eat activities</p>
+                </li> 
+            </ul>
+            </p> 
+
         </Segment>
 
-        {/* Section 3 */}
-        <Segment>
-            <Header as="h3">3. Coding Phase</Header>
-            <Header as="h4">3.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">3.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">3.3. Middleware</Header>
-            <LorumIpsum />
-        </Segment>
 
         <div class="projectFooter">
             <Button size="small" floated='left' as={Link} to={""} content="Back"/>
           
             <p className="subHeader">Local Demo via  <span><a href="https://github.com/rtanri/fitnessApp" target="_blank">Github Repo</a></span></p>
-       
         </div>
 
     </div>
