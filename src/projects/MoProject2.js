@@ -50,16 +50,19 @@ const LeftNavigation = () => (
                     <p><a href="#appFunctionality">1.2. App Functionality</a></p>
                     <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
 
-                <Header as="h4">2. App Design</Header>
-                    <p><a href="#view">2.1. View</a></p>
-                    <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
-
-                <Header as="h4">3. Coding Phase</Header>
-                    <p><a href="#apiFunction">3.1. App Component</a></p>
-                    <p><a href="#a">3.2. Component</a></p>
-                    <p><a href="#b">3.3. Component</a></p>
-                    <p><a href="#c">3.4. Component</a></p>
-                    <p><a href="#d">3.5. Component</a></p>
+                <Header as="h4">2. App Development</Header>
+                    <p><a href="#initialSetup">2.1. Initial Setup</a></p>
+                    <p><a href="#addAPI">2.2. Add API files in Utils</a></p>
+                    <p><a href="#addEntryComp">2.3. AddEntry Component</a></p>
+                    <p><a href="#apiCalls">2.4. API calls & AsyncsStorage</a></p>
+                    <p><a href="#reduxReactNative">2.5. Redux and ReactNative</a></p>
+                    <p><a href="#dailyReminder">2.6. Daily Reminder</a></p>
+                    <p><a href="#platformCSS">2.7. CSS for iOS and Android</a></p>
+                    <p><a href="#historyComp">2.8. History Component</a></p>
+                    <p><a href="#tabStack">2.9. Tab & Stack Navigation</a></p>
+                    <p><a href="#entryDetail">2.10. EntryDetail Component</a></p>
+                    <p><a href="#liveComp">2.11. Live Component</a></p>
+                    <p><a href="#permission">2.12. Ask Location and Notification</a></p>
         </Segment>
     </div>
 )
@@ -95,7 +98,7 @@ const PortfolioNotes = () => (
         {/* Section 2 */}
         <Segment>
             <Header as="h2">2. ReactNative App</Header>
-            <Header as="h3" id="view">2.1. Setting Up Development Environment</Header>
+            <Header as="h3" id="initialSetup">2.1. Setting Up Development Environment</Header>
             <p>This app was built from scratch where it was initiated from <a href="https://reactnative.dev/docs/environment-setup" target="_blank">React Native CLI Quickstart.</a>.
             It's important to work on the initial setting and path for your iOS and Android simulators to be updated simultaneously. Need to pay attention on:
             <ul>
@@ -104,7 +107,7 @@ const PortfolioNotes = () => (
             </ul>
             </p>
 
-            <Header as="h3" id="componentHierarcy">2.2. Add API files in Utils</Header>
+            <Header as="h3" id="addAPI">2.2. Add API files in Utils</Header>
             <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
             <ul>
                 <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
@@ -114,7 +117,7 @@ const PortfolioNotes = () => (
             </ul>
             </p> 
 
-            <Header as="h3" id="storeData">2.3. AddEntry Component</Header>
+            <Header as="h3" id="addEntryComp">2.3. AddEntry Component</Header>
                 <Image src="/images/fitness/comp-addentry.jpg" floated="left" bordered className="floatLeft"/>
             <p>This component will receive and manage data input by user, in this step, I add few functions in component:
             <ul>
@@ -134,7 +137,7 @@ const PortfolioNotes = () => (
             </p>  
 
 
-            <Header as="h3" id="addAPI">2.4. Add API calls & AsyncsStorage</Header>
+            <Header as="h3" id="apiCalls">2.4. Add API calls & AsyncsStorage</Header>
             <p>Create the api file and insert functions that will handle "submit" and "reset" methods in AddEntry - located in <code>/utils/api.js</code> 
             <Screenshot source="/images/fitness/api1.jpg" />
             </p> 
@@ -178,20 +181,42 @@ const PortfolioNotes = () => (
             </ol>
             </p> 
 
-            <Header as="h3" id="tabNavigation">2.9. Tab Navigation Switch</Header>
-            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            <Header as="h3" id="tabStack">2.9. Tab and Stack Navigation</Header>
+            <p>Since we want to create 3 tabs with 2 stacks. In <code>/FitnessApp.js</code>, we need to set 3 Components with tab-navigator in <code>TabNav()</code> bundle, and 
+            include this bundle in Stack-navigator - visit my <a href="https://github.com/rtanri/fitnessApp/blob/master/FitnessApp.js">Github page</a> to see the code.
+            <Screenshot source="/images/fitness/tab-navigator.jpg" />
+            <p class="pictureDetail">Figure: Route config for each page tabs</p>
+            <Screenshot source="/images/fitness/stack-navigator.jpg" />
+            <p class="pictureDetail">Figure: Stack 1 "Entry Detail" page on top of bundle of tabs</p>
             </p> 
 
-            <Header as="h3" id="dailyReminder">2.6. Build Daily Reminder</Header>
-            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            <Header as="h3" id="entryDetail">2.10. EntryDetail Component</Header>
+            <p>This component shows the submitted data entry for a particular date. It also includes the "reset" button to turn the metrics into zero and allow user to re-submit new data - located in <code>components/EntryDetail.js</code>.
+            You can visit my <a href="https://github.com/rtanri/fitnessApp/blob/master/components/EntryDetail.js" target="_blank">Github page</a> to see the code.
             </p> 
 
-            <Header as="h3" id="dailyReminder">2.6. Build Daily Reminder</Header>
-            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            <Header as="h3" id="liveComp">2.11. Live Component</Header>
+            <p>Live component construct page that allow user see the speed and direction while running, cycling or swimming - located in <code>components/Live.js</code>. There are 3 different states that need to be build based on the location enabled by user:
+            <ul>
+                <li>Status "Denied" page,</li>
+                <li>Status "Undetermined" page,</li>
+                <li>Status "Granted" page,</li>
+            </ul>
+            You can visit my <a href="https://github.com/rtanri/fitnessApp/blob/8ec5c6104dd4381579fb2587ec8210047f7a62b1/components/Live.js" target="_blank">Github page</a> to see the code.
+            <Image src="/images/fitness/Live-state.jpg" centered className="pictureMargin"/>
+            <p class="pictureDetail">Figure: Denied page, undetermined page, and granted page.</p>
             </p> 
 
-
-
+            <Header as="h3" id="permission">2.12. Permission to ask Locations and ask Notification</Header>
+            <p>This step is to send a notification to mobile user to allow location sharing and notification everyday whenever they have not fill in their data. After you install the module in terminal, I found the imports are quite tricky to avoid warning:
+            <ul> 
+                <li><code>import * as Permissions from 'expo-permissions'</code> in Live Component & Helpers.js,</li>
+                <li><code>import * as Location from 'expo-location'</code> in Live Component,</li>
+                <li><code>import * as Notifications from 'expo-notifications'</code> - in Helpers.js</li>
+            </ul>
+            You can visit the <a href="https://github.com/rtanri/fitnessApp/blob/master/components/Live.js" target="_blank">components/Live.js</a> and <a href="https://github.com/rtanri/fitnessApp/blob/master/utils/helpers.js" target="_blank">utils/helpers.js</a> in my Github.
+            </p> 
+            <br/>
         </Segment>
 
 
@@ -202,20 +227,6 @@ const PortfolioNotes = () => (
         </div>
 
     </div>
-)
-
-
-
-
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. Praesent ut viverra sem, eget ultricies nisi. 
-    Fusce a sagittis tortor, ac maximus nibh. Phasellus id justo eu nulla volutpat tempus. 
-    Nullam nunc ante, iaculis a cursus eu, placerat id risus. Donec tincidunt scelerisque augue at iaculis. 
-    Sed vel leo eu tellus iaculis vehicula.
-    </p>
 )
 
 
@@ -251,7 +262,7 @@ const Workflow = () => (
     <p>
     Start with create a new 'ReactNative CLI Quickstart', and connect with both iOS simulator and Android simulator. Followed by adding the utils files (colors, helpers and calendar) as a starting code package.
     </p>
-        <ol>
+        <ol class="biggerSpace">
             <li>Connect user inputs in new component: AddEntry,</li>
             <li>Work on handleInput for 'Slider' and 'Stepper' input types,</li>
             <li>Connect input types with 5 metrics in AddEntry-page,</li>
