@@ -80,7 +80,9 @@ const PortfolioNotes = () => (
             <Header as="h2">1. Project Requirement</Header>
 
             <Header as="h3" id="overview">1.1. Simple Overview</Header>
-            <Screenshot source="/images/fitness/all-display.jpg" />
+            <Image centered src="/images/fitness/all-display.jpg" className="largeImage"/>
+            <p class="pictureDetail">Figure: All views in the Fitness Mobile-App</p>
+
             <Overview />
 
             <Header as="h3" id="appFunctionality">1.2. App Functionality</Header>
@@ -107,7 +109,7 @@ const PortfolioNotes = () => (
             <ul>
                 <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
                     <Screenshot source="/images/fitness/getMetricMeta.jpg" />
-                    <p class="pictureDetail">Code Samples for Run and Eat activities</p>
+                    <p class="pictureDetail">Figure: Code Samples for Run and Eat activities</p>
                 </li> 
             </ul>
             </p> 
@@ -122,40 +124,73 @@ const PortfolioNotes = () => (
                 <li>Slide(metric, value) : linked with <code>onChange()</code>,</li> 
                 <li>Submit : linked with <code>onPress()</code>,</li> 
             </ul>  
-            Since this addEntry will be specific to each day, I add Date in the Header of AddEntry View Page. In addition, I also imported UdaciSlider & UdaciStepper in AddEntry Component:
+            In addition, I also imported 3 components (UdaciSlider, UdaciStepper & DateHeader) into AddEntry Component - with purpose:
             <ul>
             <li>Add Slide UI in <code>/components/UdaciSlider.js</code></li>
             <li>Add Stepper UI in <code>/components/UdaciSteppers.js</code></li>
+            <li>Add different date in header <code>/components/DateHeader.js</code></li>
             </ul>
             You can find the code for AddEntry Component here - <a href="https://github.com/rtanri/fitnessApp/blob/master/components/AddEntry.js" target="_blank">github page</a>.
             </p>  
 
 
-            <Header as="h3" id="componentHierarcy">2.4. History Component with Calendar API</Header>
-            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
+            <Header as="h3" id="addAPI">2.4. Add API calls & AsyncsStorage</Header>
+            <p>Create the api file and insert functions that will handle "submit" and "reset" methods in AddEntry - located in <code>/utils/api.js</code> 
+            <Screenshot source="/images/fitness/api1.jpg" />
+            </p> 
+
+
+            <Header as="h3" id="reduxReactNative">2.5. Redux and React Native</Header>
+            <p>Install react-redux and redux in your terminal. Then, I add actions file and reducers file to receive and add entries - with details:
             <ul>
-                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
-                </li> 
+                <li><code>actions/index.js</code></li>
+                <Screenshot source="/images/fitness/actions.jpg" />
+                <li><code>reducers/index.js</code></li>
+                <Screenshot source="/images/fitness/reducers.jpg" />
+                <li>Remember to import "connect" from react-redux, and "addEntry" from actions.</li>
             </ul>
             </p> 
 
 
-            <Header as="h3" id="componentHierarcy">2.5. Next Component</Header>
-            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
-            <ul>
-                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
-                </li> 
-            </ul>
+            <Header as="h3" id="dailyReminder">2.6. Build Daily Reminder</Header>
+            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            </p> 
+
+            <Header as="h3" id="platformCSS">2.7. Update different CSS for iOS and Android</Header>
+            <p>In AddEntry component, "Platform" and "stylesheet" is imported with purpose to differentiate the CSS of button, color or layout in 
+            iOS and Android platform. Remember to edit the CSS for slider in and stepper as well.
+            <Screenshot source="/images/fitness/platform.jpg" />
+            <p class="pictureDetail">Figure: Platform.OS change the CSS in iOS and Android</p>
+            <Screenshot source="/images/fitness/stylesheet.jpg" />
+            <p class="pictureDetail">Figure: Stylesheet help to compile all CSS within that component</p>
+            </p> 
+
+            <Header as="h3" id="historyComp">2.8. Import Calendar API under History Component</Header>
+            <Image src="/images/fitness/history-calendar.jpg" floated="left" bordered className="floatLeft"/>
+            <p>There are few steps that we can do to import calendar into our app:
+            <ol class="biggerSpace">
+                <li>In <code>api.js</code> - Import _formatCalendarResults and add function <code>fetchCalendarResults()</code>  - visit my <a href="https://github.com/rtanri/fitnessApp/commit/f2156978bc18954b536782886bace7972835ecd9#diff-ac9f2309c33b0a3a94437d30e93062c2">Github page</a> to see the code.</li>
+                <li>Add Calendar in <code>components/History.js</code> - visit my <a href="https://github.com/rtanri/fitnessApp/commit/f2156978bc18954b536782886bace7972835ecd9#diff-ac9f2309c33b0a3a94437d30e93062c2">Github page</a> to see the code.
+                </li>
+                <li>Install udacifitness-calendar in your terminal and import to the <code>components/History.js</code>,</li>
+                <li>In History component, we need to render the calendar with few props (items, renderItem, renderEmptyDate)</li>
+                <li>Render the calendar in History component with props.</li>
+            </ol>
+            </p> 
+
+            <Header as="h3" id="tabNavigation">2.9. Tab Navigation Switch</Header>
+            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            </p> 
+
+            <Header as="h3" id="dailyReminder">2.6. Build Daily Reminder</Header>
+            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
+            </p> 
+
+            <Header as="h3" id="dailyReminder">2.6. Build Daily Reminder</Header>
+            <p>Create new function <code>getDailyReminderValue()</code> as a value of date with empty activities in <code>utils/helpers.js</code> 
             </p> 
 
 
-            <Header as="h3" id="componentHierarcy">2.6. What Else</Header>
-            <p>Add 3 API files: <code>_calendar.js</code>, <code>color.js</code>, and <code>helpers.js</code> - details in this <a href="https://github.com/rtanri/fitnessApp/tree/master/utils" target="_blank">github page</a>.
-            <ul>
-                <li>Next, add function <code>getMetricMetaInfo(metric)</code> to set unit, max-value, icons, and type of input for all activities (run, swim, cycling, sleep and eat) - in <code>utils/helpers.js</code> 
-                </li> 
-            </ul>
-            </p> 
 
         </Segment>
 

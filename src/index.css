@@ -198,6 +198,9 @@ a.ui.header{
 
 }
 
+p ol.biggerSpace{
+  line-height: 2; 
+}
 
 
 .ui.left.rail.navRail {
@@ -219,10 +222,21 @@ a.ui.header{
   text-align: center;
   font-weight: bolder;
   margin-top: -20px;
+  margin-bottom: 40px;
   font-size: small;
 }
 
+.ui.image.largeImage{
+  margin: 30px auto 30px auto;
+}
+
 .ui.floated.image.floatLeft{
+  margin: 10px 40px 20px 20px;
+  border-width: 3px;
+  max-height: 300px;
+}
+
+.ui.floated.image.floatRight{
   margin: 10px 40px 20px 20px;
   border-width: 3px;
   max-height: 300px;
