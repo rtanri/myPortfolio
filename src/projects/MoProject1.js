@@ -47,21 +47,24 @@ const LeftNavigation = () => (
         <Segment className="navigationBar">
             <Header as="h3">Code Notes</Header>
 
-                <Header as="h4">1. Project Requirement</Header>
+            <Header as="h4">1. Project Requirement</Header>
                     <p><a href="#overview">1.1. Simple Overview</a></p>
                     <p><a href="#appFunctionality">1.2. App Functionality</a></p>
                     <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
 
-                <Header as="h4">2. App Design</Header>
-                    <p><a href="#view">2.1. View</a></p>
-                    <p><a href="#componentHierarcy">2.2. Component Hierarcy</a></p>
-
-                <Header as="h4">3. Coding Phase</Header>
-                    <p><a href="#apiFunction">3.1. App Component</a></p>
-                    <p><a href="#a">3.2. Component</a></p>
-                    <p><a href="#b">3.3. Component</a></p>
-                    <p><a href="#c">3.4. Component</a></p>
-                    <p><a href="#d">3.5. Component</a></p>
+                <Header as="h4">2. App Development</Header>
+                    <p><a href="#initialSetup">2.1. Initial Setup</a></p>
+                    <p><a href="#addAPI">2.2. Add API files in Utils</a></p>
+                    <p><a href="#addEntryComp">2.3. AddEntry Component</a></p>
+                    <p><a href="#apiCalls">2.4. API calls & AsyncsStorage</a></p>
+                    <p><a href="#reduxReactNative">2.5. Redux and ReactNative</a></p>
+                    <p><a href="#dailyReminder">2.6. Daily Reminder</a></p>
+                    <p><a href="#platformCSS">2.7. CSS for iOS and Android</a></p>
+                    <p><a href="#historyComp">2.8. History Component</a></p>
+                    <p><a href="#tabStack">2.9. Tab & Stack Navigation</a></p>
+                    <p><a href="#entryDetail">2.10. EntryDetail Component</a></p>
+                    <p><a href="#liveComp">2.11. Live Component</a></p>
+                    <p><a href="#permission">2.12. Ask Location and Notification</a></p>
         </Segment>
     </div>
 )
@@ -82,7 +85,9 @@ const PortfolioNotes = () => (
             <Header as="h2">1. Project Requirement</Header>
 
             <Header as="h3" id="overview">1.1. Simple Overview</Header>
-            <Screenshot source="/images/flashcard/all-pages.jpg" />
+            <Image centered src="/images/flashcard/most-view.jpg" className="largeImage"/>
+            <p class="pictureDetail">Figure: Example of views in the Flashcard Mobile-App</p>
+
             <Overview />
 
             <Header as="h3" id="appFunctionality">1.2. App Functionality</Header>
@@ -94,41 +99,54 @@ const PortfolioNotes = () => (
 
         {/* Section 2 */}
         <Segment>
-            <Header as="h2">2. App Design</Header>
-            <Header as="h3" id="view">2.1. View</Header>
-            <p>The designing view layout has been done on each page using React Semantic-UI format. </p>
+            <Header as="h2">2. ReactNative App</Header>
 
-            <Header as="h3" id="componentHierarcy">2.2. Component Hierarcy</Header>
-            <p>This step is to determine component hierarchy. Since a component should ideally only do one 
-            thing, it is important to see the flow of data and state across view and components. For example:
+            <Header as="h3" id="initialSetup">2.1. Planning for View, Components and Data Locations</Header>
+            <p>In this mobile apps, I sketched the views and interactions between them on paper, then decided to create:
             <ul>
-                <li>Dashboard View Page
-                <Screenshot source="/images/yourather/component-hie.jpg"/>
-                </li> 
+                <li>
+                6 main components : <strong>Home, AddDeck, Deck, DeckSetting, AddCard, Quiz</strong>.
+                </li>
+                <li>
+                2 Tabs : <strong>Decks & Add Decks</strong>.
+                </li>
+                <li>
+                4 Stacks : <strong>TabNav, DeckSetting, AddCard & Quiz </strong>.
+                </li>
+            </ul> 
+            </p>
+            <Screenshot source="/images/flashcard/planning.jpg" />
+            <p class="pictureDetail">Figure: Sketch on app planning</p>
+
+
+            <Header as="h3" id="initialSetup">2.2. Setting Up Development Environment</Header>
+            <p>This app was built from scratch where it was initiated from <a href="https://reactnative.dev/docs/environment-setup" target="_blank">React Native CLI Quickstart.</a>.
+            It's important to work on the initial setting and path for your iOS and Android simulators to be updated simultaneously. Need to pay attention on:
+            <ul>
+                <li>iOS Dependencies: Node, Watchman, Xcode, CocoaPods;</li>
+                <li>Android Dependencies: Java Development Kit, Android Studio;</li>
             </ul>
-            </p> 
+            If your iOS simulator using an iphone 10 and above, you need to install & import "SafeAreaProvider" in your <code>App.js</code> to ensure your UI in readable space.
+            </p>
 
-            <Header as="h3" id="storeData">2.3. Store Data</Header>
-            <p>Determining what data lives in the store and what should live in the component. The data elements in Redux that we are using in this app:
-            <ul>
-                <li>Users data</li> 
-                <li>Questions data</li> 
-            </ul>  
-            <br />
+            <Header as="h3" id="storeData">2.3. Work on Tab & Stack Navigation</Header>
+            <p>This step you can create minimum-viable-pages throughout each components. Then I focus to work on the RouteConfigs, Icon and Style of Tabs panel that can be different in both iOS and Android. 
+            Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.
+            <br/><br/>
+            You can see code in <code>MainApp.js</code> in my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a>.
+            </p>  
+
+            <Header as="h3" id="storeData">2.3. MainApp </Header>
+            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            </p>  
+
+            <Header as="h3" id="storeData">2.3. MainApp </Header>
+            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
             </p>  
         </Segment>
 
-        {/* Section 3 */}
-        <Segment>
-            <Header as="h3">3. Coding Phase</Header>
-            <Header as="h4">3.1. API Function</Header>
-            <LorumIpsum />
-            <Header as="h4">3.2. Action & Reducers</Header>
-            <LorumIpsum />
-            <Screenshot />
-            <Header as="h4">3.3. Middleware</Header>
-            <LorumIpsum />
-        </Segment>
 
         <div class="projectFooter">
             <Button size="small" floated='left' as={Link} to={""} content="Back"/>

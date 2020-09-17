@@ -191,7 +191,7 @@ const MobileApp = () => (
               link='/reactnative-fitness-app'
               imageSource = '/images/dashboard/fitnessapp.jpg'
               title = 'Fitness Mobile App'
-              extra = 'ReactNative, Calendar, Metric Input; Tab & Stack Navigation'
+              extra = 'Redux, ReactNative, Calendar, Tab & Stack Nav, Ask for Location and Notification'
             />}
           </Grid.Column>
 
