@@ -136,15 +136,67 @@ const PortfolioNotes = () => (
             You can see code in <code>MainApp.js</code> in my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a>.
             </p>  
 
-            <Header as="h3" id="storeData">2.3. MainApp </Header>
+            <Header as="h3" id="storeData">2.4. Add Sample Data and API function</Header>
+            <p>Add the sample initial data for deck & card in <code>utils/api.js</code> then build API functions that will help the data movement around the components.
+            <ol>
+                <li><strong>Initial data for Deck and Card</strong></li>
+                <Screenshot source="/images/flashcard/data-sample.jpg" />
+                <p class="pictureDetail">Figure: Data for Food Deck and Card</p>
+                
+                <li><strong>Few API Function</strong> like 
+                <code>getData</code>, <code>getDecks</code>, <code>saveNewDeck</code>, <code>addCardToDeck</code>, <code>removeDeck</code>
+                </li>
+                
+
+            </ol>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/utils/api.js">Github page</a> to see the initial data and API functions mentioned.
+            </p>  
+
+            <Header as="h3" id="storeData">2.5. Create Actions, Reducers and Middleware</Header>
+            <p>As a first step, We need to Install react-redux, redux, redux-thunk. Then we create these few files to manage the store and data movement:
+            <ul>
+                <li>Dispatch functions based on action id - located in <code>/actions/index.js</code>,</li>
+                <li>Set the data movement or object reaction depended on each action function called - located in <code>/reducers/index.js</code>,</li>
+                <li>Contain logger and thunk middleware - located in <code>/middleware/logger.js</code> and <code>/middleware/index.js</code></li>
+            </ul>
+            </p>  
+
+
+            <Header as="h3" id="storeData">2.6. Import Initial data to Home Components</Header>
+            <p>Import the Deck component to Home component since it build a single deck in the Deck list in Home page. 
+            <Screenshot source="/images/flashcard/home-deck.jpg" />
+            <p class="pictureDetail">Figure: List of decks in home screen</p>
+            </p>  
+
+            <Header as="h3" id="storeData">2.7. AddDeck Component</Header>
+            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            <Screenshot source="/images/flashcard/new-deck.jpg" />
+            <p class="pictureDetail">Figure: Adding new deck with compulsory title field</p>
+            </p>  
+
+            <Header as="h3" id="storeData">2.8. DeckSetting and AddCard Component</Header>
+            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            <Screenshot source="/images/flashcard/deck-setting.jpg" />
+            <p class="pictureDetail">Figure: Deck Setting with few buttons</p>
+            </p>  
+
+            <Header as="h3" id="storeData">2.9. Quiz layout and machine</Header>
+            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
+            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            <Screenshot source="/images/flashcard/quiz-layout.jpg" />
+            <p class="pictureDetail">Figure: On-going quiz page with animated answer card</p>
+            <Screenshot source="/images/flashcard/quiz-score.jpg" />
+            <p class="pictureDetail">Figure: Score page with Restart quiz button</p>
+            </p>  
+
+            <Header as="h3" id="storeData">2.10. Debug and Error tracing</Header>
             <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
             You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
             </p>  
 
-            <Header as="h3" id="storeData">2.3. MainApp </Header>
-            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
-            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
-            </p>  
+            <br/>
         </Segment>
 
 
@@ -157,16 +209,6 @@ const PortfolioNotes = () => (
 
     </div>
 )
-
-
-const LorumIpsum = () => (
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nisl at leo 
-    tempor maximus eget quis velit. Vivamus tincidunt imperdiet suscipit. Donec dapibus 
-    quis magna ac porta. Etiam id tempus tellus, ornare consectetur tortor. Praesent porta 
-    urna interdum arcu gravida, et luctus nulla maximus. 
-    </p>
-)
-
 
 
 const Overview =() => (
