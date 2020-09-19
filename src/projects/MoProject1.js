@@ -192,9 +192,9 @@ const PortfolioNotes = () => (
                 <li><strong>DeckSetting Page</strong></li>
                 <p>
                 <ul>
-                    <li>Add Card -> Simple navigation to <code>/components/AddCard.js</code></li>
-                    <li>Start Quiz -> Navigate user to <code>/components/Quiz.js</code>, but will be disabled if deck has no question card.</li>
-                    <li>Delete Deck -> Delete current deck with 'title' as the 'id', then return user to <code>/components/Home.js</code></li>
+                    <li>Add Card - Simple navigation to <code>/components/AddCard.js</code></li>
+                    <li>Start Quiz - Navigate user to <code>/components/Quiz.js</code>, but will be disabled if deck has no question card.</li>
+                    <li>Delete Deck - Delete current deck with 'title' as the 'id', then return user to <code>/components/Home.js</code></li>
                 </ul>
                 </p>
                 <li><strong>AddCard Page</strong></li>
