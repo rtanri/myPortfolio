@@ -53,18 +53,15 @@ const LeftNavigation = () => (
                     <p><a href="#workflowProcess">1.3. Workflow process  </a></p>
 
                 <Header as="h4">2. App Development</Header>
-                    <p><a href="#initialSetup">2.1. Initial Setup</a></p>
-                    <p><a href="#addAPI">2.2. Add API files in Utils</a></p>
-                    <p><a href="#addEntryComp">2.3. AddEntry Component</a></p>
-                    <p><a href="#apiCalls">2.4. API calls & AsyncsStorage</a></p>
-                    <p><a href="#reduxReactNative">2.5. Redux and ReactNative</a></p>
-                    <p><a href="#dailyReminder">2.6. Daily Reminder</a></p>
-                    <p><a href="#platformCSS">2.7. CSS for iOS and Android</a></p>
-                    <p><a href="#historyComp">2.8. History Component</a></p>
-                    <p><a href="#tabStack">2.9. Tab & Stack Navigation</a></p>
-                    <p><a href="#entryDetail">2.10. EntryDetail Component</a></p>
-                    <p><a href="#liveComp">2.11. Live Component</a></p>
-                    <p><a href="#permission">2.12. Ask Location and Notification</a></p>
+                    <p><a href="#viewPlanning">2.1. Sketching App</a></p>
+                    <p><a href="#initialSetup">2.2. Initial ReactNative Setup</a></p>
+                    <p><a href="#tabAndStack">2.3. Tab & Stack Navigation</a></p>
+                    <p><a href="#sampleData">2.4. Data Sample & API</a></p>
+                    <p><a href="#actionReducer">2.5. Action & Reducer</a></p>
+                    <p><a href="#homeComp">2.6. Connect Initial Data</a></p>
+                    <p><a href="#adddeckComp">2.7. Adding New Deck</a></p>
+                    <p><a href="#decksettingComp">2.8. DeckSetting & AddCard</a></p>
+                    <p><a href="#quizComp">2.9. Quiz Layout & Machine</a></p>
         </Segment>
     </div>
 )
@@ -101,7 +98,7 @@ const PortfolioNotes = () => (
         <Segment>
             <Header as="h2">2. ReactNative App</Header>
 
-            <Header as="h3" id="initialSetup">2.1. Planning for View, Components and Data Locations</Header>
+            <Header as="h3" id="viewPlanning">2.1. Planning for View, Components and Data Locations</Header>
             <p>In this mobile apps, I sketched the views and interactions between them on paper, then decided to create:
             <ul>
                 <li>
@@ -129,14 +126,14 @@ const PortfolioNotes = () => (
             If your iOS simulator using an iphone 10 and above, you need to install & import "SafeAreaProvider" in your <code>App.js</code> to ensure your UI in readable space.
             </p>
 
-            <Header as="h3" id="storeData">2.3. Work on Tab & Stack Navigation</Header>
+            <Header as="h3" id="tabAndStack">2.3. Work on Tab & Stack Navigation</Header>
             <p>This step you can create minimum-viable-pages throughout each components. Then I focus to work on the RouteConfigs, Icon and Style of Tabs panel that can be different in both iOS and Android. 
             Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.
             <br/><br/>
             You can see code in <code>MainApp.js</code> in my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a>.
             </p>  
 
-            <Header as="h3" id="storeData">2.4. Add Sample Data and API function</Header>
+            <Header as="h3" id="sampleData">2.4. Add Sample Data and API function</Header>
             <p>Add the sample initial data for deck & card in <code>utils/api.js</code> then build API functions that will help the data movement around the components.
             <ol>
                 <li><strong>Initial data for Deck and Card</strong></li>
@@ -152,7 +149,7 @@ const PortfolioNotes = () => (
             You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/utils/api.js">Github page</a> to see the initial data and API functions mentioned.
             </p>  
 
-            <Header as="h3" id="storeData">2.5. Create Actions, Reducers and Middleware</Header>
+            <Header as="h3" id="actionReducer">2.5. Create Actions, Reducers and Middleware</Header>
             <p>As a first step, We need to Install react-redux, redux, redux-thunk. Then we create these few files to manage the store and data movement:
             <ul>
                 <li>Dispatch functions based on action id - located in <code>/actions/index.js</code>,</li>
@@ -161,39 +158,68 @@ const PortfolioNotes = () => (
             </ul>
             </p>  
 
-
-            <Header as="h3" id="storeData">2.6. Import Initial data to Home Components</Header>
-            <p>Import the Deck component to Home component since it build a single deck in the Deck list in Home page. 
+            
+            <Header as="h3" id="homeComp">2.6. Import Initial data to Home Components</Header>
             <Screenshot source="/images/flashcard/home-deck.jpg" />
-            <p class="pictureDetail">Figure: List of decks in home screen</p>
+            <p class="pictureDetail">Figure: Imported 2 decks in Home Screen</p>
+            <p>
+            We need to import the initial decks with few questions cards into our home component, with this few steps:
+            <ol class="biggerSpace">
+                <li>In Home tab, modelled the style of each deck and deck-list by importing <code>/component/Deck.js</code> in <code>/component/Home.js</code></li>
+                <li>Import data into <code>/component/Home.js</code> with <code>ComponentDidMount</code> dispatching handleInitialData,
+                 connecting redux store 'deck' with <code>mapStateToProps(decks)</code> - see <a href="https://github.com/rtanri/mobile-flashcards/blob/master/components/Home.js" target="_blank">code in Github.</a>
+                <Screenshot source="/images/flashcard/addInitialData.jpg" />
+                </li>
+                <li>Navigate the user to <code>/components/DeckSetting.js</code> once deck is pressed</li>
+                <Screenshot source="/images/flashcard/deck-onPress.jpg" />
+            </ol>
             </p>  
+        
 
-            <Header as="h3" id="storeData">2.7. AddDeck Component</Header>
-            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
-            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            <Header as="h3" id="adddeckComp">2.7. AddDeck Component</Header>
+            <p>This step involved Text-input that is connected to State, once it is pressed - not only it will dispatch <code>handleAddDeck()</code>function sending 'input' state to Store, but also reset the 'input' state data. 
+            Then, user will be navigated into <code>components/DeckSetting.js</code>. <br/><br/>
+            You can find addDeck component code in my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/components/AddDeck.js" target="_blank">Github page</a>.
             <Screenshot source="/images/flashcard/new-deck.jpg" />
             <p class="pictureDetail">Figure: Adding new deck with compulsory title field</p>
             </p>  
 
-            <Header as="h3" id="storeData">2.8. DeckSetting and AddCard Component</Header>
-            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
-            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
-            <Screenshot source="/images/flashcard/deck-setting.jpg" />
-            <p class="pictureDetail">Figure: Deck Setting with few buttons</p>
+
+            <Header as="h3" id="decksettingComp">2.8. DeckSetting and AddCard Component</Header>
+            <Image src="/images/flashcard/deck-setting.jpg" floated="left" bordered className="floatLeft"/>
+            <p>This step presented the options that user can manage in deck like 'add card', 'delete deck' and 'start quiz'. The detail in each components:
+            <ol class="biggerSpace">
+                <li><strong>DeckSetting Page</strong></li>
+                <p>
+                <ul>
+                    <li>Add Card -> Simple navigation to <code>/components/AddCard.js</code></li>
+                    <li>Start Quiz -> Navigate user to <code>/components/Quiz.js</code>, but will be disabled if deck has no question card.</li>
+                    <li>Delete Deck -> Delete current deck with 'title' as the 'id', then return user to <code>/components/Home.js</code></li>
+                </ul>
+                </p>
+                <li><strong>AddCard Page</strong></li>
+                <p>
+                This component will be shown after user press the <strong>"Add Card"</strong> button, it contains of text inputs collecting question and answer with submit button on below. 
+                Then I categorize Question input as the "front", and Answer input as the "back" - in which will be ingested to a card with flip-animation in quiz.
+                <br/><br/>
+                You can visit my Github to see <a href="https://github.com/rtanri/mobile-flashcards/blob/master/components/DeckSetting.js" target="_blank">DeckSetting.js</a> and <a href="https://github.com/rtanri/mobile-flashcards/blob/master/components/AddCard.js" target="_blank">AddCard.js</a>  - located at <code>/components/***</code>.
+                </p>
+            </ol>
+            
             </p>  
 
-            <Header as="h3" id="storeData">2.9. Quiz layout and machine</Header>
-            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
-            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+
+            <Header as="h3" id="quizComp">2.9. Quiz layout and machine</Header>
+            <p>After we have created the style of page layout and button, It is important to create animation value before the component is created using <code>componentWillMount()</code>. Key things that I add to make this quiz interesting:
+            <ul>
+                <li>Displaying the card sequence and number of cards left,</li>
+                <li>Flip card animation between Question/Answer,</li>
+                <li>Score in the end of Quiz,</li>
+                <li>Restart button to redo the quiz.</li>
+            </ul>
+            You can visit my Github to see <a href="https://github.com/rtanri/mobile-flashcards/blob/master/Quiz.js" target="_blank">Quiz.js</a> - located at <code>components/Quiz.js</code>.
             <Screenshot source="/images/flashcard/quiz-layout.jpg" />
-            <p class="pictureDetail">Figure: On-going quiz page with animated answer card</p>
-            <Screenshot source="/images/flashcard/quiz-score.jpg" />
-            <p class="pictureDetail">Figure: Score page with Restart quiz button</p>
-            </p>  
-
-            <Header as="h3" id="storeData">2.10. Debug and Error tracing</Header>
-            <p>This step I set the RouteConfigs and style of Tabs panel that can be different in both iOS and Android. Then Stack Navigator construct the other components based on the initial plan - located in <code>/MainApp.js</code>.<br/>
-            You can visit my <a href="https://github.com/rtanri/mobile-flashcards/blob/master/MainApp.js">Github page</a> to see the code.
+            <p class="pictureDetail">Figure: On-going quiz page and Score Result</p>
             </p>  
 
             <br/>
