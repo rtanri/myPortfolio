@@ -157,13 +157,15 @@ a.ui.header{
 }
 
 .ui.center.aligned.header.headerMargin{
-  margin-top:30px;
-  margin-bottom: 20px;
+  margin-top:50px;
+  margin-bottom: 30px;
+  font-size: 26px;
 }
 
 .ui.left.aligned.header.headerMargin {
   margin-top:50px;
   margin-bottom: 30px;
+  /* font-size: 20px; */
 }
 
 
@@ -281,5 +283,14 @@ code{
   .ui.header.childHeaderItem{
     font-size: 17px;
   }
+  
+  .ui.header .content{
+    font-size: larger;
+  }
+
+  p.profileSummary{
+    font-size: larger;
+  }
+
 
 }

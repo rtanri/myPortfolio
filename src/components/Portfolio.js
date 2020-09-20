@@ -45,7 +45,7 @@ const MainHeader = () => (
   <Header as='h1'>
     Revin Tanri
     <br />
-    <Header.Subheader>tanrirevin@gmail.com  |  +65 92779530</Header.Subheader>
+    <Header.Subheader className="smallDetail">tanrirevin@gmail.com  |  +65 92779530</Header.Subheader>
   </Header>
   
 )
@@ -68,7 +68,7 @@ const InterestHeader = () => (
 const ExperimentHeader = () => (
   <Header as='h2' textAlign='left' className="headerMargin">
   <Header.Content>Experiment</Header.Content>
-  <Header.Subheader>Quick Prototype or old projects I have done in Javascript:</Header.Subheader> 
+  <Header.Subheader >Quick Prototype or old projects I have done in Javascript:</Header.Subheader> 
 </Header>
 )
 
@@ -179,7 +179,7 @@ const MobileApp = () => (
               link="/reactnative-flash-card"
               imageSource = '/images/dashboard/flashcard.jpg'
               title = 'Flash Card Mobile App'
-              extra = 'ReactNative'
+              extra = 'ReactNative, Animation, Redux, JSON Initial Data, Add Question Card, Quiz'
             />}
           </Grid.Column>
 
@@ -236,7 +236,7 @@ const OtherProjects = () => (
         <Grid.Column width={4}>
           <Image src="/images/dashboard/maeclub.png" size="small" />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={10}>
           <Header as="a" href="https://www.maeclub.com/" target='_blank' ><span>⚙️</span> NTU Mechanical Engineering Web Admin</Header>
           <Header as="h4" className="childHeaderItem">Set new hosting name, initiate JOOMLA, plan the layout and template; and maintain the content</Header>
         </Grid.Column>
@@ -248,12 +248,12 @@ const OtherProjects = () => (
         <Grid.Column width={4}>
           <Image src="/images/dashboard/shopee.png" size="small" />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={10}>
           <Header as="a" href='http://unbouncepages.com/onlinemp/' target='_blank' ><span>🛒</span> Shopee Market Research</Header>
           <Header as="h4" className="childHeaderItem">One page market research & personal recommendation on Shopee market expansion to Indonesia in 2015
           </Header>
         </Grid.Column>
-        <Grid.Column width={4} />
+        <Grid.Column width={1} />
 
     </Grid.Row >
 
@@ -261,7 +261,7 @@ const OtherProjects = () => (
         <Grid.Column width={4}>
           <Image src="/images/dashboard/rindoucard.png" size="small" />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={10}>
           <Header as="a" href='http://unbouncepages.com/rindoucard/' target='_blank' className="childHeader"><span>📮</span> Unbounce Landing Page</Header>
           <Header as="h4" className="childHeaderItem">Landing page to capture potential buyers on name card printing side-hustle
           </Header>
