@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Semantic1 from './Semantic1'
 import Portfolio from './Portfolio'
@@ -17,7 +17,7 @@ export class App extends Component{
     render(){
         return(
             // <Project1/>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <Fragment>
                 <Switch>
                     <Route path='/' exact component={Portfolio} />
