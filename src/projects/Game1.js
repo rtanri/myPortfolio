@@ -184,7 +184,6 @@ const StarterCode = () => (
 const Screenshot = ({source}) => (
     <Image 
     size="big" 
-    //size="huge"
     centered
     src={source}/>
 )

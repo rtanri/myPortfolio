@@ -77,7 +77,6 @@ const PortfolioNotes = () => (
             <span><a href="https://diy-kindle.netlify.app" target="_blank">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/MyRead" target="_blank">Github Repo</a></span>
         </p>
 
-        {/* 1st Section */}
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
             <Header as="h3" id="overview">1.1. Simple Overview</Header>
@@ -91,7 +90,6 @@ const PortfolioNotes = () => (
             <StarterCode />
         </Segment>
 
-        {/* 2nd section */}
         <Segment>
             <Header as="h2">2. App Design</Header>
             <Header as="h3">2.1. View</Header>
@@ -107,7 +105,6 @@ const PortfolioNotes = () => (
             </p>
         </Segment>
 
-        {/* 3rd section */}
         <Segment>
             <Header as="h2">3. Coding Phase</Header>
 

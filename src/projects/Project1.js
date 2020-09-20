@@ -20,7 +20,6 @@ class Project1 extends Component {
                 <Segment.Group className="projectNotes">
                     <PortfolioNotes/>
 
-                    {/* sticky navigation on the left */}
                     <Rail position="left" className="navRail"> 
                         <LeftNavigation/>
                     </Rail>
@@ -88,7 +87,6 @@ const PortfolioNotes = () => (
             <span><a href="https://wouldyourathertoeat.netlify.app">Live Demo</a></span>  ||  <span><a href="https://github.com/rtanri/youRather" target="_blank">Github Repo</a></span>
         </p>
 
-        {/* Section 1 */}
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
             <Header as="h3" id="overview">1.1. Simple Overview</Header>
@@ -100,7 +98,6 @@ const PortfolioNotes = () => (
             <Workflow />
         </Segment>
 
-        {/* Section 2 */}
         <Segment>
             <Header as="h2">2. App Design</Header>
             <Header as="h3" id="view">2.1. View</Header>
@@ -131,7 +128,6 @@ const PortfolioNotes = () => (
             </p>  
         </Segment>
 
-        {/* Section 3 */}
         <Segment>
             <Header as="h2">3. Coding Phase</Header>
             <Header as="h3" id="apiFunction">3.1. API Function</Header>

@@ -19,13 +19,11 @@ class Portfolio extends Component {
         { menuItem: 'Web Apps', render: () => <Tab.Pane>{<WebApp />}</Tab.Pane>},
         { menuItem: 'Mobile: ReactNative', render: () => <Tab.Pane>{<MobileApp />}</Tab.Pane>},
         { menuItem: 'Web Game', render: () => <Tab.Pane>{<Game />}</Tab.Pane>},
-        // { menuItem: 'Low-code Projects', render: () => <Tab.Pane>{<OtherProjects />}</Tab.Pane>},
     ]
 
     return (
       <div class="dashboard">
         <Segment.Group className="contentPage">
-          {/* <MainHeader /> */}
           <BasicProfile />
           <BodyHeader />
             <Tab panes={panes} 
@@ -137,7 +135,6 @@ class WebApp extends Component {
       <Grid.Row>
         <Grid.Column>
           {<ProjectCard 
-            // link = "https://wouldyourathertoeat.netlify.app/"
             link='/would-you-rather'
             imageSource = '/images/dashboard/yourather.jpg'
             title = 'Would You Rather'

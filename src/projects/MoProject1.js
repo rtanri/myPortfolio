@@ -19,7 +19,6 @@ class MoProject1 extends Component {
                 <Segment.Group className="projectNotes">
                     <PortfolioNotes/>
 
-                    {/* sticky navigation on the left */}
                     <Rail position="left" className="navRail"> 
                         <LeftNavigation/>
                     </Rail>
@@ -77,7 +76,6 @@ const PortfolioNotes = () => (
         />
         <p className="subHeader">Local Demo via  <span><a href="https://github.com/rtanri/fitnessApp" target="_blank">Github Repo</a></span></p>
 
-        {/* Section 1 */}
         <Segment>
             <Header as="h2">1. Project Requirement</Header>
 
@@ -94,7 +92,6 @@ const PortfolioNotes = () => (
             <Workflow />
         </Segment>
 
-        {/* Section 2 */}
         <Segment>
             <Header as="h2">2. ReactNative App</Header>
 

@@ -20,7 +20,7 @@ import {
     Label,
     Menu
 } from 'semantic-ui-react'
-// import {Redirect} from 'react-router-dom'
+
 
 class Semantic1 extends Component{
 
@@ -38,7 +38,6 @@ class Semantic1 extends Component{
                 <Header as="h2" textAlign='center' margin-bottom='100px'>Semantic UI: Segment, Segment Group & Button</Header>
             </Segment>
                 
-            {/* Segment inside Container */}
             <Container>
                 <Segment placeholder>
                     <Header icon>
@@ -53,7 +52,6 @@ class Semantic1 extends Component{
                 </Segment>
             </Container>
 
-            {/* Button with Icons and Numbers Examples */}
             <Segment>
                 <div class="flex-even">
                     <Button 
@@ -82,7 +80,6 @@ class Semantic1 extends Component{
                 </div>
             </Segment>
 
-            {/* Various Size of Segment: mini, tiny, big, large, massive, etc */}
             <div>
                 {sizes.map((size) => (
                     <Segment.Group key={size} size={size}>
@@ -110,7 +107,6 @@ class Semantic1 extends Component{
                             'Grapes',
                             'Pineapple'
                         ]}
-                        // to separate with line and bigger space
                         divided relaxed
                     />
                 </Segment>
@@ -263,7 +259,6 @@ class Semantic1 extends Component{
                 </Segment>
             </div>
             
-            {/* Modal Examples */}
             <div>
 
                 <Segment raised inverted color='gray'>
@@ -273,26 +268,22 @@ class Semantic1 extends Component{
                 <Header as ='h3' textAlign='center'>Normal Modal</Header>
                 
                 <div>
-                    {/* Shorthanded Modal */}
                     <Modal
                         trigger={<Button>Shorthand Modal</Button>}
                         header='Reminder!'
                         content='Call Benny regarding the report submission'
                         actions={['Snooze', {key: 'done', content:'Done', positive: true}]}
                         size='small'
-                        // size: mini, tiny, small, large, fullscreen
                     />
 
                 </div>
             </div> <br/>
 
-            {/* Card Examples */}
             <div>
 
                 <Segment raised inverted color='gray'>
                     <Header as="h2" textAlign='center' margin-bottom='100px'>Semantic UI: Card</Header>
                 </Segment>
-                {/* Small Cards with 2 options */}
 
                 <Header as ='h3' textAlign='center'>Cards with 2 op; Card with Feed list; 2 Items per row</Header>
                 <div class="flex-even">
@@ -346,7 +337,6 @@ class Semantic1 extends Component{
                         </Card.Content>
                     </Card>
 
-                    {/* Card with Group of Feed */}
                     <Card color="green" inverted>
                         <Card.Content>
                             <Card.Header>Title - Card with Feeds</Card.Header>
@@ -463,10 +453,9 @@ class Semantic2 extends Component{
                 <Grid>{columns1}</Grid>
             </Segment>
 
-            {/* Grid with divider each rows */}
             <Segment>
             <Header textAlign='center'>Grid have divider between columns - Setting in Grid </Header>
-                 <Grid columns={3} divided > {/* Set the number of columns as skeleton; columns='two' also can */}
+                 <Grid columns={3} divided > 
                     <Grid.Row>
                         <Grid.Column>
                             <Image src='images/wireframe/media-paragraph.png' />
@@ -494,7 +483,6 @@ class Semantic2 extends Component{
             </Segment>
 
 
-            {/* Grid with diff Columns amound each rows */}
             <Segment>
             <Header textAlign='center'>Grid have divider between columns - Setting in Grid.Row </Header>
                 <Grid divided='vertically'>
@@ -522,7 +510,6 @@ class Semantic2 extends Component{
             </Segment>
 
                 
-            {/* Grid Celled */}
             <Segment>
                 <Header textAlign='center'>Grid Celled Normal or Internally with Column Width</Header>
                 <Grid celled='internally'>
@@ -560,7 +547,6 @@ class Semantic2 extends Component{
                 </Grid>
             </Segment>
 
-            {/* Grid with Stretch */}
             <Segment>
             <Header textAlign='center'>Grid with Stretch</Header>
             <Grid columns={3} divided>
@@ -592,7 +578,6 @@ class Semantic2 extends Component{
             </Grid>
             </Segment>
 
-            {/* Grid with responsive width */}
             <Segment>
             <Header textAlign='center'>Responsive Width: Doubling and Stackable</Header>
             <Grid>
@@ -629,7 +614,6 @@ class Semantic2 extends Component{
         </Grid>
             </Segment>
 
-            {/* Comments with Comment Form */}
             <Segment>
                 <Header textAlign='center'>Comments with Input Form</Header>
                 <Comment.Group>
@@ -703,7 +687,6 @@ class Semantic2 extends Component{
       </Comment.Group>
             </Segment>
 
-            {/* Reveal Pictures and Pop-up */}
             <Segment>
                     <Header textAlign='center'> Reveal 2nd Picture with Pop-up Feature</Header>
                     <Popup
@@ -746,7 +729,6 @@ class Semantic2 extends Component{
                     />
             </Segment>
 
-            {/*Tabs */}
             <Segment>
                 <Header textAlign='center'>Tabs with vertical setup</Header>
                 <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
