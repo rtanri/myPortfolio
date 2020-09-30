@@ -18,11 +18,11 @@ export class App extends Component{
             <Router>
                 <Fragment>
                 <Switch>
-                    <Route path='https://revin-portfolio.netlify.app/' exact component={Portfolio} />
+                    <Route path='/' exact component={Portfolio} />
                     <Route path='/react-semanticui' component={Semantic1}  />
                     <Route path='/would-you-rather' component={Project1} />
                     <Route path='/e-library' component={Project2} />
-                    <Route path='https://revin-portfolio.netlify.app/resto-reviewer' component={Project3} />
+                    <Route path='/resto-reviewer' component={Project3} />
                     <Route path='/reactnative-flash-card' component={MoProject1} />
                     <Route path='/reactnative-fitness-app' component={MoProject2} />
                     <Route path='/frogger' component={Game1} />
