@@ -49,7 +49,7 @@ const MainHeader = () => (
 
 const BodyHeader = () => (
   <Header as="h2" textAlign="center" className="headerMargin">
-    <Header.Content>Programming Projects Created by Me:</Header.Content>
+    <Header.Content>Programming Projects I Created:</Header.Content>
   </Header>
 );
 
@@ -67,7 +67,7 @@ const ExperimentHeader = () => (
   <Header as="h2" textAlign="left" className="headerMargin">
     <Header.Content>Experiment</Header.Content>
     <Header.Subheader>
-      Quick Prototype or old projects I have done in Javascript:
+      Quick Prototype I have done in Javascript:
     </Header.Subheader>
   </Header>
 );
