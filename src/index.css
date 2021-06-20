@@ -1,35 +1,34 @@
-html{
+html {
   background-color: #dddddd;
 }
 
-#root{
+#root {
   background-color: #dddddd;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#dddddd;
+  background-color: #dddddd;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-    color: #ff4675;
-    background-color: #fff6f9;
-    border-radius: 3px;
-    margin: 0 2px;
-    padding: 2px;
-    font-weight: 400;
-    font-size: .8em;
-    text-shadow: none;
-    border: 1px solid #ccc;
+  color: #ff4675;
+  background-color: #fff6f9;
+  border-radius: 3px;
+  margin: 0 2px;
+  padding: 2px;
+  font-weight: 400;
+  font-size: 0.8em;
+  text-shadow: none;
+  border: 1px solid #ccc;
 }
-
 
 /* Main Page CSS */
 .dashboard {
@@ -41,70 +40,68 @@ code {
   background-color: white;
 }
 
-.contentPage{
+.contentPage {
   padding: 30px 60px 50px 60px;
   border: unset;
   box-shadow: unset;
   background-color: white;
 }
 
-.lightPadding{
+.lightPadding {
   padding: 30px 50px 30px 50px;
 }
 
-.flexBetween{
+.flexBetween {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.ui.segment.basicProfile{
+.ui.segment.basicProfile {
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
-.backButton{
+.backButton {
   margin-top: 20px;
   margin-left: 20px;
 }
 
 /* Profile  */
-p.profileSummary{
+p.profileSummary {
   font-size: 18px;
 }
 
-.ui.button.contactButton{
+.ui.button.contactButton {
   background: green;
   color: white;
   font-weight: 1200;
 }
 
-
-
 /* Dashboard TAB CSS  */
-.ui.pointing.menu{
+.ui.pointing.menu {
   justify-content: center;
   border: none;
   box-shadow: none;
   font-size: 17px;
 }
 
-.ui.pointing.menu .item{
+.ui.pointing.menu .item {
   width: 200px;
   justify-content: center;
 }
 
-.ui.pointing.menu .item:hover{
+.ui.pointing.menu .item:hover {
   background: #fafafa;
 }
 
-.ui.pointing.menu .active.item{
+.ui.pointing.menu .active.item {
   background: green;
   color: white;
 }
 
-.ui.pointing.menu .active.item:hover{
-  background:green;
+.ui.pointing.menu .active.item:hover {
+  background: green;
   color: white;
 }
 
@@ -126,104 +123,99 @@ width: 1000
 height: 680
 */
 
-
 /* sub-tab box */
-.ui.segment.minHeight{
+.ui.segment.minHeight {
   min-height: 340px;
 }
 
-
 /* Interest & Experiment Header CSS */
-.childHeader{
+.childHeader {
   margin-top: 0px;
   margin-bottom: -20px;
-  color: #0652DD;
+  color: #0652dd;
 }
 
-.deepPadding{
+.deepPadding {
   padding-left: 30px;
 }
 
-a.ui.header{
-  color: #0652DD;
+a.ui.header {
+  color: #0652dd;
 }
 
-.ui.header.childHeaderItem{
+.ui.header.childHeaderItem {
   margin-top: 5px;
 }
 
-.marginTop{
-  margin-top:30px;
+.marginTop {
+  margin-top: 30px;
 }
 
-.ui.center.aligned.header.headerMargin{
-  margin-top:50px;
+.ui.center.aligned.header.headerMargin {
+  margin-top: 50px;
   margin-bottom: 30px;
   font-size: 26px;
 }
 
 .ui.left.aligned.header.headerMargin {
-  margin-top:50px;
+  margin-top: 50px;
   margin-bottom: 30px;
   /* font-size: 20px; */
 }
 
-
 /* Project page CSS */
 
-.ui.segments.projectNotes .segment{
+.ui.segments.projectNotes .segment {
   padding: 40px auto;
   font-size: 1.1rem;
   /* border: unset;
   box-shadow: unset; */
 }
 
-.ui.segments.projectNotes{
+.ui.segments.projectNotes {
   width: 900px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   /* border:unset;
   box-shadow:unset; */
 }
 
-.projectPage{
+.projectPage {
   margin: 50px auto 50px auto;
   /* background-color: white; */
 }
 
-.ui.segment.navigationBar{
+.ui.segment.navigationBar {
   width: 220px;
   font-size: smaller;
 }
 
-.ui.segment.navigationBar p{
+.ui.segment.navigationBar p {
   font-size: 14px;
   margin: 0 0 0 10px;
-
 }
 
-p ol.biggerSpace{
-  line-height: 2; 
+p ol.biggerSpace {
+  line-height: 2;
 }
-
 
 .ui.left.rail.navRail {
   margin-right: 0;
-  width:230px;
+  width: 230px;
 }
 
-.stickyContainer{
+.stickyContainer {
   position: sticky;
-  top:50px;
+  top: 50px;
 }
 
-.subHeader{
+.subHeader {
   text-align: center;
   font-size: 1.3rem;
 }
 
-.pictureDetail{
+.pictureDetail {
   text-align: center;
   font-weight: bolder;
   margin-top: -20px;
@@ -231,17 +223,17 @@ p ol.biggerSpace{
   font-size: small;
 }
 
-.ui.image.largeImage{
+.ui.image.largeImage {
   margin: 30px auto 30px auto;
 }
 
-.ui.floated.image.floatLeft{
+.ui.floated.image.floatLeft {
   margin: 10px 40px 20px 20px;
   border-width: 3px;
   max-height: 300px;
 }
 
-.ui.floated.image.floatRight{
+.ui.floated.image.floatRight {
   margin: 10px 40px 20px 20px;
   border-width: 3px;
   max-height: 300px;
@@ -249,48 +241,53 @@ p ol.biggerSpace{
 
 /* Formating Code PRE */
 
-code{
+code {
   font-family: Consolas, monospace;
   font-size: 0.8em;
 }
 
-.highlight{
+.highlight {
   color: #d0d0d0;
 }
 
-
-.projectFooter{
+.projectFooter {
   margin-left: 50px;
   margin-right: 120px;
 }
 
-.pictureMargin{
+.pictureMargin {
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.ui.celled.table.dataTable{
+.ui.celled.table.dataTable {
   width: 600px;
   text-align: center;
 }
 
-@media (min-width: 300px) and (max-width: 700px){
-  #root{
+.dimmedCard {
+  padding: 0;
+}
+
+.project-image-in-mainpage {
+  max-width: 200px;
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  #root {
     background-color: #dddddd;
     font-size: 18px;
   }
-  
-  .ui.header.childHeaderItem{
+
+  .ui.header.childHeaderItem {
     font-size: 17px;
   }
-  
-  .ui.header .content{
+
+  .ui.header .content {
     font-size: larger;
   }
 
-  p.profileSummary{
+  p.profileSummary {
     font-size: larger;
   }
-
-
 }

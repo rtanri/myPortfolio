@@ -8,6 +8,7 @@ import {
   Tab,
   Button,
 } from "semantic-ui-react";
+import ProjectCard from "./ProjectCard";
 import { NavLink, Link } from "react-router-dom";
 
 class Portfolio extends Component {
@@ -22,7 +23,7 @@ class Portfolio extends Component {
     ];
 
     return (
-      <div class="dashboard">
+      <div className="dashboard">
         <Segment.Group className="contentPage">
           <BasicProfile />
           <BodyHeader />
@@ -84,7 +85,7 @@ class BasicProfile extends Component {
 
             <Grid.Column width={9}>
               <MainHeader />
-              <p class="profileSummary">
+              <p className="profileSummary">
                 Front-End Developer located in Singapore, and I enjoyed coding
                 with ReactJs, Node EJS and MongoDB.
               </p>
@@ -149,6 +150,18 @@ class WebApp extends Component {
               }
             </Grid.Column>
 
+            <Grid.Column>
+              {
+                <ProjectCard
+                  link="/resto-reviewer"
+                  imageSource="/images/dashboard/resto-reviewer.jpg"
+                  title="Cafe Reviewer (DIY Yelp)"
+                  extra="Google Map API, Web Responsive, Service-Worker Offline Cache"
+                />
+              }
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
             <Grid.Column>
               {
                 <ProjectCard
@@ -227,7 +240,7 @@ const Game = () => (
 );
 
 const OtherProjects = () => (
-  <div class="deepPadding">
+  <div className="deepPadding">
     <Grid>
       <Grid.Row columns={3}>
         <Grid.Column width={4}>
@@ -290,7 +303,7 @@ const OtherProjects = () => (
 );
 
 const ExperimentContent = () => (
-  <div class="marginTop">
+  <div className="marginTop">
     <Grid>
       <Grid.Row columns={3}>
         <Grid.Column>
@@ -322,17 +335,17 @@ const ExperimentContent = () => (
   </div>
 );
 
-const ProjectCard = ({ link, imageSource, title, extra }) => (
-  <Link to={link}>
-    <Card>
-      <Image src={imageSource} wrapped ui={false} />
-      <Card.Content>
-        <Card.Header>{title}</Card.Header>
-      </Card.Content>
+// const ProjectCard = ({ link, imageSource, title, extra }) => (
+//   <Link to={link}>
+//     <Card>
+//       <Image src={imageSource} wrapped ui={false} />
+//       <Card.Content>
+//         <Card.Header>{title}</Card.Header>
+//       </Card.Content>
 
-      <Card.Content extra>{extra}</Card.Content>
-    </Card>
-  </Link>
-);
+//       <Card.Content extra>{extra}</Card.Content>
+//     </Card>
+//   </Link>
+// );
 
 export default Portfolio;
