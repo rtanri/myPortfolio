@@ -20,14 +20,12 @@ class ProjectCard extends React.Component {
     this.setState({
       isShown: boolean,
     });
-    console.log(this.state.isShown);
   };
 
   handleHide = boolean => {
     this.setState({
       isShown: boolean,
     });
-    console.log(this.state.isShown);
   };
 
   makeAList = input => {
@@ -51,10 +49,10 @@ class ProjectCard extends React.Component {
           </Card>
         </Link>
         <Dimmer active={this.state.isShown} onClickOutside={this.handleHide}>
-          <Header as="h2" icon inverted>
+          <p className="project-card__dimmer__header--styling">
             Features:
-          </Header>
-          <ul>
+          </p>
+          <ul className="project-card__dimmer__list--styling">
             {listOfFeature.map(content => (
               <li>{content}</li>
             ))}

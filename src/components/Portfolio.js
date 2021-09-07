@@ -86,15 +86,16 @@ class BasicProfile extends Component {
             <Grid.Column width={9}>
               <MainHeader />
               <p className="profileSummary">
-                Front-End Developer located in Singapore, and I enjoyed coding
-                with ReactJs, Node EJS and MongoDB.
+                Junior Front-End Engineer, and currently intern in Endowus Singapore. I enjoyed to code with MERN framework and explore new FE tools
               </p>
               <Button
                 className="contactButton"
-                content="Contact"
+                content="MY RESUME"
                 icon="rocket"
+                fontWeight='700'
                 as="a"
-                href="mailto:tanrirevin@gmail.com"
+                download
+                href="resume/Revin-FrontEnd-Resume.pdf"
               />
             </Grid.Column>
             <Grid.Column width={2}>
