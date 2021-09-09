@@ -6,13 +6,11 @@ import {
   Rail,
   Breadcrumb,
   Button,
-  Icon,
-  Table,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "../index.css"
 
-class Project4 extends Component {
+class Project5 extends Component {
   render() {
     return (
       <div class="projectPage">
@@ -34,7 +32,7 @@ const BreadcrumbPanel = () => (
       to={"/"}
     >Home</Breadcrumb.Section>
     <Breadcrumb.Divider />
-    <Breadcrumb.Section>Would You Rather</Breadcrumb.Section>
+    <Breadcrumb.Section>Beautylash Eyelash Saloon</Breadcrumb.Section>
   </Breadcrumb>
 )
 
@@ -54,16 +52,17 @@ const PortfolioNotes = () => (
   <div class="lightPadding">
     <BreadcrumbPanel />
     <Header
-      content="Would You Rather Apps"
+      content="Beautylash Eyelash Saloon"
       textAlign="center"
       as="h1"
     />
     <p className="subHeader">
-      <span><a href="https://freshstart-deployment.herokuapp.com/" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/fe-project3" target="_blank">Github Repo</a></span>
+      <span><a href="https://beautylash.herokuapp.com/beautylash" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/project-two" target="_blank">Github Repo</a></span>
     </p>
     <Segment>
       <Header as="h3" id="overview">1. Simple Overview</Header>
       <Overview />
+      <Screenshot source={"/images/beautylash/homepage.jpg"} />
       <Header as="h3" id="appFunctionality">2. Application Build</Header>
       <AppF12y />
       <Header as="h3" id="workflowProcess">3. Page Views</Header>
@@ -73,7 +72,7 @@ const PortfolioNotes = () => (
     <div class="projectFooter">
       <Button size="small" floated='left' as={Link} to={""} content="Back" />
       <p className="subHeader">
-        <span><a href="https://freshstart-deployment.herokuapp.com/" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/fe-project3" target="_blank">Github Repo</a></span>
+        <span><a href="https://beautylash.herokuapp.com/beautylash" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/project-two" target="_blank">Github Repo</a></span>
       </p>
     </div>
   </div>
@@ -82,10 +81,8 @@ const PortfolioNotes = () => (
 const Overview = () => (
   <div>
     <p>
-      Freshstart app is built to support brokenhearted people in returning their sentimental items without meeting their ex-lovers face-to-face.
+      Beautylash is a fully developed web for eyelash extension booking services, customer dashboard, authenticated user login (session-cookie), and product category filtering.
       <br />
-      <br />
-      This platform is well equiped with features like forum and delivery services to all users.
     </p>
   </div>
 )
@@ -93,22 +90,14 @@ const Overview = () => (
 const AppF12y = () => (
   <div>
     <p>
-      Frontend was created with:
+      Extension and library installed
 
       <ul>
-        <li>100% React-hooks (useState, useEffect, useParams, etc),</li>
-        <li>Consist of 9 pages and 2 additional compoentns (navbar and footer),</li>
-        <li>Using material UI, google place API, react-cookie, React Toastify, and React Credit Cards; </li>
-      </ul>
-    </p>
-    <p>
-      And our backend was supported with:
-
-      <ul>
-        <li>Seamless backend file storage with Cloudinary,</li>
-        <li>Consist of 6 collections in MongoDB,</li>
-        <li>Build with 21 routes controllers,</li>
-        <li>Login user with JWT token</li>
+        <li>Frontend with Vanilla JS, and backend with Express EJS,</li>
+        <li>FullCalendar API library,</li>
+        <li>Mongoose - database management</li>
+        <li>Lodash, dotenv, moment.js, flash message</li>
+        <li>Password SHA protection - Crypto and uuid</li>
       </ul>
     </p>
   </div>
@@ -117,28 +106,25 @@ const AppF12y = () => (
 
 const PageView = () => (
   <p>
-    Few Freshstart applications screenshots:
+    Main features build in this web app:
     <ul>
-      <li>Guest Landing Page
-        <Screenshot source={'https://i.imgur.com/Kb9KBnQ.png'} />
+      <li>Booking system is opened for authenticated user and limited available timeslots
+        <Screenshot source={"/images/beautylash/booking-system.jpeg"} />
       </li>
-      <li>Sign-up and Login
-        <Screenshot source={'https://i.imgur.com/zePG7Ze.png'} />
+      <li>Booking system is locked for guest (non-login user)
+        <Screenshot source={"/images/beautylash/non-login-user.jpeg"} />
       </li>
-      <li>Delivery/Collection Services
-        <Screenshot source={'https://i.imgur.com/jiF6HDC.png'} />
+      <li>Carousel - sorted with lastest uploaded image is shown in front
+        <Screenshot source={"/images/beautylash/carousel.jpg"} />
       </li>
-      <li>Add Items to be delivered
-        <Screenshot source={'https://i.imgur.com/U98zMGR.png'} />
+      <li>Filter based on category
+        <Screenshot source={"/images/beautylash/customer-page.jpg"} />
+      </li>
+      <li>User Dashboard
+        <Screenshot source={"/images/beautylash/new-dashboard.jpg"} />
       </li>
       <li>Dashboard - to show all deliveries with various status
         <Screenshot source={'https://i.imgur.com/ChRGp1T.png'} />
-      </li>
-      <li>Forum
-        <Screenshot source={'https://i.imgur.com/OZMQT6s.png'} />
-      </li>
-      <li>Credit Card Payment
-        <Screenshot source={'https://i.imgur.com/h2VQggJ.png'} />
       </li>
     </ul>
 
@@ -159,4 +145,4 @@ const Screenshot = ({ source }) => (
 
 
 
-export default Project4
+export default Project5

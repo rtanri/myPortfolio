@@ -7,7 +7,6 @@ import {
   Card,
   Tab,
   Button,
-  Dimmer,
 } from "semantic-ui-react";
 import { NavLink, Link } from "react-router-dom";
 
@@ -33,34 +32,28 @@ class ProjectCard extends React.Component {
   };
 
   render() {
-    const listOfFeature = this.makeAList(this.props.extra);
+    // const listOfFeature = this.makeAList(this.props.extra);
+    const listOfFeature = this.props.extra;
     console.log(listOfFeature);
     return (
-      <Dimmer.Dimmable dimmed={this.state.isShown}>
-        <Link to={this.props.link}>
+      <Link to={this.props.link}>
+        <div className="project-card--wrapper">
           <Card
             onMouseEnter={() => this.handleEnter(true)}
             onMouseLeave={() => this.handleHide(false)}
+            class="project-card--styling"
           >
-            <Image src={this.props.imageSource} wrapped ui={false} />
+            <Image src={this.props.imageSource} wrapped ui={false} class="project-card__image" />
             <Card.Content>
-              <Card.Header>{this.props.title}</Card.Header>
+              <h3 className="project-card__card-content--title">{this.props.title}</h3>
+              <p className="project-card__card-content--extra">{listOfFeature}</p>
             </Card.Content>
           </Card>
-        </Link>
-        <Dimmer active={this.state.isShown} onClickOutside={this.handleHide}>
-          <p className="project-card__dimmer__header--styling">
-            Features:
-          </p>
-          <ul className="project-card__dimmer__list--styling">
-            {listOfFeature.map(content => (
-              <li>{content}</li>
-            ))}
-          </ul>
-        </Dimmer>
-      </Dimmer.Dimmable>
+        </div>
+      </Link>
     );
   }
 }
 
 export default ProjectCard;
+
