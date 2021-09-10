@@ -16,10 +16,10 @@ class Portfolio extends Component {
     const panes = [
       { menuItem: "Web Apps", render: () => <Tab.Pane>{<WebApp />}</Tab.Pane> },
       {
-        menuItem: "Mobile: ReactNative",
+        menuItem: "Mobile Apps",
         render: () => <Tab.Pane>{<MobileApp />}</Tab.Pane>,
       },
-      { menuItem: "Web Game", render: () => <Tab.Pane>{<Game />}</Tab.Pane> },
+      { menuItem: "Web Games", render: () => <Tab.Pane>{<Game />}</Tab.Pane> },
     ];
 
     return (
@@ -127,67 +127,52 @@ class WebApp extends Component {
   render() {
     return (
       <Segment className="minHeight">
-        <Grid columns={3}>
-          <Grid.Row>
-            <Grid.Column>
-              {
-                <ProjectCard
-                  link="/freshstart"
-                  imageSource="/images/dashboard/freshstart.jpg"
-                  title="Freshstart"
-                  extra="React hook, Google Place API, MongoDB, EJS (fullstack)"
-                />
-              }
-            </Grid.Column>
+        <div className="flexbox-row-projects">
+          {
+            <ProjectCard
+              link="/freshstart"
+              imageSource="/images/dashboard/freshstart.jpg"
+              title="Freshstart"
+              extra="React hook, Google Place API, MongoDB, EJS (fullstack)"
+            />
+          }
 
-            <Grid.Column>
-              {
-                <ProjectCard
-                  link="/would-you-rather"
-                  imageSource="/images/dashboard/yourather.jpg"
-                  title="Would You Rather"
-                  extra="React class Based, React-Redux, Semantic UI"
-                />
-              }
-            </Grid.Column>
+          {
+            <ProjectCard
+              link="/would-you-rather"
+              imageSource="/images/dashboard/yourather.jpg"
+              title="Would You Rather"
+              extra="React class Based, React-Redux, Semantic UI"
+            />
+          }
 
-            <Grid.Column>
-              {
-                <ProjectCard
-                  link="/e-library"
-                  imageSource="/images/dashboard/elibrary.jpg"
-                  title="React Library"
-                  extra="React class based, Categorization, Search Bar"
-                />
-              }
-            </Grid.Column>
+          {
+            <ProjectCard
+              link="/e-library"
+              imageSource="/images/dashboard/elibrary.jpg"
+              title="React Library"
+              extra="React class based, Categorization, Search Bar"
+            />
+          }
 
+          {
+            <ProjectCard
+              link="/beautylash"
+              imageSource="/images/dashboard/beautylash.jpg"
+              title="Beautylash Saloon"
+              extra="Booking System, Vanila JS, Node EJS, MongoDB (fullstack)"
+            />
+          }
 
-          </Grid.Row>
-          <Grid.Row>
-
-            <Grid.Column>
-              {
-                <ProjectCard
-                  link="/beautylash"
-                  imageSource="/images/dashboard/beautylash.jpg"
-                  title="Beautylash Saloon"
-                  extra="Booking System, Vanila JS, Node EJS, MongoDB (fullstack)"
-                />
-              }
-            </Grid.Column>
-            <Grid.Column>
-              {
-                <ProjectCard
-                  link="/resto-reviewer"
-                  imageSource="/images/dashboard/resto-reviewer.jpg"
-                  title="Cafe Reviewer"
-                  extra="Google Map Api, filtering lists, responsive web"
-                />
-              }
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+          {
+            <ProjectCard
+              link="/resto-reviewer"
+              imageSource="/images/dashboard/resto-reviewer.jpg"
+              title="Cafe Reviewer"
+              extra="Google Map Api, filtering lists, responsive web"
+            />
+          }
+        </div>
       </Segment>
     );
   }
@@ -195,71 +180,58 @@ class WebApp extends Component {
 
 const MobileApp = () => (
   <Segment className="minHeight">
-    <Grid>
-      <Grid.Row columns={3}>
-        <Grid.Column>
-          {
-            <ProjectCard
-              link="/reactnative-flash-card"
-              imageSource="/images/dashboard/flashcard.jpg"
-              title="Flash Card Mobile App"
-              extra="ReactNative, Animation, Redux, JSON Initial Data, Add Question Card, Quiz"
-            />
-          }
-        </Grid.Column>
+    <div className="flexbox-row-projects">
+      {
+        <ProjectCard
+          link="/reactnative-flash-card"
+          imageSource="/images/dashboard/flashcard.jpg"
+          title="Flash Card Mobile App"
+          extra="ReactNative, Animation, Redux, JSON Initial Data, Add Question Card, Quiz"
+        />
+      }
 
-        <Grid.Column>
-          {
-            <ProjectCard
-              link="/reactnative-fitness-app"
-              imageSource="/images/dashboard/fitnessapp.jpg"
-              title="Fitness Mobile App"
-              extra="Redux, ReactNative, Calendar, Tab & Stack Nav, Ask for Location and Notification"
-            />
-          }
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+      {
+        <ProjectCard
+          link="/reactnative-fitness-app"
+          imageSource="/images/dashboard/fitnessapp.jpg"
+          title="Fitness Mobile App"
+          extra="Redux, ReactNative, Calendar, Tab & Stack Nav, Ask for Location and Notification"
+        />
+      }
+    </div>
   </Segment>
 );
 
 const Game = () => (
   <Segment className="minHeight">
-    <Grid>
-      <Grid.Row columns={3}>
-        <Grid.Column>
-          {
-            <ProjectCard
-              link="/job-hunter"
-              imageSource="/images/dashboard/job-hunter.jpg"
-              title="Job Hunter"
-              extra="like Plant Vs Zombie - Build with OOP, DOM, eventlistener"
-            />
-          }
-        </Grid.Column>
-        <Grid.Column>
-          {
-            <ProjectCard
-              link="/frogger"
-              imageSource="/images/dashboard/frogger.jpg"
-              title="Frogger"
-              extra="Object.Prototype, DOM, EventListener, Canvas Basic"
-            />
-          }
-        </Grid.Column>
+    <div className="flexbox-row-projects">
+      {
+        <ProjectCard
+          link="/job-hunter"
+          imageSource="/images/dashboard/job-hunter.jpg"
+          title="Job Hunter"
+          extra="like Plant Vs Zombie - Build with OOP, DOM, eventlistener"
+        />
+      }
 
-        <Grid.Column>
-          {
-            <ProjectCard
-              link="/flip-card"
-              imageSource="/images/dashboard/flipcard.jpg"
-              title="Flip Card"
-              extra="Web Responsive, Arrays, DOM, EventListener, Fetch API, Timer function"
-            />
-          }
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+      {
+        <ProjectCard
+          link="/frogger"
+          imageSource="/images/dashboard/frogger.jpg"
+          title="Frogger"
+          extra="Object.Prototype, DOM, EventListener, Canvas Basic"
+        />
+      }
+
+      {
+        <ProjectCard
+          link="/flip-card"
+          imageSource="/images/dashboard/flipcard.jpg"
+          title="Flip Card"
+          extra="Web Responsive, Arrays, DOM, EventListener, Fetch API, Timer function"
+        />
+      }
+    </div>
   </Segment>
 );
 

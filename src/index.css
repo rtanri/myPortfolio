@@ -83,7 +83,7 @@ p.profileSummary {
   background: green;
   color: white;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 1px;
 }
 
 /* Dashboard TAB CSS  */
@@ -97,15 +97,20 @@ p.profileSummary {
 .ui.pointing.menu .item {
   width: 200px;
   justify-content: center;
+  font-weight: 700;
+  background-color: #e0e0e0;
+  letter-spacing: 1px;
 }
 
 .ui.pointing.menu .item:hover {
-  background: #fafafa;
+  opacity: 0.7;
 }
 
 .ui.pointing.menu .active.item {
   background: green;
   color: white;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .ui.pointing.menu .active.item:hover {
@@ -118,18 +123,75 @@ p.profileSummary {
   padding: unset;
 }
 
-/* project photo cropped size
-width: 900
-height: 680
+.flexbox-row-projects{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 940px;
+  position:relative;
+  left: 15px;
+  justify-content: start;
+  margin: 0 auto;
+  /* border: 1px solid #333; */
+}
 
-mobile-app portfolio
-width: 900
-height: 585
 
-Canvas siz
-width: 1000
-height: 680
-*/
+/* ===== Project Card Component ==== */
+
+code {
+  font-family: Consolas, monospace;
+  font-size: 0.8em;
+}
+
+
+.project-card--styling{
+  border-radius: 10px;
+}
+
+.project-card--wrapper{
+  margin: 0 20px 20px 0;
+}
+
+.project-card--wrapper:hover{
+  box-shadow: -7px 7px 6px #e0e0e0;
+}
+
+
+.project-card__card-content--extra{
+  font-size: 18px;
+  color: #7E7E7E;
+}
+
+.project-card__card-content--title{
+  font-size: 24px;
+  color: #333;
+}
+
+.project-card__image{
+  width:100%;
+}
+
+
+.highlight {
+  color: #d0d0d0;
+}
+
+.projectFooter {
+  margin-left: 50px;
+  margin-right: 120px;
+}
+
+.pictureMargin {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ui.celled.table.dataTable {
+  width: 600px;
+  text-align: center;
+}
+
+
 
 /* sub-tab box */
 .ui.segment.minHeight {
@@ -279,73 +341,31 @@ button {
   font-weight: 700;
 }
 
-/* ===== Project Card Component ==== */
 
-code {
-  font-family: Consolas, monospace;
-  font-size: 0.8em;
-}
+@media (min-width: 300px) and (max-width: 841px) {
+  .flexbox-row-projects{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 330px;
+    margin: 0 auto;
 
-.highlight {
-  color: #d0d0d0;
-}
-
-.projectFooter {
-  margin-left: 50px;
-  margin-right: 120px;
-}
-
-.pictureMargin {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.ui.celled.table.dataTable {
-  width: 600px;
-  text-align: center;
-}
-
-.project-card--styling{
-  border-radius: 10px;
-}
-
-
-.project-card--wrapper:hover{
-  box-shadow: -7px 7px 6px #e0e0e0;
-}
-
-
-.project-card__card-content--extra{
-  font-size: 18px;
-  color: #7E7E7E;
-}
-
-.project-card__card-content--title{
-  font-size: 24px;
-  color: #333;
-}
-
-.project-card__image{
-  width:100%;
-}
-
-@media (min-width: 300px) and (max-width: 700px) {
-  #root {
-    background-color: #dddddd;
-    font-size: 14px;
-  }
-
-  .ui.header.childHeaderItem {
-    font-size: 14px;
-  }
-
-  .ui.header .content {
-    font-size: larger;
-  }
-
-  p.profileSummary {
-    font-size: larger;
   }
 }
+
+@media (min-width: 842px) and (max-width: 1085px) {
+  .flexbox-row-projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+    left: 50px;
+  }
+}
+
 
 

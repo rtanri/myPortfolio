@@ -123,9 +123,6 @@ const PageView = () => (
       <li>User Dashboard
         <Screenshot source={"/images/beautylash/new-dashboard.jpg"} />
       </li>
-      <li>Dashboard - to show all deliveries with various status
-        <Screenshot source={'https://i.imgur.com/ChRGp1T.png'} />
-      </li>
     </ul>
 
   </p>
