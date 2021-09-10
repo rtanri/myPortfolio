@@ -38,8 +38,9 @@ code {
 
 /* Main Page CSS */
 .dashboard {
+  min-width: 650px;
   max-width: 1100px;
-  margin: 50px auto 50px auto;
+  margin: 0 auto 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -48,7 +49,7 @@ code {
 }
 
 .contentPage {
-  padding: 30px 60px 50px 60px;
+  padding: 80px 60px 80px 60px;
   border: unset;
   box-shadow: unset;
   background-color: white;
@@ -213,13 +214,17 @@ a.ui.header {
   color: #0652dd;
 }
 
+.section{
+  font-size: 18px;
+}
+
 
 .listItemStyling {
   margin-top: 20px;
 }
 
 .experiment-item-wrapper{
-  max-width: 400px;
+  max-width: 350px;
   margin-right: 20px;
   padding: 10px 0 20px;
   margin-left: 5%;
@@ -279,7 +284,7 @@ a.ui.header {
 }
 
 .projectPage {
-  margin: 50px auto 50px auto;
+  margin: 0 auto 50px auto;
   /* background-color: white; */
 }
 

@@ -34,7 +34,7 @@ const BreadcrumbPanel = () => (
       to={"/"}
     >Home</Breadcrumb.Section>
     <Breadcrumb.Divider />
-    <Breadcrumb.Section>Would You Rather</Breadcrumb.Section>
+    <Breadcrumb.Section>Freshstart</Breadcrumb.Section>
   </Breadcrumb>
 )
 
@@ -54,7 +54,7 @@ const PortfolioNotes = () => (
   <div class="lightPadding">
     <BreadcrumbPanel />
     <Header
-      content="Would You Rather Apps"
+      content="Freshstart - Delivery for brokenhearted"
       textAlign="center"
       as="h1"
     />
