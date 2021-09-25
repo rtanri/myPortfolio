@@ -159,7 +159,7 @@ class WebApp extends Component {
             <ProjectCard
               link="/beautylash"
               imageSource="/images/dashboard/beautylash.jpg"
-              title="Beautylash Saloon"
+              title="Beautylash Salon"
               extra="Booking System, Vanila JS, Node EJS, MongoDB (fullstack)"
             />
           }

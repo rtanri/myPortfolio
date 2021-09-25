@@ -32,7 +32,7 @@ const BreadcrumbPanel = () => (
       to={"/"}
     >Home</Breadcrumb.Section>
     <Breadcrumb.Divider />
-    <Breadcrumb.Section>Beautylash Eyelash Saloon</Breadcrumb.Section>
+    <Breadcrumb.Section>Beautylash Eyelash Salon</Breadcrumb.Section>
   </Breadcrumb>
 )
 
@@ -52,7 +52,7 @@ const PortfolioNotes = () => (
   <div class="lightPadding">
     <BreadcrumbPanel />
     <Header
-      content="Beautylash Eyelash Saloon"
+      content="Beautylash Eyelash Salon"
       textAlign="center"
       as="h1"
     />
