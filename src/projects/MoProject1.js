@@ -15,15 +15,16 @@ class MoProject1 extends Component {
 
     render(){
         return(
-            <div class="projectPage">
-                <Segment.Group className="projectNotes">
-                    <PortfolioNotes/>
-
-                    <Rail position="left" className="navRail"> 
-                        <LeftNavigation/>
-                    </Rail>
-                </Segment.Group>
+          <div class="projectPage">
+            <div className="projectNotes">
+              <div className="projectNotes__left-item">
+                <LeftNavigation />
+              </div>
+              <div className="projectNotes__right-item">
+                <PortfolioNotes />
+              </div>
             </div>
+          </div>
         )
     }
 }

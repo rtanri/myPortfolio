@@ -45,7 +45,6 @@ code {
   flex-direction: column;
   justify-content: space-around;
   background-color: white;
-  border-radius: 10%;
 }
 
 .contentPage {
@@ -53,10 +52,6 @@ code {
   border: unset;
   box-shadow: unset;
   background-color: white;
-}
-
-.lightPadding {
-  padding: 30px 50px 30px 50px;
 }
 
 .flexBetween {
@@ -133,7 +128,6 @@ p.profileSummary {
   left: 15px;
   justify-content: start;
   margin: 0 auto;
-  /* border: 1px solid #333; */
 }
 
 
@@ -187,6 +181,10 @@ code {
 .pictureMargin {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.pictureSmaller {
+  width: 200px;
 }
 
 .ui.celled.table.dataTable {
@@ -268,31 +266,55 @@ a.ui.header {
 }
 
 /* Project page CSS */
-
-.ui.segments.projectNotes .segment {
-  padding: 40px auto;
-  font-size: 1.1rem;
-  /* border: unset;
-  box-shadow: unset; */
-}
-
-.ui.segments.projectNotes {
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  /* border:unset;
-  box-shadow:unset; */
-}
-
 .projectPage {
-  margin: 0 auto 50px auto;
-  /* background-color: white; */
+  background-color: white;
+  width: 100%;
+  padding: 20px 0;
+}
+
+
+div.projectNotes .segment {
+  padding: 60px 40px 0 40px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.projectNotes {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 50px auto;
+  grid-template-rows: auto;
+  grid-template-areas: "sidebar main"
+}
+
+.projectNotes__left-item{
+  grid-area: sidebar;
+}
+
+.projectNotes__right-item{
+  grid-area: main;
+}
+
+.lightPadding {
+  padding: 30px 50px 30px 50px;
+}
+
+
+p ol.biggerSpace {
+  line-height: 2;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 8%;
 }
 
 .ui.segment.navigationBar {
   width: 220px;
   font-size: smaller;
+  padding: 20px;
 }
 
 .ui.segment.navigationBar p {
@@ -300,19 +322,6 @@ a.ui.header {
   margin: 0 0 0 10px;
 }
 
-p ol.biggerSpace {
-  line-height: 2;
-}
-
-.ui.left.rail.navRail {
-  margin-right: 0;
-  width: 230px;
-}
-
-.stickyContainer {
-  position: sticky;
-  top: 50px;
-}
 
 .subHeader {
   text-align: center;
@@ -374,5 +383,11 @@ button {
   }
 }
 
+@media (max-width:1200px) {
+
+  .projectNotes__left-item{
+    display: none;
+  }
+}
 
 

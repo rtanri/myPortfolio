@@ -3,7 +3,6 @@ import {
   Segment,
   Header,
   Image,
-  Rail,
   Breadcrumb,
   Button,
 } from "semantic-ui-react";
@@ -34,7 +33,7 @@ const BreadcrumbPanel = () => (
       to={"/"}
     >Home</Breadcrumb.Section>
     <Breadcrumb.Divider />
-    <Breadcrumb.Section>Beautylash Eyelash Salon</Breadcrumb.Section>
+    <Breadcrumb.Section>Caloric Keep</Breadcrumb.Section>
   </Breadcrumb>
 )
 
@@ -54,17 +53,17 @@ const PortfolioNotes = () => (
   <div class="lightPadding">
     <BreadcrumbPanel />
     <Header
-      content="Beautylash Eyelash Salon"
+      content="Caloric Keep"
       textAlign="center"
       as="h1"
     />
     <p className="subHeader">
-      <span><a href="https://beautylash.herokuapp.com/beautylash" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/project-two" target="_blank">Github Repo</a></span>
+      <span><a href="https://caloric-keep.herokuapp.com/" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/caloric-keep" target="_blank">Github Repo</a></span>
     </p>
     <Segment>
       <Header as="h3" id="overview">1. Simple Overview</Header>
       <Overview />
-      <Screenshot source={"/images/beautylash/homepage.jpg"} />
+      <Screenshot source={"https://i.imgur.com/YDoLjLo.png"} />
       <Header as="h3" id="appFunctionality">2. Application Build</Header>
       <AppF12y />
       <Header as="h3" id="workflowProcess">3. Page Views</Header>
@@ -74,7 +73,7 @@ const PortfolioNotes = () => (
     <div class="projectFooter">
       <Button size="small" floated='left' as={Link} to={""} content="Back" />
       <p className="subHeader">
-        <span><a href="https://beautylash.herokuapp.com/beautylash" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/project-two" target="_blank">Github Repo</a></span>
+        <span><a href="https://caloric-keep.herokuapp.com/" target="_blank">Live Demo with Heroku</a></span>  ||  <span><a href="https://github.com/rtanri/caloric-keep" target="_blank">Github Repo</a></span>
       </p>
     </div>
   </div>
@@ -83,7 +82,8 @@ const PortfolioNotes = () => (
 const Overview = () => (
   <div>
     <p>
-      Beautylash is a fully developed web for eyelash extension booking services, customer dashboard, authenticated user login (session-cookie), and product category filtering.
+      Caloric keep is a fullstack web app to track daily calories and
+      available in 4 languages - English, Indonesia, Japanese, Chinese.
       <br />
     </p>
   </div>
@@ -92,14 +92,13 @@ const Overview = () => (
 const AppF12y = () => (
   <div>
     <p>
-      Extension and library installed
+      Technology used to build this app:
 
       <ul>
-        <li>Frontend with Vanilla JS, and backend with Express EJS,</li>
-        <li>FullCalendar API library,</li>
-        <li>Mongoose - database management</li>
-        <li>Lodash, dotenv, moment.js, flash message</li>
-        <li>Password SHA protection - Crypto and uuid</li>
+        <li>Reuseable Component styling with Linaria (CSS-in-JS)</li>
+        <li>React Context for 3 Providers (translations, authentication, card data)</li>
+        <li>Firestore - database management</li>
+        <li>Firebase - Email, password and Anonymous login</li>
       </ul>
     </p>
   </div>
@@ -110,20 +109,26 @@ const PageView = () => (
   <p>
     Main features build in this web app:
     <ul>
-      <li>Booking system is opened for authenticated user and limited available timeslots
-        <Screenshot source={"/images/beautylash/booking-system.jpeg"} />
+      <li>Login page with option for "Enter as guest"
+        <Screenshot source={"https://i.imgur.com/D18b7nA.png"} />
       </li>
-      <li>Booking system is locked for guest (non-login user)
-        <Screenshot source={"/images/beautylash/non-login-user.jpeg"} />
+      <li>Create Reuseable components (Cards, Sections, Containers, Text, H1, H2) with Linaria.
+        <MediumPicture source={"https://i.imgur.com/8UsZ0e5.png"} />
       </li>
-      <li>Carousel - sorted with lastest uploaded image is shown in front
-        <Screenshot source={"/images/beautylash/carousel.jpg"} />
+      <li>Dashboard page in 3 other languages: Chinese, Japanese, Indonesia
+        <Screenshot source={"https://i.imgur.com/foa6eAj.png"} />
+        <Screenshot source={"https://i.imgur.com/1K6gcMs.png"} />
+        <Screenshot source={"https://i.imgur.com/dMNCoS3.png"} />
       </li>
-      <li>Filter based on category
-        <Screenshot source={"/images/beautylash/customer-page.jpg"} />
+      <li>Each Languages is stored within json file and can be changed with TranslationProvider support
+        <MediumPicture source={"https://i.imgur.com/B5EQYiu.png"} />
       </li>
-      <li>User Dashboard
-        <Screenshot source={"/images/beautylash/new-dashboard.jpg"} />
+
+      <li>Modal to enter daily meal intake
+        <Screenshot source={"https://i.imgur.com/aSZV8qd.png"} />
+      </li>
+      <li>Modal to create new card
+        <Screenshot source={"https://i.imgur.com/jDJyhSC.png"} />
       </li>
     </ul>
 
@@ -135,6 +140,15 @@ const PageView = () => (
 
 const Screenshot = ({ source }) => (
   <Image size="big"
+    src={source}
+    centered
+    bordered
+    className="pictureMargin"
+  />
+)
+
+const MediumPicture = ({ source }) => (
+  <Image size="medium"
     src={source}
     centered
     bordered

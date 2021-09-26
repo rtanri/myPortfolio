@@ -16,12 +16,14 @@ class Project4 extends Component {
   render() {
     return (
       <div class="projectPage">
-        <Segment.Group className="projectNotes">
-          <PortfolioNotes />
-          <Rail position="left" className="navRail">
+        <div className="projectNotes">
+          <div className="projectNotes__left-item">
             <LeftNavigation />
-          </Rail>
-        </Segment.Group>
+          </div>
+          <div className="projectNotes__right-item">
+            <PortfolioNotes />
+          </div>
+        </div>
       </div>
     );
   }
@@ -42,7 +44,7 @@ const BreadcrumbPanel = () => (
 const LeftNavigation = () => (
   <div class="stickyContainer">
     <Segment className="navigationBar">
-      <Header as="h3">Code Notes</Header>
+      <Header as="h3">Table of contents</Header>
       <p><a href="#overview">1. Simple Overview</a></p>
       <p><a href="#appFunctionality">2. Application Build</a></p>
       <p><a href="#workflowProcess">3. Page views</a></p>
@@ -82,7 +84,7 @@ const PortfolioNotes = () => (
 const Overview = () => (
   <div>
     <p>
-      Freshstart app is built to support brokenhearted people in returning their sentimental items without meeting their ex-lovers face-to-face.
+      Freshstart app is built to support brokenhearted people in providing courier services on collecting/returning sentimental items without meeting their ex-lovers face-to-face.
       <br />
       <br />
       This platform is well equiped with features like forum and delivery services to all users.

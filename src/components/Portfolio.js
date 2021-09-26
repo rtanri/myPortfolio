@@ -130,6 +130,14 @@ class WebApp extends Component {
         <div className="flexbox-row-projects">
           {
             <ProjectCard
+              link="/caloric-keep"
+              imageSource="/images/dashboard/caloric-keep.jpg"
+              title="Caloric Keep"
+              extra="Linaria, React Context, React INTL, Firebase, Firestore"
+            />
+          }
+          {
+            <ProjectCard
               link="/freshstart"
               imageSource="/images/dashboard/freshstart.jpg"
               title="Freshstart"
@@ -291,7 +299,7 @@ const ExperimentContent = () => (
       </a>
       </h2>
       <p className="listItemStyling">
-        Combining react, ramda, redux sagas, linaria, react intl in creating monitoring tool for daily calories intake
+        Currently in progress on upgrading the "Caloric Keep" apps with Ramda and Redux Sagas
       </p>
     </div>
     <div className="experiment-item-wrapper">
